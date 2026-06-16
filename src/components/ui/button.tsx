@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
@@ -42,6 +41,8 @@ export function Button({
   );
 }
 
+// Uses native <a> for same-page anchors (#hash) to avoid Next.js App Router
+// prefetch conflicts; uses <a> for external/mailto links, no wrapping needed.
 export function ButtonLink({
   children,
   variant = "primary",
@@ -50,8 +51,8 @@ export function ButtonLink({
   ...props
 }: ButtonLinkProps) {
   return (
-    <Link className={cn(baseStyles, buttonStyles[variant], className)} href={href} {...props}>
+    <a className={cn(baseStyles, buttonStyles[variant], className)} href={href} {...props}>
       {children}
-    </Link>
+    </a>
   );
 }
