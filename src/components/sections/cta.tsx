@@ -10,12 +10,14 @@ export function FinalCta() {
       <div className="grid gap-lg lg:grid-cols-[1fr_auto] lg:items-center">
         <div className="max-w-3xl">
           <Heading as="h2" size="h2" className="text-foreground-inverse">
-            {siteContent.finalCta.headline}
+            {siteContent.contact.title}
           </Heading>
-          <p className="mt-md text-body text-foreground-inverse/80">{siteContent.finalCta.description}</p>
+          <p className="mt-md text-body text-foreground-inverse/80">
+            {siteContent.contact.description}
+          </p>
         </div>
-        <ButtonLink href="mailto:contato@phosphor.example" variant="primary">
-          {siteContent.finalCta.cta}
+        <ButtonLink href="#contato" variant="primary">
+          {siteContent.contact.cta}
           <ArrowRight aria-hidden size={18} />
         </ButtonLink>
       </div>

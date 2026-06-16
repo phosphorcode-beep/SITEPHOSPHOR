@@ -1,142 +1,209 @@
-import { ArrowRight, CheckCircle2, Mail } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button, ButtonLink } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Container } from "@/components/ui/container";
 import { Heading } from "@/components/ui/heading";
 import { Input } from "@/components/ui/input";
 import { Section } from "@/components/ui/section";
-import { FinalCta } from "@/components/sections/cta";
+import { Select } from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { siteContent } from "@/content/site-content";
+
+/* ─── Sub-componentes ─────────────────────────────────────────── */
 
 function SectionIntro({
   eyebrow,
   title,
   description,
+  tone = "light",
 }: {
   eyebrow: string;
   title: string;
-  description: string;
+  description?: string;
+  tone?: "light" | "dark";
 }) {
   return (
-    <div className="mx-auto mb-xl max-w-3xl text-center">
-      <Badge>{eyebrow}</Badge>
-      <Heading className="mt-md" size="h2">
+    <div className="mb-xl max-w-3xl">
+      <Badge tone={tone}>{eyebrow}</Badge>
+      <Heading
+        className={`mt-md ${tone === "dark" ? "text-foreground-inverse" : ""}`}
+        size="h2"
+      >
         {title}
       </Heading>
-      <p className="mt-md text-body text-foreground-secondary">{description}</p>
+      {description && (
+        <p
+          className={`mt-md text-body ${
+            tone === "dark" ? "text-foreground-inverse/75" : "text-foreground-secondary"
+          }`}
+        >
+          {description}
+        </p>
+      )}
     </div>
   );
 }
 
-function HeroVisual() {
+function HeroPanel() {
   return (
-    <div className="relative min-h-[420px] overflow-hidden rounded-brand-lg border border-border bg-surface p-lg shadow-brand-lg">
+    <div
+      className="relative min-h-[380px] overflow-hidden rounded-brand-lg border border-brand-primary/20 p-lg text-foreground-inverse"
+      style={{ background: "#111A09" }}
+    >
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(circle at top right, rgb(var(--color-primary) / 0.18), transparent 34%), linear-gradient(135deg, rgb(var(--color-surface)), rgb(var(--color-muted)))",
+            "radial-gradient(ellipse at 30% 80%, rgb(var(--color-primary) / 0.25), transparent 60%)",
         }}
+        aria-hidden
       />
-      <div className="relative grid h-full content-between gap-lg">
-        <div className="grid gap-md">
-          <div className="flex items-center justify-between border-b border-border pb-md">
-            <div>
-              <p className="text-caption font-semibold uppercase text-foreground-secondary">Pipeline</p>
-              <p className="text-h3 font-bold text-foreground-primary">Leads qualificados</p>
-            </div>
-            <span className="rounded-brand-sm bg-status-success/10 px-sm py-xs text-small font-semibold text-status-success">
-              +38%
-            </span>
-          </div>
-          <div className="grid gap-sm">
-            {["Descoberta", "Proposta", "Conversao"].map((item, index) => (
-              <div className="grid gap-xs" key={item}>
-                <div className="flex items-center justify-between text-small">
-                  <span className="font-medium text-foreground-primary">{item}</span>
-                  <span className="text-foreground-secondary">{68 + index * 9}%</span>
-                </div>
-                <div className="h-2 rounded-brand-sm bg-muted">
-                  <div
-                    className="h-2 rounded-brand-sm bg-brand-primary"
-                    style={{ width: `${68 + index * 9}%` }}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
+      <div className="relative grid h-full content-between gap-xl">
+        <div className="flex items-center justify-between border-b border-foreground-inverse/15 pb-md">
+          <span className="font-secondary text-caption font-semibold uppercase text-brand-accent">
+            Phosphor Audit
+          </span>
+          <span className="font-secondary text-caption uppercase text-foreground-inverse/50">
+            2026
+          </span>
         </div>
-        <div className="grid gap-md rounded-brand border border-border bg-background/80 p-lg backdrop-blur">
-          <div className="flex items-start gap-md">
-            <div className="rounded-brand bg-brand-accent/10 p-sm text-brand-accent">
-              <Mail aria-hidden size={20} />
+        <div>
+          <p className="font-secondary text-caption font-semibold uppercase text-brand-accent">
+            Diagnóstico de operação
+          </p>
+          <p className="mt-sm max-w-sm text-h3 font-bold leading-tight text-foreground-inverse">
+            Funcionar não basta. Software para operação real precisa ser seguro e rastreável.
+          </p>
+        </div>
+        <div className="grid gap-sm">
+          {siteContent.metrics.map((metric) => (
+            <div
+              className="flex items-center justify-between border-t border-foreground-inverse/15 pt-sm"
+              key={metric.label}
+            >
+              <span className="font-secondary text-caption uppercase text-brand-accent">
+                {metric.label}
+              </span>
+              <span className="text-small text-foreground-inverse/75">{metric.value}</span>
             </div>
-            <div>
-              <p className="font-semibold text-foreground-primary">Nova oportunidade</p>
-              <p className="text-small text-foreground-secondary">
-                Lead capturado pelo CTA principal com interesse em plano Pro.
-              </p>
-            </div>
-          </div>
-          <div className="grid grid-cols-3 gap-sm text-center text-caption text-foreground-secondary">
-            <span className="rounded-brand-sm bg-muted px-xs py-sm">Brand tokens</span>
-            <span className="rounded-brand-sm bg-muted px-xs py-sm">Componentes</span>
-            <span className="rounded-brand-sm bg-muted px-xs py-sm">Conteudo</span>
-          </div>
+          ))}
         </div>
       </div>
     </div>
   );
 }
 
+/* ─── Página principal ────────────────────────────────────────── */
+
 export default function Home() {
   return (
     <main id="top">
       <Navbar />
 
-      <Section className="overflow-hidden bg-background pt-xl sm:pt-2xl">
-        <div className="grid gap-2xl lg:grid-cols-[1fr_0.9fr] lg:items-center">
-          <div className="max-w-3xl">
-            <Badge>{siteContent.hero.eyebrow}</Badge>
-            <Heading as="h1" className="mt-md" size="h1">
-              {siteContent.hero.headline}
-            </Heading>
-            <p className="mt-lg max-w-2xl text-body text-foreground-secondary">{siteContent.hero.subheadline}</p>
-            <div className="mt-xl flex flex-col gap-md sm:flex-row">
-              <ButtonLink href="#cta-final">
-                {siteContent.hero.primaryCta}
-                <ArrowRight aria-hidden size={18} />
-              </ButtonLink>
-              <ButtonLink href="#planos" variant="outline">
-                {siteContent.hero.secondaryCta}
-              </ButtonLink>
+      {/* ── 1. Hero ─────────────────────────────────────────────── */}
+      <section
+        className="relative overflow-hidden bg-brand-secondary py-2xl sm:py-3xl"
+        aria-label="Apresentação"
+      >
+        {/* Grid técnico sutil */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.035]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgb(var(--color-accent)) 1px, transparent 1px), linear-gradient(90deg, rgb(var(--color-accent)) 1px, transparent 1px)",
+            backgroundSize: "72px 72px",
+          }}
+          aria-hidden
+        />
+
+        <Container className="relative">
+          <div className="grid gap-2xl lg:grid-cols-[1fr_0.82fr] lg:items-center">
+            <div className="max-w-4xl">
+              <Badge tone="dark">{siteContent.hero.eyebrow}</Badge>
+              <Heading as="h1" className="mt-md text-foreground-inverse" size="h1">
+                {siteContent.hero.headline}
+              </Heading>
+              <p className="mt-lg max-w-2xl text-h3 font-normal leading-snug text-foreground-inverse/75">
+                {siteContent.hero.subheadline}
+              </p>
+              <div className="mt-xl flex flex-col gap-md sm:flex-row">
+                <ButtonLink href="#contato">
+                  {siteContent.hero.primaryCta}
+                  <ArrowRight aria-hidden size={18} />
+                </ButtonLink>
+                <ButtonLink href="#solucoes" variant="inverse">
+                  {siteContent.hero.secondaryCta}
+                </ButtonLink>
+              </div>
+              <p className="mt-lg font-secondary text-caption text-brand-accent">
+                {siteContent.hero.microcopy}
+              </p>
             </div>
+            <HeroPanel />
           </div>
-          <HeroVisual />
+        </Container>
+      </section>
+
+      {/* ── 2. Problema ─────────────────────────────────────────── */}
+      <Section className="bg-surface" id="problema">
+        <div className="grid gap-2xl lg:grid-cols-[1fr_1.1fr] lg:items-start">
+          <div>
+            <Badge>Diagnóstico</Badge>
+            <Heading className="mt-md" size="h2">
+              {siteContent.problem.title}
+            </Heading>
+            <p className="mt-md text-body text-foreground-secondary">
+              {siteContent.problem.description}
+            </p>
+          </div>
+          <div className="grid gap-sm sm:grid-cols-2">
+            {siteContent.problem.pains.map((pain) => {
+              const Icon = pain.icon;
+              return (
+                <div
+                  key={pain.label}
+                  className="flex items-center gap-md rounded-brand border border-border/15 bg-background p-md"
+                >
+                  <Icon
+                    className="shrink-0 text-brand-primary"
+                    aria-hidden
+                    size={18}
+                  />
+                  <span className="text-small font-medium text-foreground-primary">
+                    {pain.label}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </Section>
 
-      <Section className="bg-surface" id="beneficios">
+      {/* ── 3. Soluções ─────────────────────────────────────────── */}
+      <Section className="bg-background" id="solucoes">
         <SectionIntro
-          eyebrow="Beneficios"
-          title="Uma base comercial consistente desde o primeiro deploy"
-          description="A estrutura foi pensada para acelerar apresentacoes, captacao de leads e evolucao visual com governanca."
+          eyebrow="Soluções"
+          title="Software sob medida para vender, atender e operar melhor."
+          description="Sistemas, sites, plataformas e integrações pensados com arquitetura, revisão técnica e continuidade. Não por improviso."
         />
         <div className="grid gap-md sm:grid-cols-2 lg:grid-cols-4">
-          {siteContent.benefits.map((benefit) => {
-            const Icon = benefit.icon;
+          {siteContent.services.map((service) => {
+            const Icon = service.icon;
             return (
-              <Card className="grid gap-md" key={benefit.title}>
-                <div className="flex size-11 items-center justify-center rounded-brand bg-brand-primary/10 text-brand-primary">
+              <Card className="grid gap-md" key={service.title}>
+                <div className="flex size-11 items-center justify-center rounded-brand bg-brand-primary text-foreground-inverse">
                   <Icon aria-hidden size={22} />
                 </div>
                 <div>
                   <Heading as="h3" size="h3">
-                    {benefit.title}
+                    {service.title}
                   </Heading>
-                  <p className="mt-sm text-small text-foreground-secondary">{benefit.description}</p>
+                  <p className="mt-sm text-small text-foreground-secondary">
+                    {service.description}
+                  </p>
                 </div>
               </Card>
             );
@@ -144,160 +211,301 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section id="como-funciona">
+      {/* ── 4 & 5. Verticais (Varejo + Saúde) ──────────────────── */}
+      {siteContent.verticals.map((vertical, index) => {
+        const Icon = vertical.icon;
+        const isEven = index % 2 === 0;
+        return (
+          <Section
+            className={isEven ? "bg-surface" : "bg-background"}
+            id={vertical.id}
+            key={vertical.id}
+          >
+            <div className="grid gap-xl lg:grid-cols-[1fr_1fr] lg:items-center">
+              <div className={isEven ? "" : "lg:order-last"}>
+                <Badge>{vertical.eyebrow}</Badge>
+                <Heading className="mt-md" size="h2">
+                  {vertical.title}
+                </Heading>
+                <p className="mt-md text-body text-foreground-secondary">
+                  {vertical.description}
+                </p>
+                <ButtonLink className="mt-xl" href="#contato">
+                  {vertical.cta}
+                  <ArrowRight aria-hidden size={16} />
+                </ButtonLink>
+              </div>
+
+              <Card
+                className={`grid gap-lg ${isEven ? "bg-background" : "bg-surface"}`}
+              >
+                <div className="flex items-center gap-md border-b border-border/15 pb-md">
+                  <div className="flex size-12 items-center justify-center rounded-brand bg-brand-secondary text-foreground-inverse">
+                    <Icon aria-hidden size={24} />
+                  </div>
+                  <span className="font-secondary text-caption font-semibold uppercase text-brand-primary">
+                    Operação real
+                  </span>
+                </div>
+                <ul className="grid gap-sm" role="list">
+                  {vertical.points.map((point) => (
+                    <li className="flex items-center gap-sm text-foreground-secondary" key={point}>
+                      <CheckCircle2
+                        className="shrink-0 text-brand-primary"
+                        aria-hidden
+                        size={16}
+                      />
+                      <span className="text-small">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+            </div>
+          </Section>
+        );
+      })}
+
+      {/* ── 6. Processo ─────────────────────────────────────────── */}
+      <Section className="bg-brand-secondary text-foreground-inverse" id="processo">
         <SectionIntro
-          eyebrow="Como funciona"
-          title="Tres passos para sair do placeholder e chegar na marca final"
-          description="Troque mensagens, aplique identidade visual e publique com uma arquitetura preparada para manutencao."
+          eyebrow="Processo"
+          title={siteContent.process.title}
+          tone="dark"
         />
         <div className="grid gap-md md:grid-cols-3">
-          {siteContent.steps.map((step, index) => (
-            <Card className="grid gap-md" key={step.title}>
-              <span className="flex size-10 items-center justify-center rounded-brand bg-brand-secondary text-small font-bold text-foreground-inverse">
-                {index + 1}
-              </span>
-              <Heading as="h3" size="h3">
-                {step.title}
-              </Heading>
-              <p className="text-small text-foreground-secondary">{step.description}</p>
-            </Card>
-          ))}
+          {siteContent.process.phases.map((phase, index) => {
+            const Icon = phase.icon;
+            return (
+              <div
+                className="border-t border-foreground-inverse/15 pt-md"
+                key={phase.name}
+              >
+                <div className="mb-md flex items-center justify-between">
+                  <Icon className="text-brand-accent" aria-hidden size={24} />
+                  <span className="font-secondary text-caption text-brand-accent">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <p className="mb-xs font-secondary text-caption font-semibold uppercase text-brand-accent">
+                  {phase.name}
+                </p>
+                <Heading as="h3" className="text-foreground-inverse" size="h3">
+                  {phase.title}
+                </Heading>
+                <p className="mt-sm text-small text-foreground-inverse/75">
+                  {phase.description}
+                </p>
+              </div>
+            );
+          })}
         </div>
+        <p className="mt-2xl border-t border-foreground-inverse/15 pt-xl text-body italic text-foreground-inverse/55">
+          &ldquo;{siteContent.process.note}&rdquo;
+        </p>
       </Section>
 
-      <Section className="bg-surface">
-        <div className="grid gap-xl lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+      {/* ── 7. Segurança ────────────────────────────────────────── */}
+      <Section className="bg-surface" id="seguranca">
+        <div className="grid gap-2xl lg:grid-cols-[1fr_1fr] lg:items-start">
           <div>
-            <Badge>Prova social</Badge>
+            <Badge>Segurança e engenharia</Badge>
             <Heading className="mt-md" size="h2">
-              Preparado para receber casos reais, logos e depoimentos
+              {siteContent.securitySection.title}
             </Heading>
             <p className="mt-md text-body text-foreground-secondary">
-              Os exemplos abaixo sao ficticios e funcionam como slots editoriais para substituir por clientes,
-              parceiros e resultados validados.
+              {siteContent.securitySection.description}
             </p>
-          </div>
-          <div className="grid gap-md">
-            {siteContent.testimonials.map((testimonial) => (
-              <Card key={testimonial.author}>
-                <p className="text-body text-foreground-primary">&quot;{testimonial.quote}&quot;</p>
-                <p className="mt-md font-semibold text-foreground-primary">{testimonial.author}</p>
-                <p className="text-small text-foreground-secondary">{testimonial.role}</p>
-              </Card>
-            ))}
-            <div className="grid grid-cols-2 gap-sm sm:grid-cols-4">
-              {siteContent.partnerLogos.map((logo) => (
-                <div
-                  className="flex min-h-16 items-center justify-center rounded-brand border border-border bg-background px-md text-center text-small font-semibold text-foreground-secondary"
-                  key={logo}
-                >
-                  {logo}
+            <div className="mt-xl grid grid-cols-2 gap-sm" role="list" aria-label="Checklist de entrega">
+              {siteContent.securitySection.checklist.map((item) => (
+                <div key={item} className="flex items-center gap-sm" role="listitem">
+                  <CheckCircle2
+                    className="shrink-0 text-brand-primary"
+                    aria-hidden
+                    size={15}
+                  />
+                  <span className="font-secondary text-caption font-semibold text-foreground-primary">
+                    {item}
+                  </span>
                 </div>
               ))}
             </div>
           </div>
+
+          <div className="grid gap-md">
+            {siteContent.securitySection.cards.map((item) => {
+              const Icon = item.icon;
+              return (
+                <Card key={item.title} className="flex gap-md bg-background">
+                  <Icon
+                    className="mt-xs shrink-0 text-brand-primary"
+                    aria-hidden
+                    size={22}
+                  />
+                  <div>
+                    <Heading as="h3" size="h3">
+                      {item.title}
+                    </Heading>
+                    <p className="mt-sm text-small text-foreground-secondary">
+                      {item.description}
+                    </p>
+                  </div>
+                </Card>
+              );
+            })}
+          </div>
         </div>
       </Section>
 
-      <Section id="recursos">
+      {/* ── 8. Comparativo ──────────────────────────────────────── */}
+      <Section className="bg-background" id="comparativo">
         <SectionIntro
-          eyebrow="Recursos"
-          title="Diferenciais para vender agora e evoluir depois"
-          description="Componentes, assets e tokens criam uma base simples de manter quando o brandbook oficial chegar."
+          eyebrow="Comparativo"
+          title={siteContent.comparison.title}
+          description="Agência genérica resolve qualquer coisa. Vibe coder entrega rápido. Phosphorcode resolve operação real, com processo e governança."
         />
-        <div className="grid gap-md sm:grid-cols-2">
-          {siteContent.features.map((feature) => {
-            const Icon = feature.icon;
-            return (
-              <Card className="grid gap-md md:grid-cols-[auto_1fr]" key={feature.title}>
-                <div className="flex size-12 items-center justify-center rounded-brand bg-brand-accent/10 text-brand-accent">
-                  <Icon aria-hidden size={24} />
-                </div>
-                <div>
-                  <Heading as="h3" size="h3">
-                    {feature.title}
-                  </Heading>
-                  <p className="mt-sm text-small text-foreground-secondary">{feature.description}</p>
-                </div>
-              </Card>
-            );
-          })}
-        </div>
-      </Section>
-
-      <Section className="bg-surface" id="planos">
-        <SectionIntro
-          eyebrow="Planos"
-          title="Escolha o nivel ideal para apresentar sua oferta"
-          description="Valores e pacotes sao placeholders comerciais para adaptar ao modelo real do negocio."
-        />
-        <div className="grid gap-md lg:grid-cols-3">
-          {siteContent.plans.map((plan) => (
-            <Card
-              className={plan.recommended ? "relative border-brand-primary shadow-brand" : undefined}
-              key={plan.name}
-            >
-              {plan.recommended ? <Badge className="mb-md">Recomendado</Badge> : null}
-              <Heading as="h3" size="h3">
-                {plan.name}
-              </Heading>
-              <p className="mt-sm text-small text-foreground-secondary">{plan.description}</p>
-              <p className="mt-lg text-h2 font-bold text-foreground-primary">{plan.price}</p>
-              <ul className="mt-lg grid gap-sm">
-                {plan.features.map((feature) => (
-                  <li className="flex items-start gap-sm text-small text-foreground-secondary" key={feature}>
-                    <CheckCircle2 className="mt-1 shrink-0 text-status-success" aria-hidden size={18} />
-                    <span>{feature}</span>
-                  </li>
+        <div className="overflow-x-auto rounded-brand border border-border/15">
+          <table className="w-full min-w-[560px] border-collapse text-left">
+            <thead>
+              <tr>
+                <th className="w-36 border-b border-border/15 bg-surface px-lg py-md font-secondary text-caption uppercase text-foreground-secondary" />
+                {siteContent.comparison.columns.map((col, i) => (
+                  <th
+                    key={col}
+                    className={`border-b px-lg py-md font-secondary text-caption uppercase ${
+                      i === 2
+                        ? "border-brand-primary/30 bg-brand-primary/8 text-brand-primary"
+                        : "border-border/15 bg-surface text-foreground-secondary"
+                    }`}
+                  >
+                    {col}
+                  </th>
                 ))}
-              </ul>
-              <ButtonLink className="mt-lg w-full" href="#cta-final" variant={plan.recommended ? "primary" : "outline"}>
-                {plan.cta}
-              </ButtonLink>
-            </Card>
-          ))}
+              </tr>
+            </thead>
+            <tbody>
+              {siteContent.comparison.rows.map((row, rowIndex) => (
+                <tr
+                  key={row.label}
+                  className={rowIndex % 2 === 0 ? "bg-background" : "bg-surface/60"}
+                >
+                  <td className="border-b border-border/10 px-lg py-md font-secondary text-caption font-semibold uppercase text-foreground-secondary">
+                    {row.label}
+                  </td>
+                  {row.values.map((value, colIndex) => (
+                    <td
+                      key={colIndex}
+                      className={`border-b border-border/10 px-lg py-md text-small ${
+                        colIndex === 2
+                          ? "font-semibold text-foreground-primary"
+                          : "text-foreground-secondary"
+                      }`}
+                    >
+                      {value}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </Section>
 
-      <Section id="faq">
-        <SectionIntro
-          eyebrow="FAQ"
-          title="Perguntas frequentes"
-          description="Respostas curtas para reduzir atrito antes da conversao."
-        />
-        <div className="mx-auto grid max-w-4xl gap-sm">
-          {siteContent.faqs.map((faq) => (
-            <details className="rounded-brand border border-border bg-surface p-lg" key={faq.question}>
-              <summary className="cursor-pointer font-semibold text-foreground-primary">{faq.question}</summary>
-              <p className="mt-sm text-small text-foreground-secondary">{faq.answer}</p>
-            </details>
-          ))}
-        </div>
-      </Section>
-
-      <Section className="bg-surface">
-        <div className="grid gap-lg rounded-brand-lg border border-border bg-background p-lg shadow-brand-sm lg:grid-cols-[1fr_0.8fr] lg:items-end">
+      {/* ── 9. Contato / Formulário ─────────────────────────────── */}
+      <Section className="bg-surface" id="contato">
+        <div className="grid gap-2xl lg:grid-cols-[1fr_1.3fr] lg:items-start">
           <div>
-            <Badge>Captacao</Badge>
+            <Badge>Contato</Badge>
             <Heading className="mt-md" size="h2">
-              Receba interessados sem depender de integracoes no primeiro dia
+              {siteContent.contact.title}
             </Heading>
             <p className="mt-md text-body text-foreground-secondary">
-              Este formulario e um placeholder acessivel para conectar depois ao CRM, automacao ou ferramenta de email.
+              {siteContent.contact.description}
             </p>
+
+            <div className="mt-xl grid gap-md">
+              <div className="flex items-start gap-md border-t border-border/15 pt-md">
+                <span className="font-secondary text-caption text-brand-primary">01</span>
+                <p className="text-small text-foreground-secondary">
+                  Enviamos um retorno em até 1 dia útil com uma análise inicial do seu cenário.
+                </p>
+              </div>
+              <div className="flex items-start gap-md border-t border-border/15 pt-md">
+                <span className="font-secondary text-caption text-brand-primary">02</span>
+                <p className="text-small text-foreground-secondary">
+                  Se fizer sentido, agendamos uma conversa técnica sem compromisso.
+                </p>
+              </div>
+              <div className="flex items-start gap-md border-t border-border/15 pt-md">
+                <span className="font-secondary text-caption text-brand-primary">03</span>
+                <p className="text-small text-foreground-secondary">
+                  A proposta só vem depois de entender o problema de verdade.
+                </p>
+              </div>
+            </div>
           </div>
-          <form className="grid gap-md" action="mailto:contato@phosphor.example">
-            <Input label="Nome" name="name" placeholder="Seu nome" required />
-            <Input label="Email" name="email" placeholder="voce@empresa.com" required type="email" />
-            <Button type="submit">
-              Enviar interesse
+
+          <form
+            className="grid gap-md rounded-brand-lg border border-border/15 bg-background p-lg shadow-brand-sm"
+            action={`mailto:${siteContent.brand.contactEmail}`}
+            method="post"
+            encType="text/plain"
+            aria-label="Formulário de diagnóstico"
+          >
+            <div className="grid gap-md sm:grid-cols-2">
+              <Input
+                label="Nome"
+                name="nome"
+                placeholder="Seu nome"
+                required
+                autoComplete="name"
+              />
+              <Input
+                label="Empresa"
+                name="empresa"
+                placeholder="Sua empresa"
+                required
+                autoComplete="organization"
+              />
+            </div>
+            <Input
+              label="E-mail corporativo"
+              name="email"
+              type="email"
+              placeholder="voce@empresa.com"
+              required
+              autoComplete="email"
+            />
+            <Select
+              label="Segmento"
+              name="segmento"
+              options={siteContent.contact.segmentoOptions}
+              required
+            />
+            <Textarea
+              label="O que você precisa resolver?"
+              name="problema"
+              placeholder="Descreva o cenário: gargalos, processos manuais, sistemas que não conversam..."
+              required
+            />
+            <Input
+              label="Sistemas que usa hoje"
+              name="sistemas"
+              placeholder="ERP, CRM, agenda, e-commerce..."
+            />
+            <Select
+              label="Urgência"
+              name="urgencia"
+              options={siteContent.contact.urgenciaOptions}
+            />
+            <Button type="submit" className="mt-sm w-full">
+              {siteContent.contact.cta}
               <ArrowRight aria-hidden size={18} />
             </Button>
           </form>
         </div>
       </Section>
 
-      <FinalCta />
+      {/* ── Footer ──────────────────────────────────────────────── */}
       <Footer />
     </main>
   );

@@ -1,168 +1,261 @@
 import {
-  BarChart3,
-  Gauge,
-  Layers3,
+  Activity,
+  AlertCircle,
+  ArrowRightLeft,
+  BarChart2,
+  Code2,
+  DatabaseBackup,
+  FileSearch,
+  FileText,
+  LayoutDashboard,
   LockKeyhole,
-  Rocket,
+  MonitorSmartphone,
+  RefreshCcw,
+  ServerCog,
   ShieldCheck,
-  Sparkles,
-  Workflow,
+  ShoppingCart,
+  Stethoscope,
+  Unlink,
 } from "lucide-react";
 
 export const siteContent = {
   brand: {
-    name: "Phosphor",
-    tagline: "Placeholder para tagline oficial da marca.",
-    toneOfVoice: "Moderno, premium, minimalista, tecnologico e confiavel.",
-    contactEmail: "contato@phosphor.example",
+    name: "Phosphorcode",
+    tagline: "Software para operação real.",
+    toneOfVoice: "Sênior, técnica, discreta, confiável e direta.",
+    contactEmail: "contato@phosphorcode.com.br",
+    domain: "phosphorcode.com.br",
   },
   nav: [
-    { label: "Beneficios", href: "#beneficios" },
-    { label: "Como funciona", href: "#como-funciona" },
-    { label: "Recursos", href: "#recursos" },
-    { label: "Planos", href: "#planos" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Soluções", href: "#solucoes" },
+    { label: "Varejo", href: "#varejo" },
+    { label: "Saúde", href: "#saude" },
+    { label: "Processo", href: "#processo" },
+    { label: "Segurança", href: "#seguranca" },
+    { label: "Contato", href: "#contato" },
   ],
   hero: {
-    eyebrow: "Sistema pronto para receber brandbook",
-    headline: "Transforme uma ideia digital em uma presenca pronta para vender",
+    eyebrow: "Engenharia de software · Varejo & Saúde",
+    headline: "Sistemas que seguram a sua operação.",
     subheadline:
-      "Uma landing page SaaS B2B com design system, componentes reutilizaveis e conteudo estruturado para aplicar a identidade oficial da marca sem refazer o projeto.",
-    primaryCta: "Quero captar leads",
-    secondaryCta: "Ver planos",
+      "Software sob medida para varejo e saúde — feito para vender, atender e operar com mais controle, integração e segurança.",
+    primaryCta: "Falar com a Phosphorcode",
+    secondaryCta: "Ver soluções",
+    microcopy: "Diagnóstico · Arquitetura · MVP · Integrações · Evolução mensal",
   },
-  benefits: [
+  metrics: [
+    { label: "Foco", value: "Varejo & Saúde" },
+    { label: "Método", value: "Diagnóstico → evolução" },
+    { label: "Base", value: "Segurança desde o início" },
+  ],
+  problem: {
+    title: "Quando a operação cresce, o improviso começa a custar caro.",
+    description:
+      "Planilhas desconectadas, retrabalho, sistemas que não conversam e decisões sem visibilidade travam empresas que dependem de operação diária. A Phosphorcode transforma processos confusos em sistemas confiáveis, integrados e rastreáveis.",
+    pains: [
+      { icon: FileText, label: "Planilhas desconectadas" },
+      { icon: AlertCircle, label: "Erro manual em pedidos, agenda ou estoque" },
+      { icon: Unlink, label: "Sistemas que não conversam" },
+      { icon: LockKeyhole, label: "Dados sensíveis sem controle" },
+      { icon: BarChart2, label: "Relatórios difíceis de extrair" },
+      { icon: RefreshCcw, label: "Retrabalho operacional" },
+    ],
+  },
+  services: [
     {
-      icon: Rocket,
-      title: "Lancamento rapido",
-      description: "Base pronta para apresentar produto, captar interesse e validar oferta.",
+      icon: ServerCog,
+      title: "Sistemas internos",
+      description:
+        "Plataformas administrativas, dashboards, portais e ferramentas operacionais construídas para o fluxo real da empresa.",
     },
     {
-      icon: ShieldCheck,
-      title: "Visual consistente",
-      description: "Tokens centralizam cores, fontes, raios, sombras e espacamentos.",
+      icon: MonitorSmartphone,
+      title: "Sites e plataformas digitais",
+      description:
+        "Sites institucionais, portais, áreas logadas e experiências digitais conectadas à operação.",
     },
     {
-      icon: Workflow,
-      title: "Fluxo claro",
-      description: "Secoes pensadas para explicar valor, reduzir duvidas e conduzir ao CTA.",
+      icon: ArrowRightLeft,
+      title: "Integrações",
+      description:
+        "Conectamos ERP, PDV, e-commerce, agenda, CRM, gateways, automações e sistemas legados.",
     },
     {
-      icon: Layers3,
-      title: "Componentes base",
-      description: "UI reutilizavel para evoluir o site sem duplicar estilos.",
+      icon: LayoutDashboard,
+      title: "Dashboards e visibilidade",
+      description:
+        "Indicadores, relatórios e painéis para quem precisa decidir com dados confiáveis.",
     },
   ],
-  steps: [
+  verticals: [
     {
-      title: "Defina a oferta",
-      description: "Troque os textos centralizados pelo posicionamento oficial do negocio.",
+      id: "varejo",
+      icon: ShoppingCart,
+      eyebrow: "Para varejo",
+      title: "Menos planilha, mais controle de operação.",
+      description:
+        "Criamos sistemas para redes, lojas e operações digitais que precisam controlar pedidos, estoque, vendas, clientes e integrações com mais precisão.",
+      points: [
+        "Sistemas de pedidos",
+        "Controle de estoque",
+        "Integração com ERP e PDV",
+        "CRM e histórico de clientes",
+        "E-commerce e portais B2B/B2C",
+        "Dashboards de vendas e ruptura",
+      ],
+      cta: "Ver soluções para varejo",
     },
     {
-      title: "Aplique o brandbook",
-      description: "Atualize tokens, fontes, logos e imagens nos arquivos de tema e marca.",
-    },
-    {
-      title: "Publique e otimize",
-      description: "Valide build, responsividade e clareza dos CTAs antes da campanha.",
-    },
-  ],
-  testimonials: [
-    {
-      quote:
-        "A estrutura deixou nossa apresentacao comercial muito mais clara e facil de ajustar com a marca final.",
-      author: "Marina Costa",
-      role: "Head de Marketing, NovaStack",
-    },
-    {
-      quote:
-        "Conseguimos trocar tokens e copy sem mexer na arquitetura da pagina. Foi uma base muito solida.",
-      author: "Rafael Torres",
-      role: "Founder, Atlas Ops",
-    },
-  ],
-  partnerLogos: ["North Labs", "Vero Capital", "Orbita", "Lineal"],
-  features: [
-    {
-      icon: BarChart3,
-      title: "Captura de demanda",
-      description: "CTAs, planos e FAQ organizados para gerar conversoes qualificadas.",
-    },
-    {
-      icon: LockKeyhole,
-      title: "Padrao escalavel",
-      description: "Tokens e componentes reduzem retrabalho quando a identidade evoluir.",
-    },
-    {
-      icon: Gauge,
-      title: "Performance simples",
-      description: "Sem dependencia de dados externos ou bibliotecas visuais desnecessarias.",
-    },
-    {
-      icon: Sparkles,
-      title: "Pronto para marca",
-      description: "Assets, conteudo e tema preparados para receber guias oficiais.",
+      id: "saude",
+      icon: Stethoscope,
+      eyebrow: "Para saúde",
+      title: "Atendimento digital com segurança e rastreabilidade.",
+      description:
+        "Desenvolvemos sistemas para clínicas, consultórios, laboratórios e operações com dados sensíveis, sempre com atenção a acesso, registros, segurança e LGPD.",
+      points: [
+        "Sites para clínicas",
+        "Agendamento online",
+        "Portal do paciente",
+        "Sistemas administrativos",
+        "Automação de atendimento",
+        "Controle de acesso e dados sensíveis",
+      ],
+      cta: "Ver soluções para saúde",
     },
   ],
-  plans: [
-    {
-      name: "Basico",
-      price: "R$ 990",
-      description: "Para validar uma oferta com presenca digital profissional.",
-      features: ["Landing page responsiva", "Design tokens base", "CTA e FAQ", "Conteudo editavel"],
-      cta: "Comecar basico",
-    },
-    {
-      name: "Pro",
-      price: "R$ 2.400",
-      description: "Para equipes que precisam de uma base comercial mais completa.",
-      features: ["Tudo do Basico", "Componentes reutilizaveis", "Secao de planos", "Preparacao para brandbook"],
-      cta: "Escolher Pro",
-      recommended: true,
-    },
-    {
-      name: "Enterprise",
-      price: "Sob consulta",
-      description: "Para marcas que precisam conectar design system e crescimento.",
-      features: ["Tudo do Pro", "Arquitetura multi-pagina", "Suporte a tema escuro", "Evolucao de componentes"],
-      cta: "Falar com vendas",
-    },
-  ],
-  faqs: [
-    {
-      question: "Posso aplicar meu brandbook depois?",
-      answer: "Sim. As principais decisoes visuais ficam centralizadas em tokens e componentes base.",
-    },
-    {
-      question: "O conteudo fica facil de trocar?",
-      answer: "Sim. A copy principal esta em um arquivo de conteudo para editar tom de voz e mensagens.",
-    },
-    {
-      question: "O site ja nasce responsivo?",
-      answer: "Sim. A interface foi estruturada para mobile, tablet e desktop desde a primeira versao.",
-    },
-    {
-      question: "Preciso de dados externos para rodar?",
-      answer: "Nao. A pagina funciona com conteudo local e pode evoluir para integracoes depois.",
-    },
-    {
-      question: "Onde entram logo e favicon?",
-      answer: "A pasta public/brand possui placeholders para logo, logo escuro, simbolo e favicon.",
-    },
-    {
-      question: "O layout pode virar um site completo?",
-      answer: "Sim. A base de componentes permite criar novas paginas mantendo a consistencia visual.",
-    },
-  ],
-  finalCta: {
-    headline: "Pronto para transformar atencao em oportunidade?",
-    description: "Use esta base para apresentar a proposta, testar mensagens e aplicar a identidade oficial da marca com rapidez.",
-    cta: "Agendar conversa",
+  process: {
+    title: "Antes do código, vem o diagnóstico.",
+    note: "Projeto bom não termina no deploy. Ele precisa sobreviver ao uso real, à equipe e ao crescimento.",
+    phases: [
+      {
+        name: "Phosphor Audit",
+        icon: FileSearch,
+        title: "Diagnóstico",
+        description:
+          "Diagnóstico técnico e operacional. Mapeamos processos, gargalos, sistemas existentes, riscos e oportunidades.",
+      },
+      {
+        name: "Phosphor Build",
+        icon: Code2,
+        title: "Construção",
+        description:
+          "Construção de sistema, site ou plataforma. Desenhamos arquitetura, protótipo, MVP, integrações e implantação.",
+      },
+      {
+        name: "Phosphor Care",
+        icon: Activity,
+        title: "Evolução mensal",
+        description:
+          "Manutenção e evolução mensal. Monitoramos, corrigimos, documentamos e evoluímos o sistema depois da entrega.",
+      },
+    ],
+  },
+  securitySection: {
+    title: "Funcionar não basta. Precisa ser seguro, rastreável e mantível.",
+    description:
+      "Segurança, permissões, logs, backups e documentação são parte do projeto desde o início — não ajustes feitos no fim.",
+    checklist: [
+      "TypeScript",
+      "Autenticação segura",
+      "Permissões por perfil",
+      "Banco estruturado",
+      "Logs de erro",
+      "Backups",
+      "Versionamento Git",
+      "Ambiente de teste",
+      "Ambiente de produção",
+      "README técnico",
+      "Documentação do cliente",
+      "Checklist de segurança e deploy",
+    ],
+    cards: [
+      {
+        icon: LockKeyhole,
+        title: "Controle de acesso",
+        description: "Permissões, perfis e rastreabilidade pensados desde o desenho do sistema.",
+      },
+      {
+        icon: DatabaseBackup,
+        title: "Backups e continuidade",
+        description:
+          "Rotinas para proteger informação crítica e reduzir dependência de pessoas ou improvisos.",
+      },
+      {
+        icon: ShieldCheck,
+        title: "LGPD e privacidade",
+        description:
+          "Tratamento de dados com critério técnico, clareza de fluxo e menor superfície de risco.",
+      },
+    ],
+  },
+  comparison: {
+    title: "A diferença está no processo.",
+    columns: ["Agência genérica", "Vibe coder", "Phosphorcode"],
+    rows: [
+      {
+        label: "Foco",
+        values: [
+          "Site, app, sistema",
+          "Faço rápido com IA",
+          "Operação em varejo e saúde",
+        ],
+      },
+      {
+        label: "Processo",
+        values: [
+          "Pedido → orçamento → entrega",
+          "Prompt → código → deploy",
+          "Diagnóstico → arquitetura → MVP → evolução",
+        ],
+      },
+      {
+        label: "Qualidade",
+        values: [
+          "Varia muito",
+          "Rápida, mas arriscada",
+          "Revisada, testada e documentada",
+        ],
+      },
+      {
+        label: "Segurança",
+        values: [
+          "Muitas vezes secundária",
+          "Geralmente fraca",
+          "Parte do projeto desde o início",
+        ],
+      },
+      {
+        label: "Pós-entrega",
+        values: [
+          "Suporte informal",
+          "Pouca previsibilidade",
+          "Evolução mensal e governança",
+        ],
+      },
+    ],
+  },
+  contact: {
+    title: "Vamos mapear onde sua operação está perdendo controle?",
+    description:
+      "Conte o cenário da sua empresa. A Phosphorcode avalia processos, sistemas, gargalos e possibilidades de evolução técnica.",
+    cta: "Solicitar diagnóstico",
+    segmentoOptions: [
+      { value: "varejo", label: "Varejo" },
+      { value: "saude", label: "Saúde" },
+      { value: "outro", label: "Outro" },
+    ],
+    urgenciaOptions: [
+      { value: "agora", label: "Agora" },
+      { value: "proximos-meses", label: "Próximos meses" },
+      { value: "diagnostico", label: "Apenas diagnóstico" },
+    ],
   },
   footerLinks: [
-    { label: "Politica de privacidade", href: "#" },
-    { label: "Termos de uso", href: "#" },
-    { label: "LinkedIn", href: "#" },
-    { label: "Instagram", href: "#" },
+    { label: "Soluções", href: "#solucoes" },
+    { label: "Varejo", href: "#varejo" },
+    { label: "Saúde", href: "#saude" },
+    { label: "Processo", href: "#processo" },
+    { label: "Segurança", href: "#seguranca" },
+    { label: "Contato", href: "#contato" },
   ],
 };

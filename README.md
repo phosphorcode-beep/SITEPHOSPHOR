@@ -1,6 +1,6 @@
-# Site Phosphor
+# Site Phosphorcode
 
-Landing page em Next.js preparada para receber um brandbook completo. A estrutura usa App Router, TypeScript, Tailwind CSS, tokens visuais e componentes reutilizaveis.
+Site institucional em Next.js para a Phosphorcode, aplicado a partir do brandbook oficial. A estrutura usa App Router, TypeScript, Tailwind CSS, tokens visuais e componentes reutilizaveis.
 
 ## Como rodar
 
@@ -29,11 +29,26 @@ npm run build
 - `src/components/layout/`: Navbar e Footer.
 - `public/brand/`: logos, simbolo, favicon, imagens institucionais e icones.
 
-## Como aplicar o brandbook
+## Brandbook aplicado
+
+Referencias usadas:
+
+- `Phosphorcode Brand Book.dc.html`
+- `Phosphorcode Marca.dc.html`
+
+Diretrizes aplicadas:
+
+- Paleta oficial: olive `#556B2F`, sage `#9DB07A`, sage light `#C4D0AC`, ivory `#F2F1E7`, ivory shadow `#E6E4D4`, ink `#000000` e ink rich `#0E100B`.
+- Tipografia oficial: Hanken Grotesk para texto e titulos, JetBrains Mono para labels, navegacao e CTAs.
+- Marca: lockup horizontal e simbolo "p + bloco" em `public/brand/`.
+- Tom de voz: senior, tecnico, discreto, confiavel e direto.
+- Narrativa do site: hero, servicos, varejo, saude, processo, seguranca e dados, tecnologias, FAQ e contato.
+
+## Como ajustar o brandbook
 
 ### Cores
 
-Troque os canais RGB em `src/styles/theme.css`.
+Troque os canais RGB em `src/styles/theme.css` se houver revisao da paleta.
 
 Tokens disponiveis:
 
@@ -60,7 +75,7 @@ Atualize em `src/styles/theme.css`:
 - `--font-secondary`
 - escala `--font-size-display`, `--font-size-h1`, `--font-size-h2`, `--font-size-h3`, `--font-size-body`, `--font-size-small`, `--font-size-caption`
 
-Se a fonte oficial vier do Google Fonts ou de arquivos locais, configure o carregamento em `src/app/layout.tsx` e mantenha os tokens apontando para a familia correta.
+As fontes oficiais sao carregadas com `next/font/google` em `src/app/layout.tsx`. Se a marca mudar a fonte, atualize o carregamento e mantenha os tokens apontando para a familia correta.
 
 ### Logos e assets
 
@@ -93,9 +108,9 @@ Edite `src/content/site-content.ts` para ajustar:
 - CTAs
 - Links do footer
 
-O campo `toneOfVoice` registra o tom esperado da marca e serve como placeholder editorial para futuras revisoes.
+O campo `toneOfVoice` registra o tom esperado da marca e serve como guia editorial para futuras revisoes.
 
-## Checklist de aplicacao do brandbook
+## Checklist de revisao do brandbook
 
 1. Atualizar tokens de cor e tipografia em `src/styles/theme.css`.
 2. Substituir assets em `public/brand/`.

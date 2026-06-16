@@ -2,20 +2,22 @@ import Link from "next/link";
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
+type ButtonVariant = "primary" | "secondary" | "outline" | "ghost" | "inverse";
 
 const buttonStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-brand-primary text-foreground-inverse shadow-brand-sm hover:bg-brand-primary/90",
+    "bg-brand-primary text-foreground-inverse shadow-brand-sm hover:bg-brand-secondary",
   secondary:
     "bg-brand-secondary text-foreground-inverse shadow-brand-sm hover:bg-brand-secondary/90",
   outline:
-    "border border-border bg-surface text-foreground-primary hover:border-brand-primary hover:text-brand-primary",
+    "border border-border/25 bg-background/40 text-foreground-primary hover:border-brand-primary hover:bg-surface hover:text-foreground-primary",
   ghost: "text-foreground-secondary hover:bg-muted hover:text-foreground-primary",
+  inverse:
+    "border border-foreground-inverse/30 text-foreground-inverse hover:bg-foreground-inverse/10 focus-visible:outline-foreground-inverse",
 };
 
 const baseStyles =
-  "inline-flex min-h-11 items-center justify-center gap-2 rounded-brand px-lg py-sm text-small font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-brand-primary disabled:pointer-events-none disabled:opacity-50";
+  "inline-flex min-h-11 items-center justify-center gap-2 rounded-brand px-lg py-sm font-secondary text-caption font-semibold uppercase transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-brand-primary disabled:pointer-events-none disabled:opacity-50";
 
 type BaseProps = {
   children: ReactNode;

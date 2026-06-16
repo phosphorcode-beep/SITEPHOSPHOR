@@ -1,4 +1,5 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="32" height="32" rx="7" fill="#2563EB"/>
-  <path d="M16 6L24 16L16 26L8 16L16 6Z" fill="white"/>
+  <rect width="32" height="32" rx="8" fill="#0E100B"/>
+  <text x="8" y="23" fill="#F2F1E7" font-family="Arial, sans-serif" font-size="20" font-weight="700">p</text>
+  <rect x="21" y="8" width="6" height="16" rx="3" fill="#556B2F"/>
 </svg>

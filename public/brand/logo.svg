@@ -1,5 +1,7 @@
-<svg width="152" height="36" viewBox="0 0 152 36" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Brand logo placeholder">
-  <rect width="36" height="36" rx="8" fill="#2563EB"/>
-  <path d="M18 8L27 18L18 28L9 18L18 8Z" fill="white"/>
-  <text x="48" y="24" fill="#0F172A" font-family="Arial, sans-serif" font-size="20" font-weight="700">Phosphor</text>
+<svg width="258" height="52" viewBox="0 0 258 52" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Phosphorcode">
+  <rect x="0" y="0" width="52" height="52" rx="14" fill="#0E100B"/>
+  <text x="14" y="37" fill="#F2F1E7" font-family="Arial, sans-serif" font-size="34" font-weight="700">p</text>
+  <rect x="34" y="13" width="10" height="26" rx="5" fill="#556B2F"/>
+  <text x="66" y="35" fill="#0E100B" font-family="Arial, sans-serif" font-size="27" font-weight="700">phosphor</text>
+  <text x="181" y="35" fill="#556B2F" font-family="Arial, sans-serif" font-size="27" font-weight="700">code</text>
 </svg>

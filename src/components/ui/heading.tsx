@@ -17,7 +17,7 @@ type HeadingProps = {
 
 export function Heading({ as: Component = "h2", size = "h2", children, className }: HeadingProps) {
   return (
-    <Component className={cn("font-secondary font-bold text-foreground-primary", sizeStyles[size], className)}>
+    <Component className={cn("font-primary font-bold text-foreground-primary", sizeStyles[size], className)}>
       {children}
     </Component>
   );
