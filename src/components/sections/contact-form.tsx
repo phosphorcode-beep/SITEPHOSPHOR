@@ -5,7 +5,7 @@
  * Ex: "https://form.jotform.com/251234567890"
  * Enquanto vazio, exibe o CTA do Instagram.
  */
-const JOTFORM_URL = "";
+const JOTFORM_URL = "https://agent.jotform.com/019ed7c521247d6498ccaac2c7704876e720";
 
 const INSTAGRAM_HANDLE = "phosphorcode";
 const INSTAGRAM_DM_URL = `https://ig.me/m/${INSTAGRAM_HANDLE}`;
