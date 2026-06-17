@@ -3,6 +3,7 @@ import { Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { SiteBackground } from "@/components/ui/site-background";
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
+import { InstagramChatWidget } from "@/components/ui/instagram-chat-widget";
 
 const hanken = Hanken_Grotesk({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({
         <SmoothScroll />
         <SiteBackground />
         {children}
+        <InstagramChatWidget />
       </body>
     </html>
   );
