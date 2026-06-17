@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 const IG_URL = "https://ig.me/m/phosphor.code";
 const AVATAR = "https://cdn.jotfor.ms/assets/agent-avatars/avatar_icon_254.png";
@@ -50,7 +51,7 @@ export function InstagramChatWidget() {
         <div style={{ display: "flex", alignItems: "center", padding: "1rem", gap: "1.25rem", position: "relative" }}>
           {/* Avatar */}
           <div style={{ position: "relative", width: "3rem", height: "3rem" }}>
-            <img src={AVATAR} alt="Phosphorcode" style={{ width: "2.75rem", height: "2.75rem", borderRadius: "9999px", backgroundColor: "#f8fafc" }} />
+            <Image src={AVATAR} alt="Phosphorcode" width={44} height={44} style={{ borderRadius: "9999px", backgroundColor: "#f8fafc" }} />
             <div style={{ position: "absolute", bottom: 0, right: "-2px", width: "1rem", height: "1rem", backgroundColor: "#fff", borderRadius: "9999px", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <div style={{ width: "0.75rem", height: "0.75rem", backgroundColor: "#22c55e", borderRadius: "9999px" }} />
             </div>
@@ -77,7 +78,7 @@ export function InstagramChatWidget() {
 
         {/* Mensagem */}
         <div style={{ display: "flex", alignItems: "flex-start", gap: "1.25rem", padding: "1rem" }}>
-          <img src={AVATAR} alt="" style={{ width: "2.5rem", height: "2.5rem", borderRadius: "9999px", backgroundColor: "#f8fafc", flexShrink: 0 }} />
+          <Image src={AVATAR} alt="" width={40} height={40} style={{ borderRadius: "9999px", backgroundColor: "#f8fafc", flexShrink: 0 }} />
           <div style={{ backgroundColor: "#fafafa", borderRadius: "0.375rem", padding: "0.75rem 1rem" }}>
             <p style={{ color: "#334155", margin: "0.25rem 0" }}>Olá! 👋</p>
             <p style={{ color: "#334155", margin: "0.25rem 0" }}>Como posso te ajudar?</p>
