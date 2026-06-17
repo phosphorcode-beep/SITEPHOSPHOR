@@ -1,24 +1,22 @@
 "use client";
 
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-/* -----------------------------------------------------------------------------
- * PARCEIROS — empresas que confiam na Phosphorcode.
- * -------------------------------------------------------------------------- */
-
-const PARTNER_LOGOS = [
-  () => (
-    <Image
-      src="/brand/cara-de-cavalo.png"
-      alt="Cara de Cavalo"
-      width={300}
-      height={200}
-      className="h-16 w-auto select-none rounded-brand object-contain sm:h-20"
-    />
-  ),
+const HERO_DATA_POINTS = [
+  {
+    value: "4x",
+    label: "menos retrabalho",
+  },
+  {
+    value: "100%",
+    label: "fluxos rastreaveis",
+  },
+  {
+    value: "24/7",
+    label: "dados disponiveis",
+  },
 ];
 
 /* -----------------------------------------------------------------------------
@@ -380,9 +378,19 @@ export function PixelHero({
           <div className="mb-5 font-secondary text-[11px] font-medium uppercase tracking-[0.18em] text-foreground-inverse/55">
             {stackLabel}
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-10 py-1">
-            {PARTNER_LOGOS.map((Logo, i) => (
-              <Logo key={i} />
+          <div className="grid grid-cols-3 gap-2 px-2 py-1">
+            {HERO_DATA_POINTS.map((item) => (
+              <div
+                key={item.label}
+                className="rounded-xl border border-foreground-inverse/10 bg-foreground-inverse/[0.04] px-2 py-3 text-center backdrop-blur-sm"
+              >
+                <div className="font-secondary text-base font-semibold text-brand-accent">
+                  {item.value}
+                </div>
+                <div className="mt-1 text-[10px] font-medium leading-tight text-foreground-inverse/60">
+                  {item.label}
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -424,9 +432,19 @@ export function PixelHero({
         <span className="select-none font-secondary text-xs font-medium uppercase tracking-[0.18em] text-foreground-inverse/55">
           {stackLabel}
         </span>
-        <div className="flex flex-wrap items-center justify-center gap-16 py-3">
-          {PARTNER_LOGOS.map((Logo, i) => (
-            <Logo key={i} />
+        <div className="grid w-full max-w-3xl grid-cols-3 gap-3 px-6 py-2">
+          {HERO_DATA_POINTS.map((item) => (
+            <div
+              key={item.label}
+              className="rounded-2xl border border-foreground-inverse/10 bg-foreground-inverse/[0.035] px-6 py-4 text-center backdrop-blur-md"
+            >
+              <div className="font-secondary text-2xl font-semibold text-brand-accent lg:text-3xl">
+                {item.value}
+              </div>
+              <div className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-foreground-inverse/55">
+                {item.label}
+              </div>
+            </div>
           ))}
         </div>
       </div>

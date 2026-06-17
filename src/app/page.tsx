@@ -80,7 +80,7 @@ export default function Home() {
         secondaryCtaMobile="Método"
         primaryHref="#contato"
         secondaryHref="#processo"
-        stackLabel="Parceiros"
+        stackLabel="Dados"
       />
 
       {/* 2. Método Phosphor ──────────────────────────────────── */}
