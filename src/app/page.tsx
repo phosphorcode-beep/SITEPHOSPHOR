@@ -12,7 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { MethodSection } from "@/components/sections/method-section";
-import { PudgyLottie } from "@/components/sections/pudgy-lottie";
+import { ChameleonAnimation } from "@/components/sections/chameleon-animation";
 import { PixelHero } from "@/components/ui/pixel-perfect-hero";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { siteContent } from "@/content/site-content";
@@ -216,7 +216,7 @@ export default function Home() {
           <div className="grid items-center gap-2xl lg:grid-cols-2">
             {/* Animação à esquerda — sem borda nem fundo (transparente) */}
             <div className="flex justify-center bg-transparent lg:justify-start">
-              <PudgyLottie />
+              <ChameleonAnimation />
             </div>
 
             {/* Copy à direita */}
