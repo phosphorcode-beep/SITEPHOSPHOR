@@ -12,7 +12,6 @@ export function ContactForm() {
   const [fields, setFields] = useState({
     nome: "",
     empresa: "",
-    instagram: "",
     email: "",
     telefone: "",
     funcionarios: "",
@@ -32,7 +31,6 @@ export function ContactForm() {
       ``,
       `👤 *Nome:* ${fields.nome}`,
       `🏢 *Empresa:* ${fields.empresa}`,
-      `📸 *Instagram:* @${fields.instagram.replace(/^@/, "")}`,
       `📧 *E-mail:* ${fields.email}`,
       `📱 *Telefone:* ${fields.telefone}`,
       `👥 *Funcionários:* ${fields.funcionarios}`,
@@ -71,14 +69,6 @@ export function ContactForm() {
         autoComplete="organization"
         value={fields.empresa}
         onChange={set("empresa")}
-      />
-
-      <AnimatedInput
-        label="Seu @ do Instagram"
-        name="instagram"
-        placeholder="@seuusuario"
-        value={fields.instagram}
-        onChange={set("instagram")}
       />
 
       <AnimatedInput
