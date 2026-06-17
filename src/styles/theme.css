@@ -1,18 +1,18 @@
 :root {
-  /* Phosphorcode brandbook palette. */
-  --color-primary: 85 107 47;
-  --color-secondary: 14 16 11;
-  --color-accent: 157 176 122;
-  --color-background: 242 241 231;
-  --color-surface: 230 228 212;
-  --color-muted: 220 219 203;
-  --color-text-primary: 14 16 11;
-  --color-text-secondary: 58 58 51;
-  --color-text-inverse: 242 241 231;
-  --color-border: 14 16 11;
-  --color-error: 180 69 47;
-  --color-success: 85 107 47;
-  --color-warning: 139 111 49;
+  /* Phosphorcode palette — preto + verde predominantes. */
+  --color-primary: 64 132 52;         /* verde profundo (botões/ícones) */
+  --color-secondary: 6 9 4;           /* preto esverdeado (seções mais escuras) */
+  --color-accent: 150 210 110;        /* verde vivo (destaques) */
+  --color-background: 13 17 10;       /* preto-verde de fundo */
+  --color-surface: 20 26 15;          /* painel escuro */
+  --color-muted: 32 42 22;            /* verde escuro suave */
+  --color-text-primary: 236 240 228;  /* off-white */
+  --color-text-secondary: 158 176 142;/* verde-acinzentado */
+  --color-text-inverse: 247 250 242;  /* claro sobre verde/preto */
+  --color-border: 230 236 220;        /* claro, usado em baixa opacidade */
+  --color-error: 224 96 72;
+  --color-success: 124 184 70;
+  --color-warning: 200 170 90;
 
   /* Phosphorcode typography. */
   --font-primary: var(--font-hanken), "Hanken Grotesk", "Segoe UI", system-ui, sans-serif;

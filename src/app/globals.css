@@ -44,3 +44,143 @@ select {
   outline: 2px solid rgb(var(--color-primary));
   outline-offset: 3px;
 }
+
+/* ── Scroll reveal ─────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Keyframes ─────────────────────────────────────────────────── */
+@keyframes pc-glow {
+  0%, 100% { opacity: 0.18; }
+  50%       { opacity: 0.36; }
+}
+
+@keyframes pc-scan {
+  from { transform: translateY(-100%); opacity: 0; }
+  5%   { opacity: 1; }
+  95%  { opacity: 1; }
+  to   { transform: translateY(130vh);  opacity: 0; }
+}
+
+@keyframes pc-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes pc-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ── Hero scan line ─────────────────────────────────────────────── */
+.hero-scan::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 80px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgb(var(--color-accent) / 0.05),
+    transparent
+  );
+  animation: pc-scan 10s linear infinite;
+  pointer-events: none;
+}
+
+/* ── Hero glow ─────────────────────────────────────────────────── */
+.hero-glow {
+  animation: pc-glow 4s ease-in-out infinite;
+}
+
+/* ── Blinking cursor ─────────────────────────────────────────────── */
+.cursor-blink {
+  animation: pc-blink 1s step-end infinite;
+}
+
+/* ── Card hover lift ─────────────────────────────────────────────── */
+.card-lift {
+  transition:
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-3px);
+  border-color: rgb(var(--color-primary) / 0.28);
+  box-shadow: 0 8px 28px rgb(var(--color-primary) / 0.08);
+}
+
+/* ── Navbar scrolled ─────────────────────────────────────────────── */
+.navbar-scrolled {
+  border-bottom-color: rgb(var(--color-border) / 0.22) !important;
+  box-shadow: 0 2px 20px rgb(0 0 0 / 0.08);
+}
+
+/* ── Process step number ─────────────────────────────────────────── */
+.process-step:hover .step-num {
+  color: rgb(var(--color-accent));
+}
+
+/* ── Table row highlight ─────────────────────────────────────────── */
+.compare-row {
+  transition: background 0.15s ease;
+}
+
+.compare-row:hover td {
+  background: rgb(var(--color-primary) / 0.04) !important;
+}
+
+/* ── Hero headline animation ─────────────────────────────────────── */
+.hero-animate-in {
+  animation: pc-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-delay-1 { animation-delay: 0.05s; }
+.hero-delay-2 { animation-delay: 0.15s; }
+.hero-delay-3 { animation-delay: 0.25s; }
+.hero-delay-4 { animation-delay: 0.35s; }
+.hero-delay-5 { animation-delay: 0.45s; }
+
+/* ===== 3D MacBook (estrutura; tampa controlada por scroll no componente) ===== */
+.macbook-container { perspective: 720px; }
+.macbook-inner { transform-style: preserve-3d; }
+.macbook-screen { transform-style: preserve-3d; transform-origin: bottom; }
+.macbook-screen-face-one { transform: translateZ(2px); backface-visibility: hidden; }
+.macbook-body {
+  transform-style: preserve-3d;
+  transform-origin: bottom;
+  transform: rotateX(-90deg);
+}
+.macbook-body-face-one { transform-style: preserve-3d; transform: translateZ(-2px); }
+.macbook-keyboard { transform-style: preserve-3d; }
+.macbook-key { transform: translateZ(-2px); }
+
+/* MacBook: tamanho responsivo (zoom re-renderiza nítido em vez de esticar). */
+.macbook-fit { zoom: 1.5; }
+@media (min-width: 768px) {
+  .macbook-fit { zoom: 2.6; }
+}
+
+/* Evita scroll horizontal acidental no mobile. */
+body { overflow-x: hidden; }
+
+/* Lenis (smooth scroll) */
+html.lenis,
+html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+

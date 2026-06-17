@@ -1,21 +1,14 @@
 import {
-  Activity,
-  AlertCircle,
   ArrowRightLeft,
-  BarChart2,
-  Code2,
-  DatabaseBackup,
-  FileSearch,
-  FileText,
+  FileSpreadsheet,
   LayoutDashboard,
-  LockKeyhole,
+  LineChart,
   MonitorSmartphone,
-  RefreshCcw,
+  RefreshCw,
   ServerCog,
-  ShieldCheck,
   ShoppingCart,
   Stethoscope,
-  Unlink,
+  Unplug,
 } from "lucide-react";
 
 export const siteContent = {
@@ -27,218 +20,209 @@ export const siteContent = {
     domain: "phosphorcode.com.br",
   },
   nav: [
-    { label: "Soluções", href: "#solucoes" },
-    { label: "Varejo", href: "#varejo" },
-    { label: "Saúde", href: "#saude" },
-    { label: "Processo", href: "#processo" },
-    { label: "Segurança", href: "#seguranca" },
+    { label: "Início", href: "#top" },
+    { label: "Método", href: "#processo" },
     { label: "Contato", href: "#contato" },
+    { label: "FAQ", href: "#faq" },
   ],
   hero: {
-    eyebrow: "Engenharia de software · Varejo & Saúde",
-    headline: "Sistemas que seguram a sua operação.",
+    baseText: "Criamos softwares para empresas que precisam controlar",
+    rotatingWords: [
+      "vendas.",
+      "estoque.",
+      "atendimento.",
+      "agendamentos.",
+      "pedidos.",
+      "dados sensíveis.",
+      "processos críticos.",
+      "indicadores.",
+    ],
     subheadline:
-      "Software sob medida para varejo e saúde — feito para vender, atender e operar com mais controle, integração e segurança.",
-    primaryCta: "Falar com a Phosphorcode",
-    secondaryCta: "Ver soluções",
-    microcopy: "Diagnóstico · Arquitetura · MVP · Integrações · Evolução mensal",
+      "Desenvolvemos softwares sob medida para transformar processos manuais em operações integradas, seguras e rastreáveis.",
+    primaryCta: "Criar software sob medida",
+    secondaryCta: "Ver método",
+    microcopy: "Diagnóstico · Arquitetura · Desenvolvimento · Implantação · Evolução",
   },
-  metrics: [
-    { label: "Foco", value: "Varejo & Saúde" },
-    { label: "Método", value: "Diagnóstico → evolução" },
-    { label: "Base", value: "Segurança desde o início" },
-  ],
-  problem: {
+  pain: {
+    eyebrow: "Dor operacional",
     title: "Quando a operação cresce, o improviso começa a custar caro.",
-    description:
-      "Planilhas desconectadas, retrabalho, sistemas que não conversam e decisões sem visibilidade travam empresas que dependem de operação diária. A Phosphorcode transforma processos confusos em sistemas confiáveis, integrados e rastreáveis.",
-    pains: [
-      { icon: FileText, label: "Planilhas desconectadas" },
-      { icon: AlertCircle, label: "Erro manual em pedidos, agenda ou estoque" },
-      { icon: Unlink, label: "Sistemas que não conversam" },
-      { icon: LockKeyhole, label: "Dados sensíveis sem controle" },
-      { icon: BarChart2, label: "Relatórios difíceis de extrair" },
-      { icon: RefreshCcw, label: "Retrabalho operacional" },
-    ],
-  },
-  services: [
-    {
-      icon: ServerCog,
-      title: "Sistemas internos",
-      description:
-        "Plataformas administrativas, dashboards, portais e ferramentas operacionais construídas para o fluxo real da empresa.",
-    },
-    {
-      icon: MonitorSmartphone,
-      title: "Sites e plataformas digitais",
-      description:
-        "Sites institucionais, portais, áreas logadas e experiências digitais conectadas à operação.",
-    },
-    {
-      icon: ArrowRightLeft,
-      title: "Integrações",
-      description:
-        "Conectamos ERP, PDV, e-commerce, agenda, CRM, gateways, automações e sistemas legados.",
-    },
-    {
-      icon: LayoutDashboard,
-      title: "Dashboards e visibilidade",
-      description:
-        "Indicadores, relatórios e painéis para quem precisa decidir com dados confiáveis.",
-    },
-  ],
-  verticals: [
-    {
-      id: "varejo",
-      icon: ShoppingCart,
-      eyebrow: "Para varejo",
-      title: "Menos planilha, mais controle de operação.",
-      description:
-        "Criamos sistemas para redes, lojas e operações digitais que precisam controlar pedidos, estoque, vendas, clientes e integrações com mais precisão.",
-      points: [
-        "Sistemas de pedidos",
-        "Controle de estoque",
-        "Integração com ERP e PDV",
-        "CRM e histórico de clientes",
-        "E-commerce e portais B2B/B2C",
-        "Dashboards de vendas e ruptura",
-      ],
-      cta: "Ver soluções para varejo",
-    },
-    {
-      id: "saude",
-      icon: Stethoscope,
-      eyebrow: "Para saúde",
-      title: "Atendimento digital com segurança e rastreabilidade.",
-      description:
-        "Desenvolvemos sistemas para clínicas, consultórios, laboratórios e operações com dados sensíveis, sempre com atenção a acesso, registros, segurança e LGPD.",
-      points: [
-        "Sites para clínicas",
-        "Agendamento online",
-        "Portal do paciente",
-        "Sistemas administrativos",
-        "Automação de atendimento",
-        "Controle de acesso e dados sensíveis",
-      ],
-      cta: "Ver soluções para saúde",
-    },
-  ],
-  process: {
-    title: "Antes do código, vem o diagnóstico.",
-    note: "Projeto bom não termina no deploy. Ele precisa sobreviver ao uso real, à equipe e ao crescimento.",
-    phases: [
-      {
-        name: "Phosphor Audit",
-        icon: FileSearch,
-        title: "Diagnóstico",
-        description:
-          "Diagnóstico técnico e operacional. Mapeamos processos, gargalos, sistemas existentes, riscos e oportunidades.",
-      },
-      {
-        name: "Phosphor Build",
-        icon: Code2,
-        title: "Construção",
-        description:
-          "Construção de sistema, site ou plataforma. Desenhamos arquitetura, protótipo, MVP, integrações e implantação.",
-      },
-      {
-        name: "Phosphor Care",
-        icon: Activity,
-        title: "Evolução mensal",
-        description:
-          "Manutenção e evolução mensal. Monitoramos, corrigimos, documentamos e evoluímos o sistema depois da entrega.",
-      },
-    ],
-  },
-  securitySection: {
-    title: "Funcionar não basta. Precisa ser seguro, rastreável e mantível.",
-    description:
-      "Segurança, permissões, logs, backups e documentação são parte do projeto desde o início — não ajustes feitos no fim.",
-    checklist: [
-      "TypeScript",
-      "Autenticação segura",
-      "Permissões por perfil",
-      "Banco estruturado",
-      "Logs de erro",
-      "Backups",
-      "Versionamento Git",
-      "Ambiente de teste",
-      "Ambiente de produção",
-      "README técnico",
-      "Documentação do cliente",
-      "Checklist de segurança e deploy",
-    ],
     cards: [
       {
-        icon: LockKeyhole,
-        title: "Controle de acesso",
-        description: "Permissões, perfis e rastreabilidade pensados desde o desenho do sistema.",
+        icon: FileSpreadsheet,
+        title: "Planilhas soltas",
+        description:
+          "Informações importantes espalhadas entre arquivos, mensagens e controles manuais.",
       },
       {
-        icon: DatabaseBackup,
-        title: "Backups e continuidade",
-        description:
-          "Rotinas para proteger informação crítica e reduzir dependência de pessoas ou improvisos.",
+        icon: Unplug,
+        title: "Sistemas que não conversam",
+        description: "ERP, agenda, PDV, CRM e e-commerce operando sem integração real.",
       },
       {
-        icon: ShieldCheck,
-        title: "LGPD e privacidade",
+        icon: RefreshCw,
+        title: "Retrabalho operacional",
         description:
-          "Tratamento de dados com critério técnico, clareza de fluxo e menor superfície de risco.",
+          "A equipe repete tarefas, confere dados manualmente e perde tempo com processos frágeis.",
+      },
+      {
+        icon: LineChart,
+        title: "Decisão sem visibilidade",
+        description:
+          "Gestores sem indicadores confiáveis para acompanhar vendas, estoque, atendimento e produtividade.",
       },
     ],
   },
-  comparison: {
-    title: "A diferença está no processo.",
-    columns: ["Agência genérica", "Vibe coder", "Phosphorcode"],
-    rows: [
+  solutions: {
+    eyebrow: "Soluções",
+    title: "Softwares sob medida para vender, atender e operar melhor.",
+    subtitle:
+      "Criamos sistemas internos, sites, plataformas e integrações com arquitetura, revisão técnica e continuidade — para empresas que precisam controlar processos, dados e operações críticas sem depender de improviso.",
+    cards: [
       {
-        label: "Foco",
-        values: [
-          "Site, app, sistema",
-          "Faço rápido com IA",
-          "Operação em varejo e saúde",
-        ],
+        icon: ServerCog,
+        title: "Sistemas internos",
+        description:
+          "Plataformas administrativas, dashboards, portais e ferramentas operacionais construídas para o fluxo real da empresa.",
       },
       {
-        label: "Processo",
-        values: [
-          "Pedido → orçamento → entrega",
-          "Prompt → código → deploy",
-          "Diagnóstico → arquitetura → MVP → evolução",
-        ],
+        icon: MonitorSmartphone,
+        title: "Sites e plataformas digitais",
+        description:
+          "Sites institucionais, portais, áreas logadas e experiências digitais conectadas à operação.",
       },
       {
-        label: "Qualidade",
-        values: [
-          "Varia muito",
-          "Rápida, mas arriscada",
-          "Revisada, testada e documentada",
-        ],
+        icon: ArrowRightLeft,
+        title: "Integrações operacionais",
+        description:
+          "Conectamos ERP, PDV, e-commerce, agenda, CRM, gateways, automações e sistemas legados.",
       },
       {
-        label: "Segurança",
-        values: [
-          "Muitas vezes secundária",
-          "Geralmente fraca",
-          "Parte do projeto desde o início",
-        ],
-      },
-      {
-        label: "Pós-entrega",
-        values: [
-          "Suporte informal",
-          "Pouca previsibilidade",
-          "Evolução mensal e governança",
-        ],
+        icon: LayoutDashboard,
+        title: "Dashboards e indicadores",
+        description:
+          "Indicadores, relatórios e painéis para quem precisa decidir com dados confiáveis.",
       },
     ],
+  },
+  process: {
+    eyebrow: "Método Phosphor",
+    title: "Software sob medida,\nprocesso estruturado.",
+    description:
+      "Cada operação é diferente. Por isso, começamos entendendo o contexto real da empresa antes de desenhar, construir e evoluir a solução.",
+    cta: "Criar software sob medida",
+    phases: [
+      {
+        phase: "Fase 01 · Diagnóstico operacional",
+        title: "Mapeamos a operação.",
+        description:
+          "Antes de qualquer linha de código, mergulhamos na rotina real da empresa. Levantamos processos, gargalos, sistemas atuais, fluxos manuais, dados sensíveis e pontos de risco. O objetivo é entender onde a operação perde tempo e controle, e definir com clareza o que o software precisa resolver de verdade.",
+      },
+      {
+        phase: "Fase 02 · Arquitetura da solução",
+        title: "Desenhamos o software sob medida.",
+        description:
+          "Com o diagnóstico em mãos, transformamos a operação em uma estrutura técnica clara: fluxos, regras de negócio, integrações, permissões por perfil, modelo de dados e prioridades de entrega. Tudo desenhado para o contexto da empresa, sem depender de modelo pronto ou template genérico.",
+      },
+      {
+        phase: "Fase 03 · Desenvolvimento e implantação",
+        title: "Construímos e colocamos em operação.",
+        description:
+          "Desenvolvemos o software com revisão técnica, testes, segurança e documentação em cada etapa. Conectamos integrações, validamos com a equipe, homologamos e implantamos com previsibilidade, para que a solução funcione no uso real do dia a dia, e não apenas em demonstração.",
+      },
+      {
+        phase: "Fase 04 · Evolução contínua",
+        title: "Evoluímos com a operação.",
+        description:
+          "A entrega é o começo da relação, não o fim. Acompanhamos o uso, monitoramos o sistema, corrigimos pontos críticos, ajustamos fluxos e implementamos melhorias. Conforme a empresa cresce, expandimos o software com novas funcionalidades e integrações, sempre com suporte e manutenção contínuos.",
+      },
+    ],
+  },
+  techRuler: {
+    eyebrow: "Régua técnica",
+    title: "Sob medida não significa improvisado.",
+    description:
+      "Todo projeto entrega uma base técnica mínima. É a régua que garante segurança, rastreabilidade e manutenção no longo prazo.",
+    checklist: [
+      "Autenticação segura",
+      "Permissões por perfil",
+      "Banco de dados estruturado",
+      "Logs e rastreabilidade",
+      "Backups",
+      "Ambiente de teste",
+      "Deploy em produção",
+      "Documentação técnica",
+      "Documentação para o cliente",
+      "Plano de evolução",
+    ],
+  },
+  verticals: {
+    eyebrow: "Varejo e saúde",
+    title: "Software sob medida para operações de varejo e saúde.",
+    cards: [
+      {
+        icon: ShoppingCart,
+        name: "Varejo",
+        description:
+          "Pedidos, estoque, CRM, e-commerce, PDV, dashboards, automações e integrações com sistemas comerciais.",
+      },
+      {
+        icon: Stethoscope,
+        name: "Saúde",
+        description:
+          "Agenda, portal do paciente, dados sensíveis, documentos, atendimento, relatórios e segurança de acesso.",
+      },
+    ],
+  },
+  gettingStarted: {
+    eyebrow: "Como começamos",
+    title: "O primeiro passo é entender a operação.",
+    text: "Antes de propor uma solução, analisamos o cenário atual: processos, sistemas, gargalos, riscos e prioridades. A partir disso, definimos o melhor caminho para construir ou evoluir o software.",
+    cta: "Mapear minha operação",
+  },
+  faq: {
+    eyebrow: "Dúvidas frequentes",
+    title: "Perguntas frequentes",
+    items: [
+      {
+        question: "Qual é o prazo de um projeto?",
+        answer:
+          "Depende do escopo. Após o diagnóstico, definimos um cronograma realista por entregas. Os projetos costumam começar por um MVP funcional e evoluir a partir do uso real.",
+      },
+      {
+        question: "Como o escopo é definido?",
+        answer:
+          "O escopo nasce do diagnóstico operacional. Mapeamos processos, prioridades e integrações antes de definir o que será construído na primeira fase.",
+      },
+      {
+        question: "Existe suporte após a entrega?",
+        answer:
+          "Sim. Depois da implantação, acompanhamos o uso, corrigimos pontos críticos e evoluímos a solução com suporte e manutenção contínuos.",
+      },
+      {
+        question: "Vocês integram com os sistemas que já usamos?",
+        answer:
+          "Sim. Conectamos o software a ERPs, PDVs, CRMs, agendas, e-commerces, gateways e sistemas legados que a empresa já utiliza.",
+      },
+      {
+        question: "O software pode evoluir depois?",
+        answer:
+          "Sim. O software é construído para evoluir. Novas funcionalidades, ajustes e melhorias entram em ciclos planejados conforme a operação cresce.",
+      },
+      {
+        question: "De quem é a propriedade do software?",
+        answer:
+          "O software é seu. Você recebe o código, a documentação técnica e os acessos necessários para manter a propriedade total da solução.",
+      },
+    ],
+  },
+  finalCta: {
+    eyebrow: "Vamos conversar",
+    title: "Sua operação precisa de um software sob medida?",
+    text: "Vamos mapear seus processos e entender o que precisa ser construído, integrado ou melhorado.",
+    cta: "Criar software sob medida",
   },
   contact: {
-    title: "Vamos mapear onde sua operação está perdendo controle?",
-    description:
-      "Conte o cenário da sua empresa. A Phosphorcode avalia processos, sistemas, gargalos e possibilidades de evolução técnica.",
-    cta: "Solicitar diagnóstico",
+    cta: "Criar software sob medida",
     segmentoOptions: [
       { value: "varejo", label: "Varejo" },
       { value: "saude", label: "Saúde" },
@@ -251,11 +235,9 @@ export const siteContent = {
     ],
   },
   footerLinks: [
-    { label: "Soluções", href: "#solucoes" },
-    { label: "Varejo", href: "#varejo" },
-    { label: "Saúde", href: "#saude" },
-    { label: "Processo", href: "#processo" },
-    { label: "Segurança", href: "#seguranca" },
+    { label: "Início", href: "#top" },
+    { label: "Método", href: "#processo" },
+    { label: "FAQ", href: "#faq" },
     { label: "Contato", href: "#contato" },
   ],
 };

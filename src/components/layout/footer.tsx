@@ -1,43 +1,113 @@
-import Image from "next/image";
+import { Instagram, Mail, MessageCircle } from "lucide-react";
 import { Container } from "@/components/ui/container";
+import { TextHoverEffect, FooterBackgroundGradient } from "@/components/ui/hover-footer";
+import { Wordmark } from "@/components/ui/wordmark";
 import { siteContent } from "@/content/site-content";
 
+const linkClass =
+  "flex items-center gap-sm text-small text-foreground-inverse/70 transition-colors hover:text-brand-accent";
+
 export function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="border-t border-border/15 bg-surface py-xl">
-      <Container className="grid gap-lg md:grid-cols-[1fr_auto] md:items-center">
-        <div className="grid gap-sm">
-          <Image src="/brand/logo.svg" alt={siteContent.brand.name} width={198} height={40} />
-          <p className="max-w-xs text-small text-foreground-secondary">{siteContent.brand.tagline}</p>
-          <a
-            href={`mailto:${siteContent.brand.contactEmail}`}
-            className="text-caption text-foreground-secondary transition-colors hover:text-foreground-primary"
-          >
-            {siteContent.brand.contactEmail}
-          </a>
+    <footer className="relative overflow-hidden border-t border-border/12 text-foreground-inverse">
+      <FooterBackgroundGradient />
+
+      <Container className="relative z-10 py-2xl">
+        <div className="grid grid-cols-1 gap-xl pb-xl sm:grid-cols-2 lg:grid-cols-4">
+          {/* Marca */}
+          <div className="flex flex-col gap-md">
+            <Wordmark className="text-2xl" />
+            <p className="max-w-xs text-small text-foreground-inverse/65">
+              {siteContent.brand.tagline}
+            </p>
+          </div>
+
+          {/* Navegação */}
+          <div>
+            <h4 className="mb-md font-secondary text-caption font-semibold uppercase tracking-widest text-brand-accent">
+              Navegação
+            </h4>
+            <ul className="grid gap-sm">
+              {siteContent.footerLinks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="text-small text-foreground-inverse/70 transition-colors hover:text-brand-accent"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contato */}
+          <div>
+            <h4 className="mb-md font-secondary text-caption font-semibold uppercase tracking-widest text-brand-accent">
+              Contato
+            </h4>
+            <ul className="grid gap-sm">
+              <li>
+                <a href="#" className={linkClass}>
+                  <MessageCircle className="shrink-0 text-brand-accent" size={16} aria-hidden />
+                  WhatsApp
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${siteContent.brand.contactEmail}`} className={linkClass}>
+                  <Mail className="shrink-0 text-brand-accent" size={16} aria-hidden />
+                  {siteContent.brand.contactEmail}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/phosphor.code"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkClass}
+                >
+                  <Instagram className="shrink-0 text-brand-accent" size={16} aria-hidden />
+                  Instagram
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h4 className="mb-md font-secondary text-caption font-semibold uppercase tracking-widest text-brand-accent">
+              Legal
+            </h4>
+            <ul className="grid gap-sm">
+              <li>
+                <a href="/privacidade" className="text-small text-foreground-inverse/70 transition-colors hover:text-brand-accent">
+                  Política de Privacidade
+                </a>
+              </li>
+              <li>
+                <a href="/termos" className="text-small text-foreground-inverse/70 transition-colors hover:text-brand-accent">
+                  Termos de Uso
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <nav
-          className="flex flex-wrap gap-md font-secondary text-caption font-semibold uppercase text-foreground-secondary"
-          aria-label="Links do rodapé"
-        >
-          {siteContent.footerLinks.map((link) => (
-            <a
-              className="transition-colors hover:text-foreground-primary focus-visible:text-foreground-primary"
-              href={link.href}
-              key={link.label}
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
+        <hr className="border-t border-foreground-inverse/12" />
+
+        <div className="flex items-center justify-center pt-lg">
+          <p className="font-secondary text-caption text-foreground-inverse/45">
+            © {year} {siteContent.brand.domain} · Todos os direitos reservados.
+          </p>
+        </div>
       </Container>
 
-      <Container className="mt-lg border-t border-border/10 pt-lg">
-        <p className="font-secondary text-caption text-foreground-secondary/60">
-          © {new Date().getFullYear()} {siteContent.brand.domain} · Todos os direitos reservados.
-        </p>
-      </Container>
+      {/* Wordmark gigante com revelação no hover */}
+      <div className="relative z-10 -mb-10 -mt-16 hidden h-[16rem] items-center lg:flex">
+        <TextHoverEffect text="phosphorcode" />
+      </div>
     </footer>
   );
 }

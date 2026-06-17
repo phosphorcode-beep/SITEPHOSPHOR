@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { SiteBackground } from "@/components/ui/site-background";
+import { SmoothScroll } from "@/components/providers/smooth-scroll";
 
 const hanken = Hanken_Grotesk({
   subsets: ["latin"],
@@ -16,7 +18,7 @@ const jetBrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Phosphorcode | Sistemas que seguram a sua operacao",
-  description: "Software sob medida para varejo e saude, feito para vender, atender e operar com mais controle.",
+  description: "Software sob medida para empresas que precisam operar com mais controle, integração e segurança.",
   icons: {
     icon: "/brand/favicon.svg",
   },
@@ -29,7 +31,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${hanken.variable} ${jetBrains.variable}`}>{children}</body>
+      <body className={`${hanken.variable} ${jetBrains.variable}`}>
+        <SmoothScroll />
+        <SiteBackground />
+        {children}
+      </body>
     </html>
   );
 }
