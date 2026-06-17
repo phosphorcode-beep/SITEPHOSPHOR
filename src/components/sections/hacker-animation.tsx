@@ -17,6 +17,8 @@ const CSS = `
   width: 100%;
   height: 50vw;
   overflow: hidden;
+  contain: layout paint style;
+  will-change: transform;
 }
 
 /* Todos os divs dentro do container */

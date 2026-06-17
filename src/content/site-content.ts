@@ -30,12 +30,12 @@ export const siteContent = {
     rotatingWords: [
       "vendas.",
       "estoque.",
+      "financeiro.",
+      "produção.",
+      "logística.",
       "atendimento.",
-      "agendamentos.",
-      "pedidos.",
-      "dados sensíveis.",
-      "processos críticos.",
-      "indicadores.",
+      "integrações.",
+      "operações.",
     ],
     subheadline:
       "Desenvolvemos softwares sob medida para transformar processos manuais em operações integradas, seguras e rastreáveis.",

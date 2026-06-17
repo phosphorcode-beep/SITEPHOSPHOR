@@ -9,11 +9,11 @@ export function SmoothScroll() {
     if (prefersReducedMotion.matches) return;
 
     const lenis = new Lenis({
-      lerp: 0.085,
+      lerp: 0.12,
       smoothWheel: true,
       syncTouch: false,
-      wheelMultiplier: 0.9,
-      touchMultiplier: 1.15,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.2,
     });
 
     let frameId = 0;
