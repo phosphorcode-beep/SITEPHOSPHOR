@@ -12,10 +12,11 @@ const CSS = `
 
 /* Container principal */
 .ha-root .ha-canvas {
-  background: rgb(0,0,0);
+  background: transparent;
   position: relative;
   width: 100%;
-  height: 56.25vw;
+  height: 50vw;
+  overflow: hidden;
 }
 
 /* Todos os divs dentro do container */
@@ -25,12 +26,12 @@ const CSS = `
   transform-origin: 0 50%;
 }
 
-/* Cena */
+/* Cena — deslocada para ficar visível na coluna direita (~50vw) */
 .ha-root .ha-canvas .ha-scene {
   background: transparent;
   width: 100%;
   height: 100%;
-  transform: translateX(26vw);
+  transform: translateX(-10vw);
 }
 
 /* â”€â”€ Cyber Particles â”€â”€ */

@@ -146,13 +146,9 @@ export default function Home() {
 
       {/* Como começamos ──────────────────────────────────────── */}
       <section
-        className="relative overflow-hidden text-foreground-inverse"
+        className="relative overflow-hidden py-2xl text-foreground-inverse sm:py-3xl"
         id="comecar"
       >
-        {/* Animação — largura total do viewport (usa unidades vw) */}
-        <HackerAnimation />
-
-        {/* Gradiente decorativo */}
         <div
           className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full"
           style={{
@@ -160,26 +156,32 @@ export default function Home() {
           }}
           aria-hidden
         />
+        <Container className="relative">
+          <div className="grid items-center gap-2xl lg:grid-cols-2">
+            {/* Copy à esquerda */}
+            <div className="text-center lg:text-left">
+              <BlurFade>
+                <span className="font-secondary text-caption font-semibold uppercase tracking-widest text-brand-accent">
+                  {gettingStarted.eyebrow}
+                </span>
+              </BlurFade>
+              <BlurFade delay={0.1}>
+                <Heading className="mt-md text-foreground-inverse" size="h2">
+                  {gettingStarted.title}
+                </Heading>
+              </BlurFade>
+              <BlurFade delay={0.2}>
+                <p className="mt-md max-w-xl text-body text-foreground-inverse/70">
+                  {gettingStarted.text}
+                </p>
+              </BlurFade>
+              <FlowButton href="#contato" text={gettingStarted.cta} className="mt-xl" />
+            </div>
 
-        {/* Copy centralizado abaixo da animação */}
-        <Container className="relative pb-2xl sm:pb-3xl">
-          <div className="mx-auto max-w-2xl text-center">
-            <BlurFade>
-              <span className="font-secondary text-caption font-semibold uppercase tracking-widest text-brand-accent">
-                {gettingStarted.eyebrow}
-              </span>
-            </BlurFade>
-            <BlurFade delay={0.1}>
-              <Heading className="mt-md text-foreground-inverse" size="h2">
-                {gettingStarted.title}
-              </Heading>
-            </BlurFade>
-            <BlurFade delay={0.2}>
-              <p className="mx-auto mt-md max-w-xl text-body text-foreground-inverse/70">
-                {gettingStarted.text}
-              </p>
-            </BlurFade>
-            <FlowButton href="#contato" text={gettingStarted.cta} className="mt-xl" />
+            {/* Animação à direita — sem fundo, overflow cortado pela seção */}
+            <div className="overflow-hidden">
+              <HackerAnimation />
+            </div>
           </div>
         </Container>
       </section>
