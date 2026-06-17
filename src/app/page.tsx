@@ -80,7 +80,7 @@ export default function Home() {
         secondaryCtaMobile="Método"
         primaryHref="#contato"
         secondaryHref="#processo"
-        stackLabel="Stack de engenharia"
+        stackLabel="Parceiros"
       />
 
       {/* 2. Método Phosphor ──────────────────────────────────── */}
