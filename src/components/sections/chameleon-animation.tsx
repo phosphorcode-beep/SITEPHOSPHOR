@@ -212,8 +212,7 @@ export function ChameleonAnimation() {
               { x: 142, y: 295, w: 118, c: "#7C3AED", o: 0.55 },
               { x: 152, y: 309, w: 75,  c: "#5EEAEA", o: 0.5 },
               { x: 142, y: 323, w: 100, c: "#38B27A", o: 0.6 },
-              {/* duplicate for seamless loop */
-                x: 142, y: 337, w: 85,  c: "#7C3AED", o: 0.6 },
+              { x: 142, y: 337, w: 85,  c: "#7C3AED", o: 0.6 },
               { x: 142, y: 351, w: 125, c: "#5EEAEA", o: 0.55 },
               { x: 152, y: 365, w: 95,  c: "#5EEAEA", o: 0.5 },
               { x: 152, y: 379, w: 65,  c: "#38B27A", o: 0.6 },

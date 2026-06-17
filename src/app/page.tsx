@@ -5,14 +5,12 @@ import { Container } from "@/components/ui/container";
 import { Heading } from "@/components/ui/heading";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { CircledText } from "@/components/ui/hand-writing-text";
-import { AnimatedInput } from "@/components/ui/animated-input";
 import { Section } from "@/components/ui/section";
-import { Select } from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { MethodSection } from "@/components/sections/method-section";
 import { ChameleonAnimation } from "@/components/sections/chameleon-animation";
+import { ContactForm } from "@/components/sections/contact-form";
 import { PixelHero } from "@/components/ui/pixel-perfect-hero";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { siteContent } from "@/content/site-content";
@@ -80,7 +78,6 @@ export default function Home() {
         secondaryCtaMobile="Método"
         primaryHref="#contato"
         secondaryHref="#processo"
-        stackLabel="Dados"
       />
 
       {/* 2. Método Phosphor ──────────────────────────────────── */}
@@ -121,60 +118,7 @@ export default function Home() {
           </div>
 
           {/* Formulário à direita */}
-          <form
-            className="reveal grid gap-md rounded-brand-lg border border-border/14 bg-background p-lg shadow-brand-sm"
-            action={`mailto:${siteContent.brand.contactEmail}`}
-            method="post"
-            encType="text/plain"
-            aria-label="Formulário de contato"
-            data-delay="120"
-          >
-            <AnimatedInput label="Nome" name="nome" required autoComplete="name" />
-
-            <AnimatedInput
-              label="Empresa"
-              name="empresa"
-              required
-              autoComplete="organization"
-            />
-
-            <AnimatedInput
-              label="E-mail"
-              name="email"
-              type="email"
-              required
-              autoComplete="email"
-            />
-
-            <AnimatedInput
-              label="Número"
-              name="telefone"
-              type="tel"
-              required
-              autoComplete="tel"
-            />
-
-            <Select
-              label="Quantidade de funcionários"
-              name="funcionarios"
-              required
-              options={[
-                { value: "1-10", label: "1 a 10" },
-                { value: "11-50", label: "11 a 50" },
-                { value: "51-200", label: "51 a 200" },
-                { value: "200+", label: "Mais de 200" },
-              ]}
-            />
-
-            <Textarea
-              label="Diga sua principal dor"
-              name="dor"
-              placeholder="Ex.: planilhas soltas, sistemas que não conversam, retrabalho, falta de indicadores..."
-              required
-            />
-
-            <FlowButton type="submit" text="Enviar" className="mt-sm w-full justify-center" />
-          </form>
+          <ContactForm />
         </div>
       </Section>
 

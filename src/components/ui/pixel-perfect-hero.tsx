@@ -262,7 +262,6 @@ interface PixelHeroProps {
   secondaryCtaMobile?: string;
   primaryHref?: string;
   secondaryHref?: string;
-  stackLabel?: string;
 }
 
 export function PixelHero({
@@ -281,7 +280,6 @@ export function PixelHero({
   secondaryCtaMobile = "Soluções",
   primaryHref = "#contato",
   secondaryHref = "#solucoes",
-  stackLabel = "Stack de engenharia",
 }: PixelHeroProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [themeColors, setThemeColors] = useState<string[]>([]);
@@ -306,15 +304,8 @@ export function PixelHero({
   }, []);
 
   return (
-    <div className="relative isolate flex min-h-[100dvh] w-full select-none flex-col justify-between overflow-hidden bg-brand-secondary px-2 py-8 sm:px-6 md:justify-center md:gap-6 md:py-0">
+    <div className="relative isolate flex min-h-[100dvh] w-full select-none flex-col justify-center overflow-hidden bg-brand-secondary px-2 py-8 sm:px-6 md:gap-6 md:py-0">
       <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0%); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          animation: marquee 28s linear infinite;
-        }
         @keyframes pc-word-rotate {
           0%   { opacity: 0; transform: translateY(0.4em); }
           100% { opacity: 1; transform: translateY(0); }
@@ -323,7 +314,6 @@ export function PixelHero({
           animation: pc-word-rotate 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
         @media (prefers-reduced-motion: reduce) {
-          .animate-marquee { animation: none; }
           .word-rotate { animation: none; }
         }
       `}</style>
@@ -353,32 +343,11 @@ export function PixelHero({
         </h1>
       </div>
 
-      {/* Centro: descrição + marquee mobile */}
+      {/* Centro: descrição */}
       <div className="order-2 my-auto flex w-full flex-col items-center justify-center px-1 text-center pointer-events-none md:my-0">
         <p className="max-w-[95%] whitespace-pre-line px-1 text-sm font-normal leading-relaxed text-foreground-inverse/95 [text-shadow:0_2px_12px_rgb(0_0_0_/_0.55)] sm:max-w-md sm:text-lg md:max-w-xl md:text-xl">
           {description}
         </p>
-
-        <div className="mt-14 block w-full pointer-events-auto md:hidden">
-          <div className="mb-5 font-secondary text-[11px] font-medium uppercase tracking-[0.18em] text-foreground-inverse/55">
-            {stackLabel}
-          </div>
-          <div className="grid grid-cols-3 gap-2 px-2 py-1">
-            {HERO_DATA_POINTS.map((item) => (
-              <div
-                key={item.label}
-                className="rounded-xl border border-foreground-inverse/10 bg-foreground-inverse/[0.04] px-2 py-3 text-center backdrop-blur-sm"
-              >
-                <div className="font-secondary text-base font-semibold text-brand-accent">
-                  {item.value}
-                </div>
-                <div className="mt-1 text-[10px] font-medium leading-tight text-foreground-inverse/60">
-                  {item.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
 
       {/* Base: CTAs */}
@@ -404,34 +373,6 @@ export function PixelHero({
           <span className="inline md:hidden">{secondaryCtaMobile}</span>
           <span className="hidden md:inline">{secondaryCta}</span>
         </a>
-      </div>
-
-      {/* Marquee desktop */}
-      <div
-        className={cn(
-          "absolute bottom-8 left-0 right-0 z-10 order-3 hidden w-full flex-col items-center justify-center gap-4 pointer-events-auto transition-all duration-1000 md:order-4 md:flex",
-          isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0",
-        )}
-        style={{ transitionDelay: "600ms" }}
-      >
-        <span className="select-none font-secondary text-xs font-medium uppercase tracking-[0.18em] text-foreground-inverse/55">
-          {stackLabel}
-        </span>
-        <div className="grid w-full max-w-3xl grid-cols-3 gap-3 px-6 py-2">
-          {HERO_DATA_POINTS.map((item) => (
-            <div
-              key={item.label}
-              className="rounded-2xl border border-foreground-inverse/10 bg-foreground-inverse/[0.035] px-6 py-4 text-center backdrop-blur-md"
-            >
-              <div className="font-secondary text-2xl font-semibold text-brand-accent lg:text-3xl">
-                {item.value}
-              </div>
-              <div className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-foreground-inverse/55">
-                {item.label}
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   );
