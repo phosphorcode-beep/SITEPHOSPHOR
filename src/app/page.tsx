@@ -30,7 +30,7 @@ function SectionIntro({
   center?: boolean;
 }) {
   return (
-    <div className={`mb-xl max-w-3xl ${center ? "mx-auto text-center" : ""}`}>
+    <div className={`mb-xl max-w-3xl ${center ? "mx-auto text-center" : "text-left"}`}>
       <BlurFade>
         <Badge tone={tone}>{eyebrow}</Badge>
       </BlurFade>
@@ -87,7 +87,7 @@ export default function Home() {
       <Section id="contato">
         <div className="grid gap-2xl lg:grid-cols-2 lg:items-center">
           {/* Copy à esquerda */}
-          <div className="text-center">
+          <div className="text-left">
             <BlurFade>
               <Heading size="h2">
                 {finalCtaBefore}
@@ -96,12 +96,12 @@ export default function Home() {
               </Heading>
             </BlurFade>
             <BlurFade delay={0.1}>
-              <p className="mx-auto mt-md max-w-xl text-body text-foreground-secondary">
+              <p className="mt-md max-w-xl text-body text-foreground-secondary">
                 {finalCta.text}
               </p>
             </BlurFade>
 
-            <ul className="mx-auto mt-xl grid max-w-md gap-0 text-left">
+            <ul className="mt-xl grid gap-0">
               {[
                 "Respondemos em até 25 segundos.",
                 "Se fizer sentido, agendamos uma conversa técnica sem compromisso.",
@@ -159,7 +159,7 @@ export default function Home() {
         <Container className="relative">
           <div className="grid items-center gap-2xl lg:grid-cols-2">
             {/* Copy à esquerda */}
-            <div className="text-center lg:text-left">
+            <div className="text-left">
               <BlurFade>
                 <span className="font-secondary text-caption font-semibold uppercase tracking-widest text-brand-accent">
                   {gettingStarted.eyebrow}
