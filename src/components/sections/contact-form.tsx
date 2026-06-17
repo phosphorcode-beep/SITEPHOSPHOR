@@ -11,7 +11,7 @@ import { FlowButton } from "@/components/ui/flow-button";
  * O webhook recebe os dados e aciona o agente para enviar DM no Instagram.
  * Exemplo Make: https://hook.eu2.make.com/xxxxxxxxxxxx
  */
-const WEBHOOK_URL = "";
+const WEBHOOK_URL = "https://hook.us2.make.com/bo36bfbgm04avtwyb2fpiknkbeqeenub";
 
 export function ContactForm() {
   const [fields, setFields] = useState({
