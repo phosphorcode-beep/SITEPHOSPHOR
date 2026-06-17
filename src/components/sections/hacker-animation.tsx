@@ -352,8 +352,8 @@ export function HackerAnimation() {
     <div className="ha-root w-full">
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
 
-      <div className="container">
-        <div className="scene">
+      <div className="ha-canvas">
+        <div className="ha-scene">
           <div className="lcd-light" />
 
           <div className="cyber-particles">
