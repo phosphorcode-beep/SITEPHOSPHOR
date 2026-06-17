@@ -66,9 +66,8 @@ export function DevSceneAnimation() {
         position: "relative",
         width: "100%",
         height: "56.25vw",
-        background: BG,
-        overflow: "hidden",
-        contain: "layout paint style",
+        background: "transparent",
+        overflow: "visible",
       }}
     >
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
