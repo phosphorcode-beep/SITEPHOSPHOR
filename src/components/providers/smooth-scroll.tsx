@@ -3,43 +3,74 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 
-/* Scroll suave global (Lenis). Respeita prefers-reduced-motion e
-   faz os links de âncora (#...) rolarem suavemente também. */
 export function SmoothScroll() {
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (prefersReducedMotion.matches) return;
 
     const lenis = new Lenis({
-      duration: 1.15,
-      easing: (t) => 1 - Math.pow(1 - t, 3),
+      lerp: 0.085,
       smoothWheel: true,
+      syncTouch: false,
+      wheelMultiplier: 0.9,
+      touchMultiplier: 1.15,
     });
 
-    let frame = 0;
+    let frameId = 0;
     const raf = (time: number) => {
       lenis.raf(time);
-      frame = requestAnimationFrame(raf);
+      frameId = requestAnimationFrame(raf);
     };
-    frame = requestAnimationFrame(raf);
 
-    // Âncoras internas com rolagem suave.
-    const onClick = (e: MouseEvent) => {
-      const target = (e.target as HTMLElement | null)?.closest<HTMLAnchorElement>(
+    const start = () => {
+      cancelAnimationFrame(frameId);
+      frameId = requestAnimationFrame(raf);
+    };
+
+    const stop = () => {
+      cancelAnimationFrame(frameId);
+    };
+
+    const onVisibilityChange = () => {
+      if (document.hidden) {
+        stop();
+        return;
+      }
+
+      start();
+    };
+
+    const onClick = (event: MouseEvent) => {
+      const anchor = (event.target as HTMLElement | null)?.closest<HTMLAnchorElement>(
         'a[href^="#"]',
       );
-      if (!target) return;
-      const hash = target.getAttribute("href");
+      if (!anchor) return;
+
+      const hash = anchor.getAttribute("href");
       if (!hash || hash === "#") return;
-      const el = document.querySelector(hash);
-      if (!el) return;
-      e.preventDefault();
-      lenis.scrollTo(el as HTMLElement, { offset: -72 });
+
+      const target = document.querySelector(hash);
+      if (!target) return;
+
+      event.preventDefault();
+      lenis.scrollTo(target as HTMLElement, {
+        offset: -88,
+        lock: true,
+        onComplete: () => {
+          window.history.pushState(null, "", hash);
+          anchor.blur();
+        },
+      });
     };
+
+    start();
     document.addEventListener("click", onClick);
+    document.addEventListener("visibilitychange", onVisibilityChange);
 
     return () => {
-      cancelAnimationFrame(frame);
+      stop();
       document.removeEventListener("click", onClick);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
       lenis.destroy();
     };
   }, []);
