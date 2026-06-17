@@ -9,7 +9,7 @@ import { Section } from "@/components/ui/section";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { MethodSection } from "@/components/sections/method-section";
-import { HackerAnimation } from "@/components/sections/hacker-animation";
+import { DevSceneAnimation } from "@/components/sections/dev-scene-animation";
 import { ContactForm } from "@/components/sections/contact-form";
 import { PixelHero } from "@/components/ui/pixel-perfect-hero";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
@@ -180,7 +180,7 @@ export default function Home() {
 
             {/* Animação à direita — sem fundo, overflow cortado pela seção */}
             <div className="overflow-hidden">
-              <HackerAnimation />
+              <DevSceneAnimation />
             </div>
           </div>
         </Container>
