@@ -4,344 +4,520 @@ export function ChameleonAnimation() {
   return (
     <div className="flex justify-center lg:justify-start">
       <svg
-        viewBox="0 0 560 480"
+        viewBox="0 0 600 510"
         xmlns="http://www.w3.org/2000/svg"
-        className="h-auto w-full max-w-[560px]"
+        className="h-auto w-full max-w-[600px]"
         aria-hidden="true"
       >
         <defs>
-          <linearGradient id="cg-body" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#5EEAEA" />
-            <stop offset="45%" stopColor="#38B27A" />
+          {/* ── Gradients ─────────────────────────────────────────── */}
+          <linearGradient id="g-body" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#5EE8C8" />
+            <stop offset="42%" stopColor="#38B27A" />
             <stop offset="100%" stopColor="#8B5CF6" />
           </linearGradient>
-          <linearGradient id="cg-head" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#72EED8" />
-            <stop offset="100%" stopColor="#2DB370" />
+          <linearGradient id="g-head" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#76F0DC" />
+            <stop offset="100%" stopColor="#28A86A" />
           </linearGradient>
-          <linearGradient id="cg-leg" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#38B27A" />
-            <stop offset="100%" stopColor="#1E8060" />
+          <linearGradient id="g-leg" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#4CC890" />
+            <stop offset="100%" stopColor="#1A7050" />
           </linearGradient>
-          <linearGradient id="cg-tail" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#38B27A" />
-            <stop offset="65%" stopColor="#7C3AED" />
+          <linearGradient id="g-tail" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#4CC890" />
+            <stop offset="58%" stopColor="#7C3AED" />
             <stop offset="100%" stopColor="#A855F7" />
           </linearGradient>
-          <linearGradient id="cg-screen" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#1A1A3E" />
-            <stop offset="100%" stopColor="#0F0F2A" />
+          <linearGradient id="g-screen" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#181832" />
+            <stop offset="100%" stopColor="#0C0C1E" />
           </linearGradient>
-          <linearGradient id="cg-laptop" x1="0%" y1="0%" x2="0%" y2="100%">
+          <linearGradient id="g-frame" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#F5F5F5" />
+            <stop offset="100%" stopColor="#D8D8D8" />
+          </linearGradient>
+          <linearGradient id="g-base" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#FFFFFF" />
-            <stop offset="100%" stopColor="#D5D5D5" />
+            <stop offset="100%" stopColor="#CCCCCC" />
           </linearGradient>
-          <linearGradient id="cg-btn" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#7C3AED" />
+          <linearGradient id="g-btn" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#6D28D9" />
             <stop offset="100%" stopColor="#A855F7" />
           </linearGradient>
-          <radialGradient id="cg-glow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#7C3AED" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#7C3AED" stopOpacity="0" />
+
+          {/* ── Radial glows ────────────────────────────────────── */}
+          <radialGradient id="g-screen-glow" cx="40%" cy="50%" r="55%">
+            <stop offset="0%" stopColor="#6D28D9" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="#6D28D9" stopOpacity="0" />
           </radialGradient>
-          <radialGradient id="cg-face-glow" cx="0%" cy="50%" r="65%">
-            <stop offset="0%" stopColor="#7C3AED" stopOpacity="0.25" />
-            <stop offset="100%" stopColor="#7C3AED" stopOpacity="0" />
+          <radialGradient id="g-face-glow" cx="100%" cy="50%" r="75%">
+            <stop offset="0%" stopColor="#5B8DEF" stopOpacity="0.32" />
+            <stop offset="100%" stopColor="#5B8DEF" stopOpacity="0" />
           </radialGradient>
-          <filter id="f-shadow" x="-20%" y="-20%" width="140%" height="140%">
-            <feDropShadow dx="0" dy="4" stdDeviation="8" floodColor="#000000" floodOpacity="0.12" />
-          </filter>
-          <clipPath id="sc">
-            <rect x="74" y="140" width="228" height="212" rx="5" />
+
+          {/* ── Clip path for screen content ────────────────────── */}
+          <clipPath id="clip-screen">
+            <polygon points="116,106 349,87 370,342 126,360" />
           </clipPath>
+
+          {/* ── Drop shadow ─────────────────────────────────────── */}
+          <filter id="f-shadow" x="-25%" y="-25%" width="150%" height="150%">
+            <feDropShadow dx="0" dy="6" stdDeviation="10"
+              floodColor="#000000" floodOpacity="0.18" />
+          </filter>
+          <filter id="f-card-shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="3" stdDeviation="6"
+              floodColor="#000000" floodOpacity="0.14" />
+          </filter>
         </defs>
 
+        {/* ═══════════════════════════════════════════════════════
+            CSS ANIMATIONS
+        ═══════════════════════════════════════════════════════ */}
         <style>{`
           @keyframes typeL {
-            0%,100%{transform:translateY(0px)}
-            50%{transform:translateY(-10px)}
+            0%,100%{ transform:translateY(0px) }
+            50%    { transform:translateY(-12px) }
           }
           @keyframes typeR {
-            0%,25%,100%{transform:translateY(-10px)}
-            75%{transform:translateY(0px)}
+            0%,30%,100%{ transform:translateY(-12px) }
+            75%        { transform:translateY(0px) }
           }
-          @keyframes float1 {
-            0%,100%{transform:translateY(0px)}
-            50%{transform:translateY(-11px)}
+          @keyframes floatA {
+            0%,100%{ transform:translateY(0px) }
+            50%    { transform:translateY(-13px) }
           }
-          @keyframes float2 {
-            0%,100%{transform:translateY(-6px)}
-            55%{transform:translateY(8px)}
+          @keyframes floatB {
+            0%,100%{ transform:translateY(-8px) }
+            55%    { transform:translateY(9px) }
           }
-          @keyframes float3 {
-            0%,100%{transform:translateY(3px)}
-            45%{transform:translateY(-10px)}
+          @keyframes floatC {
+            0%,100%{ transform:translateY(4px) }
+            45%    { transform:translateY(-12px) }
           }
-          @keyframes swayTail {
-            0%,100%{transform:rotate(0deg)}
-            50%{transform:rotate(8deg)}
+          @keyframes tailSway {
+            0%,100%{ transform:rotate(0deg) }
+            50%    { transform:rotate(10deg) }
           }
-          @keyframes eyeBlink {
-            0%,87%,100%{transform:scaleY(0)}
-            91%,95%{transform:scaleY(1)}
+          @keyframes blink {
+            0%,86%,100%{ transform:scaleY(0) }
+            90%,94%    { transform:scaleY(1) }
           }
-          @keyframes glowPulse {
-            0%,100%{opacity:0.22}
-            50%{opacity:0.95}
+          @keyframes screenGlow {
+            0%,100%{ opacity:0.18 }
+            50%    { opacity:1 }
+          }
+          @keyframes faceGlow {
+            0%,100%{ opacity:0.4 }
+            50%    { opacity:1 }
           }
           @keyframes breathe {
-            0%,100%{transform:scale(1)}
-            50%{transform:scale(1.02)}
+            0%,100%{ transform:scale(1) }
+            50%    { transform:scale(1.024) }
           }
-          @keyframes codeScroll {
-            0%{transform:translateY(0px)}
-            100%{transform:translateY(-52px)}
+          @keyframes codeUp {
+            0%  { transform:translateY(0px) }
+            100%{ transform:translateY(-56px) }
+          }
+          @keyframes cursorBlink {
+            0%,49% { opacity:1 }
+            50%,100%{ opacity:0 }
           }
 
-          .pawL{animation:typeL 0.36s ease-in-out infinite}
-          .pawR{animation:typeR 0.36s ease-in-out infinite}
-          .c1{animation:float1 3.2s ease-in-out infinite}
-          .c2{animation:float2 3.9s ease-in-out infinite 0.7s}
-          .c3{animation:float3 2.6s ease-in-out infinite 1.4s}
-          .tail{animation:swayTail 4.8s ease-in-out infinite;transform-origin:462px 322px}
-          .eyelid{animation:eyeBlink 5s ease-in-out infinite 2s;transform-origin:272px 248px}
-          .glow{animation:glowPulse 2.9s ease-in-out infinite}
-          .cBody{animation:breathe 3.6s ease-in-out infinite;transform-origin:383px 316px}
-          .code{animation:codeScroll 2.8s linear infinite}
+          .pawL       { animation: typeL 0.34s ease-in-out infinite }
+          .pawR       { animation: typeR 0.34s ease-in-out infinite }
+          .floatA     { animation: floatA 3.1s ease-in-out infinite }
+          .floatB     { animation: floatB 4.0s ease-in-out infinite 0.8s }
+          .floatC     { animation: floatC 2.7s ease-in-out infinite 1.5s }
+          .tail       { animation: tailSway 5s ease-in-out infinite;
+                        transform-origin: 514px 296px }
+          .eyelid     { animation: blink 4.8s ease-in-out infinite 2.2s;
+                        transform-origin: 290px 242px }
+          .screenGlow { animation: screenGlow 3s ease-in-out infinite }
+          .faceGlow   { animation: faceGlow 3s ease-in-out infinite 1s }
+          .cBody      { animation: breathe 3.8s ease-in-out infinite;
+                        transform-origin: 405px 296px }
+          .codeUp     { animation: codeUp 3.2s linear infinite }
+          .cursor     { animation: cursorBlink 0.8s step-end infinite }
         `}</style>
 
-        {/* Blue diagonal background stripe */}
-        <rect
-          x="190" y="-20" width="22" height="530"
-          rx="11" fill="#2563EB" opacity="0.88"
-          transform="rotate(10 190 240)"
-        />
+        {/* ═══════════════════════════════════════════════════════
+            BACKGROUND — blue diagonal stripes
+        ═══════════════════════════════════════════════════════ */}
+        <rect x="228" y="-40" width="26" height="600" rx="13"
+          fill="#2563EB" opacity="0.92"
+          transform="rotate(-9 228 255)" />
+        <rect x="196" y="-40" width="10" height="600" rx="5"
+          fill="#1D4ED8" opacity="0.46"
+          transform="rotate(-9 196 255)" />
 
-        {/* Laptop keyboard base */}
-        <rect x="55" y="362" width="270" height="52" rx="10"
-          fill="url(#cg-laptop)" stroke="#C5C5C5" strokeWidth="1.5"
+        {/* ═══════════════════════════════════════════════════════
+            LAPTOP SCREEN — frame in perspective
+        ═══════════════════════════════════════════════════════ */}
+        {/* Outer white frame */}
+        <polygon
+          points="100,88 364,68 386,356 116,376"
+          fill="url(#g-frame)"
           filter="url(#f-shadow)"
         />
-        {Array.from({ length: 10 }).map((_, i) => (
-          <rect key={`k1${i}`} x={74 + i * 23} y="376" width="17" height="11" rx="2.5"
-            fill="#BBBBBB" opacity="0.75" />
-        ))}
-        {Array.from({ length: 9 }).map((_, i) => (
-          <rect key={`k2${i}`} x={86 + i * 23} y="393" width="17" height="11" rx="2.5"
-            fill="#BBBBBB" opacity="0.75" />
-        ))}
-        <rect x="140" y="408" width="98" height="6" rx="3" fill="#CACACA" opacity="0.55" />
-
-        {/* Hinge */}
-        <rect x="55" y="357" width="270" height="10" rx="4" fill="#DCDCDC" />
-
-        {/* Laptop screen frame */}
-        <rect x="62" y="126" width="252" height="236" rx="10"
-          fill="#22223A" stroke="#DDDDDD" strokeWidth="2.5"
-          filter="url(#f-shadow)"
+        {/* Dark screen surface */}
+        <polygon
+          points="116,106 349,87 370,342 126,360"
+          fill="url(#g-screen)"
         />
-        {/* Screen surface */}
-        <rect x="72" y="136" width="232" height="216" rx="6" fill="url(#cg-screen)" />
 
-        {/* Screen glow — pulsing */}
-        <ellipse cx="188" cy="244" rx="110" ry="100" fill="url(#cg-glow)" className="glow" />
+        {/* Screen glow pulse */}
+        <ellipse cx="243" cy="224" rx="135" ry="122"
+          fill="url(#g-screen-glow)"
+          clipPath="url(#clip-screen)"
+          className="screenGlow"
+        />
 
         {/* Webcam dot */}
-        <circle cx="188" cy="130" r="3.5" fill="#44445A" />
+        <ellipse cx="233" cy="92" rx="5" ry="4.5" fill="#77778A" opacity="0.7" />
 
-        {/* Scrolling code lines on screen */}
-        <g clipPath="url(#sc)">
-          <g className="code">
+        {/* ── Screen content: line numbers + scrolling code ── */}
+        <g clipPath="url(#clip-screen)">
+          {/* Static line numbers */}
+          {Array.from({ length: 16 }).map((_, i) => (
+            <text
+              key={i}
+              x="124"
+              y={118 + i * 14.5}
+              fontSize="7.5"
+              fill="#555578"
+              fontFamily="'Courier New', Courier, monospace"
+            >
+              {i + 1}
+            </text>
+          ))}
+
+          {/* Scrolling code bars */}
+          <g className="codeUp">
             {[
-              { x: 86, y: 150, w: 88,  c: "#7C3AED" },
-              { x: 86, y: 163, w: 130, c: "#5EEAEA" },
-              { x: 96, y: 176, w: 96,  c: "#38B27A" },
-              { x: 96, y: 189, w: 62,  c: "#5EEAEA" },
-              { x: 86, y: 202, w: 112, c: "#7C3AED" },
-              { x: 86, y: 215, w: 78,  c: "#5EEAEA" },
-              { x: 96, y: 228, w: 104, c: "#38B27A" },
-              { x: 86, y: 241, w: 122, c: "#7C3AED" },
-              { x: 96, y: 254, w: 80,  c: "#5EEAEA" },
-              { x: 86, y: 267, w: 138, c: "#38B27A" },
-              { x: 86, y: 280, w: 90,  c: "#7C3AED" },
-              { x: 96, y: 293, w: 114, c: "#5EEAEA" },
-              { x: 86, y: 306, w: 88,  c: "#7C3AED" },
-              { x: 86, y: 319, w: 130, c: "#5EEAEA" },
-              { x: 96, y: 332, w: 96,  c: "#38B27A" },
-              { x: 96, y: 345, w: 62,  c: "#5EEAEA" },
+              { x: 142, y: 113, w: 85,  c: "#7C3AED", o: 0.6 },
+              { x: 142, y: 127, w: 125, c: "#5EEAEA", o: 0.55 },
+              { x: 152, y: 141, w: 95,  c: "#5EEAEA", o: 0.5 },
+              { x: 152, y: 155, w: 65,  c: "#38B27A", o: 0.6 },
+              { x: 142, y: 169, w: 115, c: "#7C3AED", o: 0.55 },
+              { x: 142, y: 183, w: 78,  c: "#5EEAEA", o: 0.5 },
+              { x: 152, y: 197, w: 118, c: "#38B27A", o: 0.6 },
+              { x: 142, y: 211, w: 88,  c: "#7C3AED", o: 0.55 },
+              { x: 152, y: 225, w: 108, c: "#5EEAEA", o: 0.5 },
+              { x: 142, y: 239, w: 138, c: "#38B27A", o: 0.6 },
+              { x: 142, y: 253, w: 62,  c: "#7C3AED", o: 0.55 },
+              { x: 152, y: 267, w: 104, c: "#5EEAEA", o: 0.5 },
+              { x: 142, y: 281, w: 92,  c: "#38B27A", o: 0.6 },
+              { x: 142, y: 295, w: 118, c: "#7C3AED", o: 0.55 },
+              { x: 152, y: 309, w: 75,  c: "#5EEAEA", o: 0.5 },
+              { x: 142, y: 323, w: 100, c: "#38B27A", o: 0.6 },
+              {/* duplicate for seamless loop */
+                x: 142, y: 337, w: 85,  c: "#7C3AED", o: 0.6 },
+              { x: 142, y: 351, w: 125, c: "#5EEAEA", o: 0.55 },
+              { x: 152, y: 365, w: 95,  c: "#5EEAEA", o: 0.5 },
+              { x: 152, y: 379, w: 65,  c: "#38B27A", o: 0.6 },
             ].map((ln, i) => (
-              <rect key={i} x={ln.x} y={ln.y} width={ln.w} height="5" rx="2.5"
-                fill={ln.c} opacity="0.45" />
+              <rect key={i}
+                x={ln.x} y={ln.y} width={ln.w} height="6" rx="3"
+                fill={ln.c} opacity={ln.o}
+              />
             ))}
           </g>
+
+          {/* Cursor */}
+          <rect x="144" y="332" width="7" height="10" rx="1.5"
+            fill="#7C3AED" className="cursor" />
         </g>
 
-        {/* Floating Button card (on screen) */}
-        <g className="c3">
-          <rect x="108" y="288" width="118" height="36" rx="18"
-            fill="url(#cg-btn)" filter="url(#f-shadow)" />
-          <text x="167" y="311" textAnchor="middle"
-            fill="white" fontSize="13" fontFamily="Inter, Arial, sans-serif"
-            fontWeight="600" letterSpacing="0.5">Button</text>
+        {/* ── Floating Button card — over the screen, NOT clipped ── */}
+        <g className="floatC">
+          {/* Outer pill (ghost) */}
+          <rect x="162" y="284" width="140" height="36" rx="18"
+            fill="white" opacity="0.18" />
+          {/* Filled button */}
+          <rect x="162" y="284" width="104" height="36" rx="18"
+            fill="url(#g-btn)" filter="url(#f-card-shadow)" />
+          <text x="214" y="307" textAnchor="middle"
+            fill="white" fontSize="13"
+            fontFamily="Inter, -apple-system, Arial, sans-serif"
+            fontWeight="700" letterSpacing="0.4">Button</text>
+          {/* Ghost label */}
+          <text x="278" y="307"
+            fill="#CCCCCC" fontSize="13"
+            fontFamily="Inter, -apple-system, Arial, sans-serif"
+            fontWeight="500" opacity="0.55">Button</text>
         </g>
 
-        {/* Chameleon body */}
+        {/* ═══════════════════════════════════════════════════════
+            KEYBOARD BASE — in perspective
+        ═══════════════════════════════════════════════════════ */}
+        {/* Base body */}
+        <polygon
+          points="88,380 416,358 442,464 108,488"
+          fill="url(#g-base)"
+          filter="url(#f-shadow)"
+        />
+        {/* Keyboard top surface (lighter inset) */}
+        <polygon
+          points="100,386 408,365 432,454 116,476"
+          fill="#F2F2F2"
+        />
+
+        {/* Key rows — three rows, perspective-skewed */}
+        <g opacity="0.78">
+          {/* Row 1 */}
+          {Array.from({ length: 11 }).map((_, i) => (
+            <rect key={`r1-${i}`}
+              x={108 + i * 27} y="392" width="21" height="14" rx="3.5"
+              fill="#C2C2C2"
+              transform="skewX(-1.5)"
+            />
+          ))}
+          {/* Row 2 */}
+          {Array.from({ length: 10 }).map((_, i) => (
+            <rect key={`r2-${i}`}
+              x={116 + i * 27} y="412" width="21" height="14" rx="3.5"
+              fill="#C2C2C2"
+              transform="skewX(-1.5)"
+            />
+          ))}
+          {/* Row 3 */}
+          {Array.from({ length: 9 }).map((_, i) => (
+            <rect key={`r3-${i}`}
+              x={124 + i * 27} y="432" width="21" height="12" rx="3.5"
+              fill="#C2C2C2"
+              transform="skewX(-1.5)"
+            />
+          ))}
+          {/* Space bar */}
+          <rect x="166" y="448" width="164" height="12" rx="6"
+            fill="#BBBBBB" transform="skewX(-1.5)" />
+        </g>
+
+        {/* Trackpad */}
+        <rect x="238" y="464" width="96" height="18" rx="5"
+          fill="#B8B8B8" opacity="0.5" />
+
+        {/* ═══════════════════════════════════════════════════════
+            CHAMELEON BODY — hunched over keyboard
+        ═══════════════════════════════════════════════════════ */}
         <g className="cBody">
+          {/* Main body blob */}
           <path
-            d="M 293 350
-               C 282 333, 282 300, 305 283
-               C 328 266, 370 260, 412 267
-               C 454 274, 478 299, 475 326
-               C 472 353, 450 376, 418 380
-               C 386 384, 347 377, 320 368
-               C 303 362, 298 358, 293 350 Z"
-            fill="url(#cg-body)"
+            d="M 318 348
+               C 304 328, 300 292, 326 268
+               C 352 244, 398 236, 444 244
+               C 490 252, 520 280, 518 312
+               C 516 344, 492 372, 456 378
+               C 420 384, 374 378, 344 366
+               C 328 358, 323 355, 318 348 Z"
+            fill="url(#g-body)"
           />
-          {/* Belly sheen */}
+
+          {/* Belly highlight */}
           <path
-            d="M 310 366 C 344 380, 402 378, 438 363 C 456 354, 468 340, 468 325
-               C 457 344, 435 364, 402 372 C 365 380, 325 372, 310 366 Z"
-            fill="white" opacity="0.1"
+            d="M 336 364 C 372 382, 432 380, 470 364 C 490 355, 506 340, 505 322
+               C 493 344, 466 362, 428 372 C 384 382, 346 372, 336 364 Z"
+            fill="white" opacity="0.11"
           />
+
+          {/* Iridescent sheen patches */}
+          <ellipse cx="390" cy="295" rx="38" ry="22"
+            fill="#A855F7" opacity="0.12" />
+          <ellipse cx="450" cy="316" rx="28" ry="18"
+            fill="#5EEAEA" opacity="0.1" />
+
           {/* Dorsal spines */}
           {[
-            [326, 281], [344, 272], [362, 265],
-            [381, 262], [400, 261], [420, 265],
+            [342, 271], [362, 260], [383, 252],
+            [404, 248], [426, 248], [448, 252],
           ].map(([x, y], i) => (
             <path key={i}
-              d={`M ${x} ${y + 12} L ${x + 5} ${y} L ${x + 10} ${y + 12}`}
-              fill="#155A38" opacity="0.9"
+              d={`M ${x} ${y + 14} L ${x + 5} ${y} L ${x + 10} ${y + 14}`}
+              fill="#124A30" opacity="0.95"
             />
+          ))}
+
+          {/* Scale texture hints */}
+          {[
+            [368, 308], [395, 300], [422, 300],
+            [450, 308], [464, 328],
+          ].map(([x, y], i) => (
+            <ellipse key={i} cx={x} cy={y} rx="16" ry="11"
+              fill="none" stroke="#124A30" strokeWidth="1.2" opacity="0.14" />
           ))}
         </g>
 
-        {/* Chameleon head facing left */}
+        {/* ── Head — profile facing left (toward screen) ──────── */}
+        {/* Head base shape */}
         <path
-          d="M 226 262
-             C 213 245, 220 214, 252 208
-             C 277 203, 314 214, 324 236
-             C 334 258, 324 288, 302 295
-             C 279 302, 248 294, 236 278
-             C 230 270, 228 266, 226 262 Z"
-          fill="url(#cg-head)"
+          d="M 252 258
+             C 237 238, 244 204, 278 197
+             C 306 191, 346 203, 357 228
+             C 368 253, 357 288, 332 297
+             C 305 306, 268 296, 256 278
+             C 250 268, 252 262, 252 258 Z"
+          fill="url(#g-head)"
         />
-        {/* Casque bump */}
+
+        {/* Casque (helmet bump on top of head) */}
         <path
-          d="M 252 212 C 263 194, 302 191, 322 205 C 307 200, 272 199, 259 212 Z"
-          fill="#155A38"
+          d="M 278 201 C 292 180, 332 177, 354 194 C 338 187, 304 187, 288 201 Z"
+          fill="#124A30"
         />
-        {/* Snout */}
+
+        {/* Subtler casque ridge */}
         <path
-          d="M 226 262 C 205 260, 188 267, 185 276 C 189 283, 208 280, 228 274 Z"
+          d="M 278 201 C 288 192, 316 190, 334 198 L 354 194
+             C 338 187, 304 187, 288 201 Z"
+          fill="#0E3A24" opacity="0.6"
+        />
+
+        {/* Snout projecting left */}
+        <path
+          d="M 252 258 C 228 255, 208 262, 204 273 C 208 282, 230 279, 254 272 Z"
           fill="#2DB370"
         />
-        <circle cx="189" cy="273" r="2.5" fill="#0F4028" />
+        {/* Nostril */}
+        <circle cx="208" cy="271" r="3" fill="#0C3A1E" />
 
-        {/* Screen glow reflecting on face */}
-        <ellipse cx="212" cy="256" rx="40" ry="46" fill="url(#cg-face-glow)" className="glow" />
+        {/* Jaw line hint */}
+        <path
+          d="M 254 274 C 262 285, 278 294, 296 296 C 310 298, 326 294, 335 286"
+          fill="none" stroke="#1E7050" strokeWidth="2" opacity="0.4"
+        />
 
-        {/* Eye — large chameleon eye */}
-        <circle cx="272" cy="248" r="28" fill="#08180E" />
-        <circle cx="272" cy="248" r="24" fill="#040C07" />
-        <circle cx="270" cy="248" r="16" fill="#2A8838" />
-        <circle cx="270" cy="248" r="11" fill="#C4B000" />
-        <circle cx="270" cy="248" r="6.5" fill="#060606" />
-        <circle cx="275" cy="241" r="4.5" fill="white" opacity="0.95" />
-        <circle cx="263" cy="254" r="2" fill="white" opacity="0.45" />
-        <circle cx="272" cy="248" r="28" fill="none" stroke="#2DB370" strokeWidth="2.5" />
-        {/* Eyelid — animates to cover eye during blink */}
-        <ellipse cx="272" cy="248" rx="28" ry="28"
-          fill="url(#cg-head)" className="eyelid" />
+        {/* Face glow from screen light */}
+        <ellipse cx="234" cy="250" rx="50" ry="58"
+          fill="url(#g-face-glow)" className="faceGlow" />
 
-        {/* Front paw LEFT — typing */}
+        {/* ── Eye — large, expressive chameleon eye ─────────── */}
+        <circle cx="292" cy="242" r="31" fill="#060F0A" />
+        <circle cx="292" cy="242" r="26" fill="#030806" />
+        {/* Iris — green */}
+        <circle cx="290" cy="242" r="18" fill="#248030" />
+        {/* Golden ring */}
+        <circle cx="290" cy="242" r="12.5" fill="#C4A800" />
+        {/* Pupil */}
+        <circle cx="290" cy="242" r="7.5" fill="#040404" />
+        {/* Main highlight */}
+        <circle cx="296" cy="232" r="5.5" fill="white" opacity="0.96" />
+        {/* Secondary highlight */}
+        <circle cx="280" cy="250" r="2.5" fill="white" opacity="0.42" />
+        {/* Eye orbital rim */}
+        <circle cx="292" cy="242" r="31" fill="none" stroke="#2DB370" strokeWidth="2.5" />
+
+        {/* Eyelid — for blink animation */}
+        <ellipse cx="292" cy="242" rx="31" ry="31"
+          fill="url(#g-head)" className="eyelid" />
+
+        {/* ── Front paw LEFT — typing ────────────────────────── */}
         <g className="pawL">
+          {/* Upper arm */}
           <path
-            d="M 292 343 C 275 358, 260 376, 235 390 C 230 393, 224 391, 225 386
-               C 244 377, 263 366, 277 350 Z"
-            fill="url(#cg-leg)"
+            d="M 320 344 C 302 360, 282 378, 256 396 C 250 400, 242 398, 242 392
+               C 262 382, 284 368, 302 350 Z"
+            fill="url(#g-leg)"
           />
-          <ellipse cx="225" cy="389" rx="5.5" ry="4.5" fill="#155A38" />
-          <ellipse cx="237" cy="393" rx="5.5" ry="4.5" fill="#155A38" />
-          <ellipse cx="250" cy="393" rx="5.5" ry="4.5" fill="#155A38" />
+          {/* Toes on keyboard */}
+          <ellipse cx="242" cy="394" rx="6.5" ry="5.5" fill="#155A38" />
+          <ellipse cx="255" cy="399" rx="6.5" ry="5.5" fill="#155A38" />
+          <ellipse cx="269" cy="399" rx="6.5" ry="5.5" fill="#155A38" />
+          <ellipse cx="282" cy="396" rx="6" ry="5"    fill="#155A38" />
         </g>
 
-        {/* Front paw RIGHT — typing, offset phase */}
+        {/* ── Front paw RIGHT — typing, offset phase ─────────── */}
         <g className="pawR">
+          {/* Upper arm */}
           <path
-            d="M 324 352 C 314 368, 306 384, 286 395 C 281 398, 275 396, 277 391
-               C 293 382, 310 373, 319 358 Z"
-            fill="url(#cg-leg)"
+            d="M 358 354 C 344 370, 330 384, 308 398 C 302 402, 294 400, 296 394
+               C 314 384, 332 373, 346 358 Z"
+            fill="url(#g-leg)"
           />
-          <ellipse cx="277" cy="393" rx="5.5" ry="4.5" fill="#155A38" />
-          <ellipse cx="289" cy="397" rx="5.5" ry="4.5" fill="#155A38" />
-          <ellipse cx="302" cy="396" rx="5.5" ry="4.5" fill="#155A38" />
+          {/* Toes */}
+          <ellipse cx="296" cy="396" rx="6.5" ry="5.5" fill="#155A38" />
+          <ellipse cx="309" cy="401" rx="6.5" ry="5.5" fill="#155A38" />
+          <ellipse cx="323" cy="401" rx="6.5" ry="5.5" fill="#155A38" />
+          <ellipse cx="336" cy="398" rx="6" ry="5"    fill="#155A38" />
         </g>
 
-        {/* Back legs */}
+        {/* ── Back legs ─────────────────────────────────────── */}
         <path
-          d="M 440 363 C 453 378, 460 396, 464 410 C 466 417, 474 417, 477 411
-             C 472 400, 465 386, 454 371 Z"
-          fill="url(#cg-leg)"
+          d="M 470 364 C 484 382, 490 404, 494 420 C 496 428, 505 428, 508 422
+             C 503 410, 496 392, 484 374 Z"
+          fill="url(#g-leg)"
         />
         <path
-          d="M 453 370 C 466 383, 472 398, 476 411 C 478 418, 486 417, 488 411
-             C 483 400, 476 386, 466 374 Z"
-          fill="#155A38" opacity="0.6"
+          d="M 486 372 C 500 388, 506 408, 510 422 C 512 430, 521 429, 523 423
+             C 518 410, 511 392, 498 377 Z"
+          fill="#1A7050" opacity="0.55"
         />
+        {/* Back toes */}
+        <ellipse cx="494" cy="422" rx="6.5" ry="5" fill="#155A38" />
+        <ellipse cx="508" cy="426" rx="6.5" ry="5" fill="#155A38" />
 
-        {/* Tail — curling right */}
+        {/* ── Tail — coiled spiral ─────────────────────────── */}
         <g className="tail">
           <path
-            d="M 462 322 C 500 314, 528 337, 532 363
-               C 536 389, 522 413, 504 419
-               C 486 425, 465 415, 461 403
-               C 457 391, 471 381, 483 385
-               C 495 389, 498 403, 490 411"
+            d="M 514 296 C 554 284, 582 310, 584 340
+               C 586 370, 568 400, 546 408
+               C 524 416, 500 404, 496 388
+               C 492 372, 508 360, 522 366
+               C 536 372, 540 388, 528 396"
             fill="none"
-            stroke="url(#cg-tail)"
-            strokeWidth="18"
+            stroke="url(#g-tail)"
+            strokeWidth="20"
             strokeLinecap="round"
           />
+          {/* Tail sheen */}
           <path
-            d="M 462 322 C 500 314, 528 337, 532 363
-               C 536 389, 522 413, 504 419
-               C 486 425, 465 415, 461 403
-               C 457 391, 471 381, 483 385
-               C 495 389, 498 403, 490 411"
+            d="M 514 296 C 554 284, 582 310, 584 340
+               C 586 370, 568 400, 546 408
+               C 524 416, 500 404, 496 388
+               C 492 372, 508 360, 522 366
+               C 536 372, 540 388, 528 396"
             fill="none"
             stroke="white"
-            strokeWidth="5"
+            strokeWidth="6"
             strokeLinecap="round"
-            opacity="0.11"
+            opacity="0.1"
           />
         </g>
 
-        {/* Floating pill card — color palette */}
-        <g className="c1">
-          <rect x="140" y="66" width="168" height="48" rx="24"
-            fill="white" stroke="#E8E8E8" strokeWidth="1"
-            filter="url(#f-shadow)"
+        {/* ═══════════════════════════════════════════════════════
+            FLOATING UI CARDS
+        ═══════════════════════════════════════════════════════ */}
+
+        {/* Pill card — color palette */}
+        <g className="floatA">
+          <rect x="194" y="52" width="178" height="50" rx="25"
+            fill="white" stroke="#EBEBEB" strokeWidth="1"
+            filter="url(#f-card-shadow)"
           />
-          <circle cx="175" cy="90" r="13" fill="#7C3AED" />
-          <circle cx="207" cy="90" r="13" fill="#EC4899" />
-          <circle cx="239" cy="90" r="13" fill="#22C55E" />
-          <circle cx="271" cy="90" r="13" fill="#F59E0B" />
+          <circle cx="234" cy="77" r="14" fill="#7C3AED" />
+          <circle cx="268" cy="77" r="14" fill="#EC4899" />
+          <circle cx="302" cy="77" r="14" fill="#22C55E" />
+          <circle cx="336" cy="77" r="14" fill="#F59E0B" />
         </g>
 
-        {/* Floating typography card */}
-        <g className="c2">
-          <rect x="354" y="138" width="180" height="60" rx="12"
-            fill="white" stroke="#E8E8E8" strokeWidth="1"
-            filter="url(#f-shadow)"
+        {/* Typography card */}
+        <g className="floatB">
+          <rect x="400" y="132" width="186" height="64" rx="13"
+            fill="white" stroke="#EBEBEB" strokeWidth="1"
+            filter="url(#f-card-shadow)"
           />
-          <text x="377" y="178" fontSize="30"
+          <text x="424" y="175"
+            fontSize="32"
             fontFamily="Georgia, 'Times New Roman', serif"
-            fontWeight="700" fill="#1A1A2E">Aa</text>
-          <text x="416" y="162" fontSize="11.5"
-            fontFamily="Inter, Arial, sans-serif"
-            fontWeight="700" fill="#1A1A2E">Inter</text>
-          <text x="416" y="181" fontSize="10.5"
-            fontFamily="Inter, Arial, sans-serif"
+            fontWeight="700" fill="#12122A">Aa</text>
+          <text x="466" y="158"
+            fontSize="12"
+            fontFamily="Inter, -apple-system, Arial, sans-serif"
+            fontWeight="700" fill="#12122A">Inter</text>
+          <text x="466" y="178"
+            fontSize="10.5"
+            fontFamily="Inter, -apple-system, Arial, sans-serif"
             fill="#888888">Semibold, 16px</text>
         </g>
       </svg>

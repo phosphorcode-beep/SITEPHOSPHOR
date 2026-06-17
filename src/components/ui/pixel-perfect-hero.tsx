@@ -4,21 +4,6 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const HERO_DATA_POINTS = [
-  {
-    value: "4x",
-    label: "menos retrabalho",
-  },
-  {
-    value: "100%",
-    label: "fluxos rastreaveis",
-  },
-  {
-    value: "24/7",
-    label: "dados disponiveis",
-  },
-];
-
 /* -----------------------------------------------------------------------------
  * MOTOR DE FÍSICA DO CANVAS (ripple de pixels) — inalterado.
  * -------------------------------------------------------------------------- */
