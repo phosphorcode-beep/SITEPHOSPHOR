@@ -9,7 +9,7 @@ import { Section } from "@/components/ui/section";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { MethodSection } from "@/components/sections/method-section";
-import { ChameleonAnimation } from "@/components/sections/chameleon-animation";
+import { HackerAnimation } from "@/components/sections/hacker-animation";
 import { ContactForm } from "@/components/sections/contact-form";
 import { PixelHero } from "@/components/ui/pixel-perfect-hero";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
@@ -146,9 +146,13 @@ export default function Home() {
 
       {/* Como começamos ──────────────────────────────────────── */}
       <section
-        className="relative overflow-hidden py-2xl text-foreground-inverse sm:py-3xl"
+        className="relative overflow-hidden text-foreground-inverse"
         id="comecar"
       >
+        {/* Animação — largura total do viewport (usa unidades vw) */}
+        <HackerAnimation />
+
+        {/* Gradiente decorativo */}
         <div
           className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full"
           style={{
@@ -156,32 +160,26 @@ export default function Home() {
           }}
           aria-hidden
         />
-        <Container className="relative">
-          <div className="grid items-center gap-2xl lg:grid-cols-2">
-            {/* Animação à esquerda — sem borda nem fundo (transparente) */}
-            <div className="flex justify-center bg-transparent lg:justify-start">
-              <ChameleonAnimation />
-            </div>
 
-            {/* Copy à direita */}
-            <div className="text-center">
-              <BlurFade>
-                <span className="font-secondary text-caption font-semibold uppercase tracking-widest text-brand-accent">
-                  {gettingStarted.eyebrow}
-                </span>
-              </BlurFade>
-              <BlurFade delay={0.1}>
-                <Heading className="mt-md text-foreground-inverse" size="h2">
-                  {gettingStarted.title}
-                </Heading>
-              </BlurFade>
-              <BlurFade delay={0.2}>
-                <p className="mx-auto mt-md max-w-xl text-body text-foreground-inverse/70">
-                  {gettingStarted.text}
-                </p>
-              </BlurFade>
-              <FlowButton href="#contato" text={gettingStarted.cta} className="mt-xl" />
-            </div>
+        {/* Copy centralizado abaixo da animação */}
+        <Container className="relative pb-2xl sm:pb-3xl">
+          <div className="mx-auto max-w-2xl text-center">
+            <BlurFade>
+              <span className="font-secondary text-caption font-semibold uppercase tracking-widest text-brand-accent">
+                {gettingStarted.eyebrow}
+              </span>
+            </BlurFade>
+            <BlurFade delay={0.1}>
+              <Heading className="mt-md text-foreground-inverse" size="h2">
+                {gettingStarted.title}
+              </Heading>
+            </BlurFade>
+            <BlurFade delay={0.2}>
+              <p className="mx-auto mt-md max-w-xl text-body text-foreground-inverse/70">
+                {gettingStarted.text}
+              </p>
+            </BlurFade>
+            <FlowButton href="#contato" text={gettingStarted.cta} className="mt-xl" />
           </div>
         </Container>
       </section>
