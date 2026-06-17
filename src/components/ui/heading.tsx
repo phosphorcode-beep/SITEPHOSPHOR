@@ -15,9 +15,11 @@ type HeadingProps = {
   className?: string;
 };
 
+// Color intentionally omitted from defaults — inherits from body (#0E100B) in
+// light sections, and from parent context (text-foreground-inverse on dark sections).
 export function Heading({ as: Component = "h2", size = "h2", children, className }: HeadingProps) {
   return (
-    <Component className={cn("font-primary font-bold text-foreground-primary", sizeStyles[size], className)}>
+    <Component className={cn("font-primary font-bold", sizeStyles[size], className)}>
       {children}
     </Component>
   );
