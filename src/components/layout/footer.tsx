@@ -14,12 +14,12 @@ export function Footer() {
     <footer className="relative overflow-hidden border-t border-border/12 text-foreground-inverse">
       <FooterBackgroundGradient />
 
-      <Container className="relative z-10 py-xl">
-        <div className="grid grid-cols-1 gap-xl pb-xl sm:grid-cols-2 lg:grid-cols-4">
+      <Container className="relative z-10 py-lg sm:py-xl">
+        <div className="grid grid-cols-2 gap-x-md gap-y-lg pb-lg sm:pb-xl lg:grid-cols-4">
           {/* Marca */}
           <div className="flex flex-col gap-md">
             <Wordmark className="text-2xl" />
-            <p className="max-w-xs text-small text-foreground-inverse/65">
+            <p className="text-small text-foreground-inverse/65 sm:max-w-xs">
               {siteContent.brand.tagline}
             </p>
           </div>

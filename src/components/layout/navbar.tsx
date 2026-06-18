@@ -117,10 +117,10 @@ export function Navbar() {
           </button>
         </div>
 
-        {/* Menu mobile */}
+        {/* Menu mobile — overlay full-screen */}
         {mobileOpen && (
-          <div className="mx-auto mt-2 w-full max-w-sm rounded-3xl border border-foreground-inverse/10 bg-[#0a0f0a]/98 p-3 lg:hidden">
-            <div className="grid gap-1">
+          <div className="fixed inset-0 z-40 flex flex-col bg-[#060904] px-6 pb-8 pt-20 lg:hidden">
+            <nav className="grid gap-1">
               {siteContent.nav.map((item) => (
                 <Link
                   key={item.href}
@@ -129,16 +129,16 @@ export function Navbar() {
                     setActive(item.label);
                     setMobileOpen(false);
                   }}
-                  className="rounded-xl px-4 py-3 text-sm font-semibold text-foreground-inverse/70 transition-colors hover:bg-foreground-inverse/[0.06] hover:text-foreground-inverse"
+                  className="rounded-xl px-4 py-4 text-base font-semibold text-foreground-inverse/80 transition-colors hover:bg-foreground-inverse/[0.06] hover:text-foreground-inverse"
                 >
                   {item.label}
                 </Link>
               ))}
-            </div>
+            </nav>
             <Link
               href="#contato"
               onClick={() => setMobileOpen(false)}
-              className="mt-2 flex items-center justify-center gap-2 rounded-full bg-brand-primary px-4 py-3 text-sm font-semibold text-foreground-inverse"
+              className="mt-6 flex items-center justify-center gap-2 rounded-full bg-brand-primary px-4 py-4 text-base font-semibold text-foreground-inverse"
             >
               Falar com a Phosphorcode
               <ArrowRight size={16} aria-hidden />

@@ -178,8 +178,8 @@ export default function Home() {
               <FlowButton href="#contato" text={gettingStarted.cta} className="mt-xl" />
             </div>
 
-            {/* Animação à direita */}
-            <div>
+            {/* Animação à direita — oculta no mobile para evitar overflow */}
+            <div className="hidden sm:block">
               <DevSceneAnimation />
             </div>
           </div>

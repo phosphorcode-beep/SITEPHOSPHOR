@@ -304,7 +304,7 @@ export function PixelHero({
   }, []);
 
   return (
-    <div className="relative isolate flex min-h-[100dvh] w-full select-none flex-col justify-center overflow-hidden bg-brand-secondary px-2 py-8 sm:px-6 md:gap-6 md:py-0">
+    <div className="relative isolate flex min-h-[100dvh] w-full select-none flex-col justify-start sm:justify-center overflow-hidden bg-brand-secondary px-2 py-8 sm:px-6 md:gap-6 md:py-0">
       <style>{`
         @keyframes pc-word-rotate {
           0%   { opacity: 0; transform: translateY(0.4em); }
@@ -344,7 +344,7 @@ export function PixelHero({
       </div>
 
       {/* Centro: descrição */}
-      <div className="order-2 my-auto flex w-full flex-col items-center justify-center px-1 text-center pointer-events-none md:my-0">
+      <div className="order-2 mt-4 flex w-full flex-col items-center justify-center px-1 text-center pointer-events-none">
         <p className="max-w-[95%] whitespace-pre-line px-1 text-sm font-normal leading-relaxed text-foreground-inverse/95 [text-shadow:0_2px_12px_rgb(0_0_0_/_0.55)] sm:max-w-md sm:text-lg md:max-w-xl md:text-xl">
           {description}
         </p>
