@@ -50,7 +50,7 @@ export function Footer() {
             </h4>
             <ul className="grid gap-sm">
               <li>
-                <a href="#" className={linkClass}>
+                <a href="https://wa.me/5561982473645" target="_blank" rel="noopener noreferrer" className={linkClass}>
                   <MessageCircle className="shrink-0 text-brand-accent" size={16} aria-hidden />
                   WhatsApp
                 </a>
