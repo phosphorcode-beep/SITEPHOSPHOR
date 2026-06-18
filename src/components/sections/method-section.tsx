@@ -35,11 +35,11 @@ export function MethodSection() {
   return (
     <section
       id="processo"
-      className="py-2xl text-foreground-inverse sm:py-3xl"
+      className="py-xl text-foreground-inverse sm:py-2xl"
     >
       <Container>
         {/* Cabeçalho centralizado */}
-        <div className="mx-auto mb-2xl max-w-4xl text-center">
+        <div className="mx-auto mb-xl max-w-4xl text-center">
           <BlurFade>
             <span className="font-secondary text-caption font-semibold uppercase tracking-widest text-brand-accent">
               {eyebrow}
@@ -73,13 +73,13 @@ export function MethodSection() {
             aria-hidden
           />
 
-          <div className="grid gap-2xl">
+          <div className="grid gap-xl">
             {phases.map((p, i) => {
               const left = i % 2 === 0;
               return (
                 <div
                   key={p.phase}
-                  className="relative md:grid md:grid-cols-2 md:items-center md:gap-3xl"
+                  className="relative md:grid md:grid-cols-2 md:items-center md:gap-2xl"
                 >
                   {/* Marcador central (desktop) */}
                   <span
@@ -168,7 +168,7 @@ export function MethodSection() {
           </div>
         </div>
 
-        <div className="mt-2xl flex justify-center">
+        <div className="mt-xl flex justify-center">
           <FlowButton href="#contato" text={cta} />
         </div>
       </Container>

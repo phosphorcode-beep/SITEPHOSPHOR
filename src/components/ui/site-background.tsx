@@ -6,27 +6,7 @@ export function SiteBackground() {
       aria-hidden
       className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-[#050505]"
     >
-      {/* 1. Ruído ultra-suave (dithering) */}
-      <div className="absolute inset-0 z-30 opacity-[0.018] mix-blend-screen">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-full w-full"
-          preserveAspectRatio="none"
-        >
-          <filter id="microGrain">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.99"
-              numOctaves="2"
-              stitchTiles="stitch"
-            />
-            <feColorMatrix type="saturate" values="0" />
-          </filter>
-          <rect width="100%" height="100%" filter="url(#microGrain)" />
-        </svg>
-      </div>
-
-      {/* 2. Grid técnico suavizado */}
+      {/* 1. Grid técnico suavizado */}
       <div
         className="absolute inset-0 z-10 opacity-[0.012]"
         style={{

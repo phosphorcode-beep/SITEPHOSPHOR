@@ -85,7 +85,7 @@ export default function Home() {
 
       {/* Formulário ──────────────────────────────────────────── */}
       <Section id="contato">
-        <div className="grid gap-2xl lg:grid-cols-2 lg:items-center">
+        <div className="grid gap-xl lg:grid-cols-2 lg:items-center">
           {/* Copy à esquerda */}
           <div className="text-left">
             <BlurFade>
@@ -146,7 +146,7 @@ export default function Home() {
 
       {/* Como começamos ──────────────────────────────────────── */}
       <section
-        className="relative overflow-hidden py-2xl text-foreground-inverse sm:py-3xl"
+        className="relative overflow-hidden py-xl text-foreground-inverse sm:py-2xl"
         id="comecar"
       >
         <div
@@ -157,7 +157,7 @@ export default function Home() {
           aria-hidden
         />
         <Container className="relative">
-          <div className="grid items-center gap-2xl lg:grid-cols-2">
+          <div className="grid items-center gap-xl lg:grid-cols-2">
             {/* Copy à esquerda */}
             <div className="text-left">
               <BlurFade>

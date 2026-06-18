@@ -7,7 +7,7 @@ export function WebCodingLottie() {
     <LottieIDV
       src="/lottie/web-coding.json"
       label="Desenvolvimento web"
-      className="h-auto w-full max-w-[620px]"
+      className="h-auto w-full max-w-[800px]"
     />
   );
 }

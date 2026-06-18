@@ -14,7 +14,7 @@ export function Section({
   containerClassName?: string;
 }) {
   return (
-    <section className={cn("py-2xl sm:py-3xl", className)} id={id}>
+    <section className={cn("py-xl sm:py-2xl", className)} id={id}>
       <Container className={containerClassName}>{children}</Container>
     </section>
   );

@@ -41,7 +41,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 px-4 pt-3 sm:pt-4">
       <Container className="px-0">
         {/* Pílula única (compacta e centralizada) */}
-        <div className="mx-auto flex w-fit max-w-full items-center gap-2 rounded-full border border-foreground-inverse/10 bg-[#0a0f0a]/80 p-1.5 shadow-brand-lg backdrop-blur-xl">
+        <div className="mx-auto flex w-fit max-w-full items-center gap-2 rounded-full border border-foreground-inverse/10 bg-[#0a0f0a]/90 p-1.5 shadow-brand-lg backdrop-blur-sm">
           {/* Logo */}
           <Link
             href="#top"
@@ -119,7 +119,7 @@ export function Navbar() {
 
         {/* Menu mobile */}
         {mobileOpen && (
-          <div className="mx-auto mt-2 w-full max-w-sm rounded-3xl border border-foreground-inverse/10 bg-[#0a0f0a]/95 p-3 backdrop-blur-xl lg:hidden">
+          <div className="mx-auto mt-2 w-full max-w-sm rounded-3xl border border-foreground-inverse/10 bg-[#0a0f0a]/98 p-3 lg:hidden">
             <div className="grid gap-1">
               {siteContent.nav.map((item) => (
                 <Link

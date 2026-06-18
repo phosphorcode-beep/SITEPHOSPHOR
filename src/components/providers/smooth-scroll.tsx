@@ -6,7 +6,8 @@ import Lenis from "lenis";
 export function SmoothScroll() {
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (prefersReducedMotion.matches) return;
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    if (prefersReducedMotion.matches || isMobile) return;
 
     const lenis = new Lenis({
       lerp: 0.12,

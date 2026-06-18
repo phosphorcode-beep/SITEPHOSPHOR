@@ -14,7 +14,7 @@ export function Footer() {
     <footer className="relative overflow-hidden border-t border-border/12 text-foreground-inverse">
       <FooterBackgroundGradient />
 
-      <Container className="relative z-10 py-2xl">
+      <Container className="relative z-10 py-xl">
         <div className="grid grid-cols-1 gap-xl pb-xl sm:grid-cols-2 lg:grid-cols-4">
           {/* Marca */}
           <div className="flex flex-col gap-md">
@@ -105,7 +105,7 @@ export function Footer() {
       </Container>
 
       {/* Wordmark gigante com revelação no hover */}
-      <div className="relative z-10 -mb-10 -mt-16 hidden h-[16rem] items-center lg:flex">
+      <div className="relative z-10 -mb-6 -mt-12 hidden h-[12rem] items-center lg:flex">
         <TextHoverEffect text="phosphorcode" />
       </div>
     </footer>

@@ -79,19 +79,21 @@ select {
 }
 
 /* ── Hero scan line ─────────────────────────────────────────────── */
-.hero-scan::after {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 80px;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgb(var(--color-accent) / 0.05),
-    transparent
-  );
-  animation: pc-scan 10s linear infinite;
-  pointer-events: none;
+@media (min-width: 768px) {
+  .hero-scan::after {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 80px;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--color-accent) / 0.05),
+      transparent
+    );
+    animation: pc-scan 10s linear infinite;
+    pointer-events: none;
+  }
 }
 
 /* ── Hero glow ─────────────────────────────────────────────────── */

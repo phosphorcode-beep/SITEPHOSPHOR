@@ -138,7 +138,6 @@ export function DevSceneAnimation() {
             position: "absolute",
             background: "transparent",
             transformOrigin: "0 50%",
-            willChange: "transform",
             animation: "pcBreathe 6.5s ease-in-out infinite",
           }}
         >
