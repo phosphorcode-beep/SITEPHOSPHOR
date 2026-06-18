@@ -31,8 +31,6 @@ function sh(
 
 /* ── CSS global (keyframes) ────────────────────────────────────── */
 const CSS = `
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700&family=JetBrains+Mono:wght@400&display=swap');
-
 @keyframes pcFlash {
   from { opacity: 1;    }
   to   { opacity: 0.78; }
@@ -92,12 +90,13 @@ export function DevSceneAnimation() {
           transform: "translateX(-5vw)",
         }}
       >
-        {/* Monitor glow */}
+        {/* Monitor glow — cone recortado com clip-path */}
         <div
           style={sh("0", "18.23vw", "19.79vw", "10.42vw", "18.75vw", {
-            background: "radial-gradient(at center left, #9DB07A, transparent 75%)",
+            background: "radial-gradient(at center left, #9DB07A55, transparent 80%)",
             transform: "rotate(-10deg)",
             transformOrigin: "0 50%",
+            clipPath: "polygon(0% 33%, 100% 0%, 100% 100%, 0% 81%)",
             animation: "pcFlash 0.08s steps(2) infinite alternate",
           })}
         />
