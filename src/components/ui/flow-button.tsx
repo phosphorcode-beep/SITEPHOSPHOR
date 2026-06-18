@@ -11,6 +11,16 @@ interface FlowButtonProps {
   className?: string;
 }
 
+const SHIMMER_CSS = `
+@keyframes flowShimmer {
+  0%   { transform: translateX(-120%) skewX(-20deg); }
+  100% { transform: translateX(320%) skewX(-20deg); }
+}
+.flow-btn-shimmer {
+  animation: flowShimmer 2.6s ease-in-out infinite;
+}
+`;
+
 export function FlowButton({
   text = "Modern Button",
   href,
@@ -24,6 +34,25 @@ export function FlowButton({
 
   const content = (
     <>
+      <style dangerouslySetInnerHTML={{ __html: SHIMMER_CSS }} />
+
+      {/* shimmer contínuo */}
+      <span
+        className="flow-btn-shimmer pointer-events-none absolute inset-y-0 z-[2] w-[30%] opacity-0 group-hover:opacity-0"
+        style={{
+          background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent)",
+        }}
+        aria-hidden
+      />
+      <span
+        className="flow-btn-shimmer pointer-events-none absolute inset-y-0 z-[2] w-[30%]"
+        style={{
+          background: "linear-gradient(90deg, transparent, rgba(157,176,122,0.22), transparent)",
+          animationDelay: "0.4s",
+        }}
+        aria-hidden
+      />
+
       {/* seta esquerda */}
       <ArrowRight className="absolute left-[-25%] z-[9] h-4 w-4 fill-none transition-all duration-[800ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:left-4" />
 

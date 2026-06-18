@@ -6,8 +6,6 @@ import type { CSSProperties } from "react";
 const BG    = "#0E100B";
 const SHAPE = "#F2F1E7";
 const EYE   = "#9DB07A";
-const MONO  = "'JetBrains Mono', monospace";
-const FONT  = "'Hanken Grotesk', sans-serif";
 
 /* ── Helper de shape (replica o sh() do DC) ────────────────────── */
 function sh(
@@ -94,7 +92,7 @@ export function DevSceneAnimation() {
           transform: "translateX(-5vw)",
         }}
       >
-        {/* Monitor glow + cone-mask */}
+        {/* Monitor glow */}
         <div
           style={sh("0", "18.23vw", "19.79vw", "10.42vw", "18.75vw", {
             background: "radial-gradient(at center left, #9DB07A, transparent 75%)",
@@ -102,30 +100,7 @@ export function DevSceneAnimation() {
             transformOrigin: "0 50%",
             animation: "pcFlash 0.08s steps(2) infinite alternate",
           })}
-        >
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: 0,
-              height: 0,
-              borderBottom: `6.25vw solid transparent`,
-              borderLeft: `10.42vw solid ${BG}`,
-            }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              bottom: 0,
-              left: 0,
-              width: 0,
-              height: 0,
-              borderTop: `3.65vw solid transparent`,
-              borderLeft: `9.38vw solid ${BG}`,
-            }}
-          />
-        </div>
+        />
 
         {/* Monitor corpo */}
         <div style={sh("1.04vw", "16.67vw", "23.96vw", "11.46vw", "2.08vw", { transform: "rotate(80deg)" })} />
@@ -223,42 +198,6 @@ export function DevSceneAnimation() {
         </div>
       </div>
 
-      {/* ── Label canto superior esquerdo ─────────────────────── */}
-      <div
-        aria-hidden
-        style={{
-          position: "absolute",
-          left: "3vw",
-          top: "3vw",
-          fontFamily: MONO,
-          fontSize: "0.85vw",
-          letterSpacing: "0.18em",
-          textTransform: "uppercase",
-          color: "rgba(157,176,122,0.55)",
-          pointerEvents: "none",
-        }}
-      >
-        PHOSPHORCODE · EM OPERAÇÃO
-      </div>
-
-      {/* ── Wordmark canto inferior direito ───────────────────── */}
-      <div
-        aria-hidden
-        style={{
-          position: "absolute",
-          right: "3vw",
-          bottom: "3vw",
-          fontFamily: FONT,
-          fontSize: "1.6vw",
-          fontWeight: 700,
-          letterSpacing: "-0.02em",
-          color: "rgba(242,241,231,0.85)",
-          pointerEvents: "none",
-          lineHeight: 1,
-        }}
-      >
-        phosphor<span style={{ color: "#9DB07A" }}>code</span>
-      </div>
     </div>
   );
 }
