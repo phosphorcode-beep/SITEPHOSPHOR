@@ -73,7 +73,7 @@ export function MethodSection() {
             aria-hidden
           />
 
-          <div className="grid gap-xl">
+          <div className="grid gap-xl md:gap-2xl">
             {phases.map((p, i) => {
               const left = i % 2 === 0;
               return (
@@ -90,7 +90,7 @@ export function MethodSection() {
                   {/* Animação ao lado do card da Fase 01 */}
                   {i === 0 && (
                     <motion.div
-                      className="mb-md overflow-hidden md:overflow-visible md:col-start-2 md:row-start-1 md:mb-0 md:flex md:items-center"
+                      className="mx-auto mb-md flex w-full max-w-[300px] items-center justify-center md:col-start-2 md:row-start-1 md:mb-0 md:max-w-none"
                       variants={card(false)}
                       initial="hidden"
                       whileInView="visible"
@@ -109,7 +109,7 @@ export function MethodSection() {
                       whileInView="visible"
                       viewport={{ once: true, amount: 0.4 }}
                     >
-                      <div className="relative mx-auto flex h-[220px] w-full items-center justify-center overflow-hidden md:h-[480px] md:overflow-visible">
+                      <div className="relative mx-auto flex h-[260px] w-full items-center justify-center overflow-hidden md:h-[480px] md:overflow-visible">
                         <div className="macbook-fit relative h-[190px] w-[190px]">
                           <Macbook />
                         </div>
@@ -120,7 +120,7 @@ export function MethodSection() {
                   {/* Animação ao lado do card da Fase 03 */}
                   {i === 2 && (
                     <motion.div
-                      className="mb-md overflow-hidden md:overflow-visible md:col-start-2 md:row-start-1 md:mb-0 md:flex md:items-center"
+                      className="mx-auto mb-md flex w-full max-w-[300px] items-center justify-center md:col-start-2 md:row-start-1 md:mb-0 md:max-w-none"
                       variants={card(false)}
                       initial="hidden"
                       whileInView="visible"
@@ -133,7 +133,7 @@ export function MethodSection() {
                   {/* Animação ao lado do card da Fase 04 */}
                   {i === phases.length - 1 && (
                     <motion.div
-                      className="mb-md overflow-hidden md:overflow-visible md:col-start-1 md:mb-0 md:flex md:items-center"
+                      className="mx-auto mb-md flex w-full max-w-[300px] items-center justify-center md:col-start-1 md:mb-0 md:max-w-none"
                       variants={card(true)}
                       initial="hidden"
                       whileInView="visible"

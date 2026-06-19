@@ -41,7 +41,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 px-4 pt-3 sm:pt-4">
       <Container className="px-0">
         {/* Pílula única (compacta e centralizada) */}
-        <div className="mx-auto flex w-fit max-w-full items-center gap-2 rounded-full border border-foreground-inverse/10 bg-[#0a0f0a]/90 p-1.5 shadow-brand-lg backdrop-blur-sm">
+        <div className="relative z-50 mx-auto flex w-fit max-w-full items-center gap-2 rounded-full border border-foreground-inverse/10 bg-[#0a0f0a]/90 p-1.5 shadow-brand-lg backdrop-blur-sm">
           {/* Logo */}
           <Link
             href="#top"

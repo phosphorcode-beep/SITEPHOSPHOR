@@ -160,6 +160,7 @@ export default function Home() {
           <div className="grid items-center gap-xl lg:grid-cols-2">
             {/* Copy à esquerda */}
             <div className="text-left">
+
               <BlurFade>
                 <span className="font-secondary text-caption font-semibold uppercase tracking-widest text-brand-accent">
                   {gettingStarted.eyebrow}

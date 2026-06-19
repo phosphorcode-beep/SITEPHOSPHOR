@@ -17,7 +17,7 @@ export function Footer() {
       <Container className="relative z-10 py-lg sm:py-xl">
         <div className="grid grid-cols-2 gap-x-md gap-y-lg pb-lg sm:pb-xl lg:grid-cols-4">
           {/* Marca */}
-          <div className="flex flex-col gap-md">
+          <div className="col-span-2 flex flex-col gap-md sm:col-span-1">
             <Wordmark className="text-2xl" />
             <p className="text-small text-foreground-inverse/65 sm:max-w-xs">
               {siteContent.brand.tagline}
