@@ -18,14 +18,14 @@ export function ContactForm() {
     mensagem: "",
   });
 
+  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+
   function set(field: keyof typeof fields) {
     return (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
       setFields((prev) => ({ ...prev, [field]: e.target.value }));
   }
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-
+  function openWhatsAppFallback() {
     const text = [
       `🟢 *Nova mensagem via site Phosphorcode*`,
       ``,
@@ -43,6 +43,39 @@ export function ContactForm() {
       `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`,
       "_blank",
       "noopener,noreferrer",
+    );
+  }
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(fields),
+      });
+      if (!res.ok) throw new Error("falha no envio");
+      setStatus("sent");
+    } catch {
+      // Se o envio automático falhar, cai no fluxo do WhatsApp
+      openWhatsAppFallback();
+      setStatus("idle");
+    }
+  }
+
+  if (status === "sent") {
+    return (
+      <div
+        className="reveal grid gap-sm rounded-brand-lg border border-border/14 bg-background p-lg text-center shadow-brand-sm"
+        data-delay="120"
+      >
+        <p className="text-lg font-semibold text-foreground">Recebemos seu contato.</p>
+        <p className="text-sm text-foreground-secondary/80">
+          A Antonela vai te chamar no WhatsApp em instantes. Fique de olho no número que você informou.
+        </p>
+      </div>
     );
   }
 
@@ -116,12 +149,12 @@ export function ContactForm() {
 
       <FlowButton
         type="submit"
-        text="Enviar pelo WhatsApp"
+        text={status === "sending" ? "Enviando..." : "Falar com a Phosphorcode"}
         className="mt-sm w-full justify-center"
       />
 
       <p className="text-center text-xs text-foreground-secondary/60">
-        Ao enviar, você será redirecionado ao WhatsApp com a mensagem já preenchida.
+        Ao enviar, a Antonela entra em contato com você no WhatsApp.
       </p>
     </form>
   );
