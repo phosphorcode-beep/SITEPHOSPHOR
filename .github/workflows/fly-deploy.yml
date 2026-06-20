@@ -1,0 +1,30 @@
+name: Deploy para Fly.io
+
+# Faz deploy automático a cada push na branch main.
+# Também pode ser disparado manualmente pela aba "Actions" do GitHub.
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# Garante que só um deploy roda por vez (cancela builds antigos em fila)
+concurrency:
+  group: fly-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Build e Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Instalar flyctl
+        uses: superfly/flyctl-actions/setup-flyctl@master
+
+      - name: Deploy
+        run: flyctl deploy --remote-only
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
