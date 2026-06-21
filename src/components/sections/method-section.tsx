@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion, useReducedMotion, type Variants } from "motion/react";
 import { Container } from "@/components/ui/container";
 import { FlowButton } from "@/components/ui/flow-button";
@@ -18,12 +19,22 @@ const [estruturadoBefore, estruturadoAfter] = (titleLineTwo ?? "").split("estrut
 
 export function MethodSection() {
   const reduced = useReducedMotion();
+  const [isMobile, setIsMobile] = useState(false);
+
+  // No mobile, sem deslocamento horizontal (evita o card sair da tela).
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mq.matches);
+    const onChange = () => setIsMobile(mq.matches);
+    mq.addEventListener?.("change", onChange);
+    return () => mq.removeEventListener?.("change", onChange);
+  }, []);
 
   const card = (left: boolean): Variants =>
     reduced
       ? { hidden: { opacity: 1 }, visible: { opacity: 1 } }
       : {
-          hidden: { opacity: 0, x: left ? -48 : 48, y: 16 },
+          hidden: { opacity: 0, x: isMobile ? 0 : left ? -48 : 48, y: 16 },
           visible: {
             opacity: 1,
             x: 0,
