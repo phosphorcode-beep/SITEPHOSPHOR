@@ -90,7 +90,7 @@ export function MethodSection() {
                   {/* Animação ao lado do card da Fase 01 */}
                   {i === 0 && (
                     <motion.div
-                      className="hidden md:col-start-2 md:row-start-1 md:mb-0 md:flex md:max-w-none md:items-center md:justify-center"
+                      className="mx-auto mb-md flex w-full max-w-[240px] items-center justify-center md:col-start-2 md:row-start-1 md:mb-0 md:max-w-none"
                       variants={card(false)}
                       initial="hidden"
                       whileInView="visible"
@@ -103,13 +103,13 @@ export function MethodSection() {
                   {/* MacBook 3D animado ao lado do card da Fase 02 */}
                   {i === 1 && (
                     <motion.div
-                      className="hidden overflow-hidden md:col-start-1 md:row-start-1 md:mb-0 md:flex md:items-center md:justify-center md:overflow-visible"
+                      className="mb-md flex items-center justify-center overflow-hidden md:col-start-1 md:row-start-1 md:mb-0 md:overflow-visible"
                       variants={card(true)}
                       initial="hidden"
                       whileInView="visible"
                       viewport={{ once: true, amount: 0.4 }}
                     >
-                      <div className="relative mx-auto flex h-[260px] w-full items-center justify-center overflow-hidden md:h-[480px] md:overflow-visible">
+                      <div className="relative mx-auto flex h-[210px] w-full items-center justify-center overflow-hidden sm:h-[260px] md:h-[480px] md:overflow-visible">
                         <div className="macbook-fit relative h-[190px] w-[190px]">
                           <Macbook />
                         </div>
@@ -120,7 +120,7 @@ export function MethodSection() {
                   {/* Animação ao lado do card da Fase 03 */}
                   {i === 2 && (
                     <motion.div
-                      className="hidden md:col-start-2 md:row-start-1 md:mb-0 md:flex md:max-w-none md:items-center md:justify-center"
+                      className="mx-auto mb-md flex w-full max-w-[240px] items-center justify-center md:col-start-2 md:row-start-1 md:mb-0 md:max-w-none"
                       variants={card(false)}
                       initial="hidden"
                       whileInView="visible"
@@ -133,7 +133,7 @@ export function MethodSection() {
                   {/* Animação ao lado do card da Fase 04 */}
                   {i === phases.length - 1 && (
                     <motion.div
-                      className="hidden md:col-start-1 md:mb-0 md:flex md:max-w-none md:items-center md:justify-center"
+                      className="mx-auto mb-md flex w-full max-w-[240px] items-center justify-center md:col-start-1 md:mb-0 md:max-w-none"
                       variants={card(true)}
                       initial="hidden"
                       whileInView="visible"

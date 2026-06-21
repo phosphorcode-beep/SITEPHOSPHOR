@@ -1,12 +1,22 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "motion/react";
 
 /* MacBook 3D preto: chega fechado e a tampa abre conforme o scroll da página. */
 const Macbook: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
+  const [isMobile, setIsMobile] = useState(false);
+
+  // No mobile o efeito de abrir no scroll fica instável, então abre por padrão.
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mq.matches);
+    const onChange = () => setIsMobile(mq.matches);
+    mq.addEventListener?.("change", onChange);
+    return () => mq.removeEventListener?.("change", onChange);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -17,7 +27,7 @@ const Macbook: React.FC = () => {
   const lidRotate = useTransform(scrollYProgress, [0.18, 0.52], [-90, 0]);
   const screenOpacity = useTransform(scrollYProgress, [0.4, 0.55], [0, 1]);
 
-  const lidStyle = reduced
+  const lidStyle = reduced || isMobile
     ? { transform: "rotateX(0deg)" }
     : { rotateX: lidRotate };
 
@@ -47,7 +57,7 @@ const Macbook: React.FC = () => {
             {/* Display: site da Phosphor */}
             <motion.div
               className="w-[130px] h-[74px] m-[10px] rounded-[1px] relative overflow-hidden bg-[rgb(13_17_10)] shadow-[inset_0_0_2px_rgba(0,0,0,1)]"
-              style={reduced ? undefined : { opacity: screenOpacity }}
+              style={reduced || isMobile ? undefined : { opacity: screenOpacity }}
             >
               <div
                 className="absolute inset-0 opacity-[0.1]"
