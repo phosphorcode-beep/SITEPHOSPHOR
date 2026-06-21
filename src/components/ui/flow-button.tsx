@@ -20,11 +20,11 @@ const SHIMMER_CSS = `
   animation: flowShimmer 2.6s ease-in-out infinite;
 }
 @keyframes flowPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(64,132,52,0); border-color: rgb(var(--color-primary) / 0.45); }
-  50%      { box-shadow: 0 0 20px 1px rgba(64,132,52,0.45); border-color: rgb(var(--color-primary) / 0.9); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(150,210,110,0); border-color: rgb(var(--color-primary) / 0.5); }
+  50%      { box-shadow: 0 0 24px 2px rgba(150,210,110,0.55); border-color: rgb(var(--color-accent) / 1); }
 }
 .flow-btn-pulse {
-  animation: flowPulse 2.8s ease-in-out infinite;
+  animation: flowPulse 2.6s ease-in-out infinite;
 }
 @media (prefers-reduced-motion: reduce) {
   .flow-btn-shimmer, .flow-btn-pulse { animation: none; }

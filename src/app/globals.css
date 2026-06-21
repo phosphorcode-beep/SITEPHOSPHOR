@@ -166,7 +166,7 @@ select {
 .macbook-key { transform: translateZ(-2px); }
 
 /* MacBook: tamanho responsivo (zoom re-renderiza nítido em vez de esticar). */
-.macbook-fit { zoom: 1.25; }
+.macbook-fit { zoom: 0.7; }
 @media (min-width: 768px) {
   .macbook-fit { zoom: 2.6; }
 }

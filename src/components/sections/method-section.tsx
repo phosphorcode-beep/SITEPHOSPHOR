@@ -90,7 +90,7 @@ export function MethodSection() {
               return (
                 <div
                   key={p.phase}
-                  className="relative md:grid md:grid-cols-2 md:items-center md:gap-2xl"
+                  className="relative flex items-center gap-sm md:grid md:grid-cols-2 md:items-center md:gap-2xl"
                 >
                   {/* Marcador central (desktop) */}
                   <span
@@ -101,7 +101,7 @@ export function MethodSection() {
                   {/* Animação ao lado do card da Fase 01 */}
                   {i === 0 && (
                     <motion.div
-                      className="mx-auto mb-md flex w-full max-w-[240px] items-center justify-center md:col-start-2 md:row-start-1 md:mb-0 md:max-w-none"
+                      className="flex w-[38%] shrink-0 items-center justify-center md:col-start-2 md:row-start-1 md:w-auto md:max-w-none"
                       variants={card(false)}
                       initial="hidden"
                       whileInView="visible"
@@ -114,13 +114,13 @@ export function MethodSection() {
                   {/* MacBook 3D animado ao lado do card da Fase 02 */}
                   {i === 1 && (
                     <motion.div
-                      className="mb-md flex items-center justify-center overflow-hidden md:col-start-1 md:row-start-1 md:mb-0 md:overflow-visible"
+                      className="flex w-[38%] shrink-0 items-center justify-center overflow-hidden md:col-start-1 md:row-start-1 md:w-auto md:overflow-visible"
                       variants={card(true)}
                       initial="hidden"
                       whileInView="visible"
                       viewport={{ once: true, amount: 0.4 }}
                     >
-                      <div className="relative mx-auto flex h-[210px] w-full items-center justify-center overflow-hidden sm:h-[260px] md:h-[480px] md:overflow-visible">
+                      <div className="relative mx-auto flex h-[150px] w-full items-center justify-center overflow-hidden sm:h-[260px] md:h-[480px] md:overflow-visible">
                         <div className="macbook-fit relative h-[190px] w-[190px]">
                           <Macbook />
                         </div>
@@ -131,7 +131,7 @@ export function MethodSection() {
                   {/* Animação ao lado do card da Fase 03 */}
                   {i === 2 && (
                     <motion.div
-                      className="mx-auto mb-md flex w-full max-w-[240px] items-center justify-center md:col-start-2 md:row-start-1 md:mb-0 md:max-w-none"
+                      className="flex w-[38%] shrink-0 items-center justify-center md:col-start-2 md:row-start-1 md:w-auto md:max-w-none"
                       variants={card(false)}
                       initial="hidden"
                       whileInView="visible"
@@ -144,7 +144,7 @@ export function MethodSection() {
                   {/* Animação ao lado do card da Fase 04 */}
                   {i === phases.length - 1 && (
                     <motion.div
-                      className="mx-auto mb-md flex w-full max-w-[240px] items-center justify-center md:col-start-1 md:mb-0 md:max-w-none"
+                      className="flex w-[38%] shrink-0 items-center justify-center md:col-start-1 md:w-auto md:max-w-none"
                       variants={card(true)}
                       initial="hidden"
                       whileInView="visible"
@@ -155,7 +155,7 @@ export function MethodSection() {
                   )}
 
                   <motion.div
-                    className={left ? "md:col-start-1" : "md:col-start-2"}
+                    className={`min-w-0 flex-1 md:flex-none ${left ? "md:col-start-1" : "md:col-start-2"}`}
                     variants={card(left)}
                     initial="hidden"
                     whileInView="visible"
