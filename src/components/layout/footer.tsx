@@ -5,7 +5,7 @@ import { Wordmark } from "@/components/ui/wordmark";
 import { siteContent } from "@/content/site-content";
 
 const linkClass =
-  "flex items-center gap-sm text-small text-foreground-inverse/70 transition-colors hover:text-brand-accent";
+  "flex min-w-0 items-center gap-sm break-words text-small text-foreground-inverse/70 transition-colors hover:text-brand-accent";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -15,7 +15,7 @@ export function Footer() {
       <FooterBackgroundGradient />
 
       <Container className="relative z-10 py-lg sm:py-xl">
-        <div className="grid grid-cols-2 gap-x-md gap-y-lg pb-lg sm:pb-xl lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-x-md gap-y-lg pb-lg sm:pb-xl lg:grid-cols-4 [&>*]:min-w-0">
           {/* Marca */}
           <div className="col-span-2 flex flex-col gap-md sm:col-span-1">
             <Wordmark className="text-2xl" />
