@@ -90,7 +90,7 @@ export function MethodSection() {
                   {/* Animação ao lado do card da Fase 01 */}
                   {i === 0 && (
                     <motion.div
-                      className="mx-auto mb-md flex w-full max-w-[300px] items-center justify-center md:col-start-2 md:row-start-1 md:mb-0 md:max-w-none"
+                      className="hidden md:col-start-2 md:row-start-1 md:mb-0 md:flex md:max-w-none md:items-center md:justify-center"
                       variants={card(false)}
                       initial="hidden"
                       whileInView="visible"
@@ -103,7 +103,7 @@ export function MethodSection() {
                   {/* MacBook 3D animado ao lado do card da Fase 02 */}
                   {i === 1 && (
                     <motion.div
-                      className="mb-md overflow-hidden md:overflow-visible md:col-start-1 md:row-start-1 md:mb-0 md:flex md:items-center md:justify-center"
+                      className="hidden overflow-hidden md:col-start-1 md:row-start-1 md:mb-0 md:flex md:items-center md:justify-center md:overflow-visible"
                       variants={card(true)}
                       initial="hidden"
                       whileInView="visible"
@@ -120,7 +120,7 @@ export function MethodSection() {
                   {/* Animação ao lado do card da Fase 03 */}
                   {i === 2 && (
                     <motion.div
-                      className="mx-auto mb-md flex w-full max-w-[300px] items-center justify-center md:col-start-2 md:row-start-1 md:mb-0 md:max-w-none"
+                      className="hidden md:col-start-2 md:row-start-1 md:mb-0 md:flex md:max-w-none md:items-center md:justify-center"
                       variants={card(false)}
                       initial="hidden"
                       whileInView="visible"
@@ -133,7 +133,7 @@ export function MethodSection() {
                   {/* Animação ao lado do card da Fase 04 */}
                   {i === phases.length - 1 && (
                     <motion.div
-                      className="mx-auto mb-md flex w-full max-w-[300px] items-center justify-center md:col-start-1 md:mb-0 md:max-w-none"
+                      className="hidden md:col-start-1 md:mb-0 md:flex md:max-w-none md:items-center md:justify-center"
                       variants={card(true)}
                       initial="hidden"
                       whileInView="visible"

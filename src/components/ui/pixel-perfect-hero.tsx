@@ -304,7 +304,7 @@ export function PixelHero({
   }, []);
 
   return (
-    <div className="relative isolate flex min-h-[100dvh] w-full select-none flex-col justify-center overflow-hidden bg-brand-secondary px-4 pb-10 pt-24 sm:px-6 sm:py-8 md:gap-6 md:py-0">
+    <div className="relative isolate flex min-h-[78svh] w-full select-none flex-col justify-center overflow-hidden bg-brand-secondary px-4 pb-12 pt-20 sm:min-h-[100dvh] sm:px-6 sm:py-8 md:gap-6 md:py-0">
       <style>{`
         @keyframes pc-word-rotate {
           0%   { opacity: 0; transform: translateY(0.4em); }
