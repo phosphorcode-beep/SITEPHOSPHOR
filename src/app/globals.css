@@ -166,13 +166,19 @@ select {
 .macbook-key { transform: translateZ(-2px); }
 
 /* MacBook: tamanho responsivo (zoom re-renderiza nítido em vez de esticar). */
-.macbook-fit { zoom: 1.5; }
+.macbook-fit { zoom: 0.7; }
 @media (min-width: 768px) {
   .macbook-fit { zoom: 2.6; }
 }
 
 /* Evita scroll horizontal acidental no mobile. */
 body { overflow-x: hidden; }
+
+/* Âncoras param abaixo da navbar fixa (não ficam escondidas atrás dela). */
+section[id],
+[id] {
+  scroll-margin-top: 5.5rem;
+}
 
 /* Lenis */
 html.lenis,

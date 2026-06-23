@@ -23,6 +23,16 @@ const SHIMMER_CSS = `
 .group:hover .flow-btn-shimmer {
   animation-play-state: running;
 }
+@keyframes flowPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(150,210,110,0); border-color: rgb(var(--color-primary) / 0.5); }
+  50%      { box-shadow: 0 0 24px 2px rgba(150,210,110,0.55); border-color: rgb(var(--color-accent) / 1); }
+}
+.flow-btn-pulse {
+  animation: flowPulse 2.6s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .flow-btn-shimmer, .flow-btn-pulse { animation: none; }
+}
 `;
 
 export function FlowButton({
@@ -32,7 +42,7 @@ export function FlowButton({
   className,
 }: FlowButtonProps) {
   const classes = cn(
-    "group relative inline-flex items-center gap-1 overflow-hidden rounded-[100px] border-[1.5px] border-brand-primary/45 bg-transparent px-8 py-3 text-sm font-semibold text-foreground-inverse cursor-pointer transition-all duration-[600ms] ease-[cubic-bezier(0.23,1,0.32,1)] hover:rounded-[12px] hover:border-transparent active:scale-[0.95]",
+    "flow-btn-pulse group relative inline-flex items-center gap-1 overflow-hidden rounded-[100px] border-[1.5px] border-brand-primary/45 bg-transparent px-8 py-3 text-sm font-semibold text-foreground-inverse cursor-pointer transition-all duration-[600ms] ease-[cubic-bezier(0.23,1,0.32,1)] hover:rounded-[12px] hover:border-transparent active:scale-[0.95]",
     className,
   );
 

@@ -321,7 +321,7 @@ export function PixelHero({
   }, []);
 
   return (
-    <div className="relative isolate flex min-h-[100dvh] w-full select-none flex-col justify-start sm:justify-center overflow-hidden bg-brand-secondary px-2 py-8 sm:px-6 md:gap-6 md:py-0">
+    <div className="relative isolate flex min-h-[78svh] w-full select-none flex-col justify-center overflow-hidden bg-brand-secondary px-4 pb-12 pt-20 sm:min-h-[100dvh] sm:px-6 sm:py-8 md:gap-6 md:py-0">
       <style>{`
         @keyframes pc-word-rotate {
           0%   { opacity: 0; transform: translateY(0.4em); }
@@ -351,7 +351,7 @@ export function PixelHero({
       </div>
 
       {/* Topo: headline com palavra rotativa */}
-      <div className="order-1 mt-24 flex w-full flex-col items-center justify-center text-center pointer-events-none sm:mt-0">
+      <div className="order-1 flex w-full flex-col items-center justify-center text-center pointer-events-none">
         <h1 className="mx-auto max-w-4xl px-1 font-primary text-[2rem] font-bold leading-[1.12] tracking-tight text-foreground-inverse sm:text-4xl md:text-5xl lg:text-6xl">
           <span className="block">{baseText}</span>
           <span className="mt-1 block">
@@ -370,7 +370,7 @@ export function PixelHero({
       {/* Base: CTAs */}
       <div
         className={cn(
-          "order-4 mb-4 mt-4 flex flex-row items-center justify-center gap-3 px-1 pointer-events-auto transition-all duration-1000 md:order-3 md:mb-0 md:mt-10",
+          "order-4 flex flex-row items-center justify-center gap-3 px-1 pointer-events-auto transition-all duration-1000 md:order-3 md:mb-0 md:mt-10",
           isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0",
         )}
         style={{ transitionDelay: "450ms" }}
