@@ -109,6 +109,7 @@ function PixelCanvas({ colors, gap = 5, speed = 30 }: PixelCanvasProps) {
   const animationRef = useRef<number>(0);
   const lastFrameRef = useRef(performance.now());
   const reducedMotionRef = useRef(false);
+  const isVisibleRef = useRef(false);
 
   const init = useCallback(() => {
     const canvas = canvasRef.current;
@@ -144,9 +145,10 @@ function PixelCanvas({ colors, gap = 5, speed = 30 }: PixelCanvasProps) {
 
   const animate = useCallback((mode: "appear" | "disappear") => {
     cancelAnimationFrame(animationRef.current);
-    const frameInterval = 1000 / 60;
+    const frameInterval = 1000 / 30;
 
     const loop = () => {
+      if (!isVisibleRef.current) return;
       animationRef.current = requestAnimationFrame(loop);
 
       const now = performance.now();
@@ -173,15 +175,30 @@ function PixelCanvas({ colors, gap = 5, speed = 30 }: PixelCanvasProps) {
 
   useEffect(() => {
     reducedMotionRef.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reducedMotionRef.current) return;
+    if (window.matchMedia("(max-width: 767px)").matches) return;
+
     init();
 
     const resizeObserver = new ResizeObserver(() => init());
     if (wrapRef.current) resizeObserver.observe(wrapRef.current);
 
-    animate("appear");
+    const intersectionObserver = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+        if (entry.isIntersecting) {
+          animate("appear");
+        } else {
+          cancelAnimationFrame(animationRef.current);
+        }
+      },
+      { threshold: 0 },
+    );
+    if (wrapRef.current) intersectionObserver.observe(wrapRef.current);
 
     return () => {
       resizeObserver.disconnect();
+      intersectionObserver.disconnect();
       cancelAnimationFrame(animationRef.current);
     };
   }, [init, animate]);
@@ -320,7 +337,7 @@ export function PixelHero({
 
       {/* Fundo de pixels + vinheta */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        {themeColors.length > 0 && <PixelCanvas colors={themeColors} gap={6} speed={30} />}
+        {themeColors.length > 0 && <PixelCanvas colors={themeColors} gap={12} speed={30} />}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgb(var(--color-secondary))_100%)] opacity-85" />
         {/* Grid técnico sutil */}
         <div

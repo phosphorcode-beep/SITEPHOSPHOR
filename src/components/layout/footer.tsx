@@ -56,7 +56,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href={`mailto:${siteContent.brand.contactEmail}`} className={linkClass}>
+                <a href={`mailto:${siteContent.brand.contactEmail}`} className={`${linkClass} break-all`}>
                   <Mail className="shrink-0 text-brand-accent" size={16} aria-hidden />
                   {siteContent.brand.contactEmail}
                 </a>

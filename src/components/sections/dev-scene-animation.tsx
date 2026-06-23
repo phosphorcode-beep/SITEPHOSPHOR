@@ -68,18 +68,6 @@ export function DevSceneAnimation() {
     >
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
 
-      {/* ── Grade de pontos decorativa ───────────────────────── */}
-      <div
-        aria-hidden
-        style={{
-          position: "absolute",
-          inset: 0,
-          pointerEvents: "none",
-          backgroundImage:
-            "radial-gradient(circle, rgba(157,176,122,0.07) 1px, transparent 1px)",
-          backgroundSize: "2.2vw 2.2vw",
-        }}
-      />
 
       {/* ── Cena — translateX ajustado para caber na coluna direita */}
       <div
@@ -97,7 +85,7 @@ export function DevSceneAnimation() {
             transform: "rotate(-10deg)",
             transformOrigin: "0 50%",
             clipPath: "polygon(0% 33%, 100% 0%, 100% 100%, 0% 81%)",
-            animation: "pcFlash 0.08s steps(2) infinite alternate",
+            animation: "pcFlash 0.7s steps(2) infinite alternate",
           })}
         />
 

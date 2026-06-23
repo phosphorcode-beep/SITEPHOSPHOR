@@ -18,6 +18,10 @@ const SHIMMER_CSS = `
 }
 .flow-btn-shimmer {
   animation: flowShimmer 2.6s ease-in-out infinite;
+  animation-play-state: paused;
+}
+.group:hover .flow-btn-shimmer {
+  animation-play-state: running;
 }
 `;
 
@@ -36,19 +40,11 @@ export function FlowButton({
     <>
       <style dangerouslySetInnerHTML={{ __html: SHIMMER_CSS }} />
 
-      {/* shimmer contínuo */}
-      <span
-        className="flow-btn-shimmer pointer-events-none absolute inset-y-0 z-[2] w-[30%] opacity-0 group-hover:opacity-0"
-        style={{
-          background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent)",
-        }}
-        aria-hidden
-      />
+      {/* shimmer no hover */}
       <span
         className="flow-btn-shimmer pointer-events-none absolute inset-y-0 z-[2] w-[30%]"
         style={{
           background: "linear-gradient(90deg, transparent, rgba(157,176,122,0.22), transparent)",
-          animationDelay: "0.4s",
         }}
         aria-hidden
       />
