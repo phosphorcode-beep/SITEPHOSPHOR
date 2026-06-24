@@ -82,15 +82,26 @@ export function MethodSection() {
             className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-foreground-inverse/10 md:block"
             aria-hidden
           />
+          <div
+            className="absolute bottom-0 left-[0.6875rem] top-2 w-px bg-gradient-to-b from-brand-accent/45 via-brand-accent/18 to-transparent md:hidden"
+            aria-hidden
+          />
 
-          <div className="grid gap-xl md:gap-2xl">
+          <div className="grid gap-lg md:gap-2xl">
             {phases.map((p, i) => {
               const left = i % 2 === 0;
               return (
                 <div
                   key={p.phase}
-                  className="relative md:grid md:grid-cols-2 md:items-center md:gap-2xl"
+                  className="relative min-w-0 pl-9 md:grid md:grid-cols-2 md:items-center md:gap-2xl md:pl-0"
                 >
+                  <span
+                    className="absolute left-0 top-3 z-10 grid size-[1.375rem] place-items-center rounded-full border border-brand-accent/55 bg-background shadow-[0_0_18px_rgb(var(--color-accent)_/_0.18)] md:hidden"
+                    aria-hidden
+                  >
+                    <span className="size-1.5 rounded-full bg-brand-accent" />
+                  </span>
+
                   {/* Marcador central (desktop) */}
                   <span
                     className="absolute left-1/2 top-lg hidden size-3 -translate-x-1/2 rounded-full border-2 border-brand-secondary bg-brand-accent md:block"
@@ -154,20 +165,23 @@ export function MethodSection() {
                   )}
 
                   <motion.div
-                    className={left ? "md:col-start-1" : "md:col-start-2"}
+                    className={left ? "min-w-0 md:col-start-1" : "min-w-0 md:col-start-2"}
                     variants={card(left)}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.4 }}
                   >
-                    <div className="card-lift grid h-full gap-sm rounded-brand-lg border border-foreground-inverse/12 bg-background p-lg">
-                      <span className="font-secondary text-caption font-semibold uppercase tracking-widest text-brand-accent">
+                    <div className="card-lift grid h-full min-w-0 gap-sm overflow-hidden rounded-brand-lg border border-foreground-inverse/12 bg-background p-md shadow-[0_18px_60px_rgb(0_0_0_/_0.16)] sm:p-lg">
+                      <span className="font-secondary text-[0.72rem] font-semibold uppercase leading-relaxed tracking-[0.16em] text-brand-accent sm:text-caption sm:tracking-widest">
                         {p.phase}
                       </span>
-                      <Heading as="h3" className="text-foreground-inverse" size="h3">
+                      <Heading
+                        as="h3"
+                        className="text-[clamp(1.7rem,8vw,2.25rem)] leading-[0.98] text-foreground-inverse sm:text-h3"
+                      >
                         {p.title}
                       </Heading>
-                      <p className="text-small leading-relaxed text-foreground-inverse/65">
+                      <p className="text-[0.98rem] leading-relaxed text-foreground-inverse/65 sm:text-small">
                         {p.description}
                       </p>
                     </div>
