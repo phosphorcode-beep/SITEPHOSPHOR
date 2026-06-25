@@ -73,7 +73,7 @@ export function ContactForm() {
       >
         <p className="text-lg font-semibold text-foreground">Recebemos seu contato.</p>
         <p className="text-sm text-foreground-secondary/80">
-          A Antonela vai te chamar no WhatsApp em instantes. Fique de olho no número que você informou.
+          Vamos analisar o contexto e chamar você no WhatsApp informado para avançar com a conversa técnica.
         </p>
       </div>
     );
@@ -141,7 +141,7 @@ export function ContactForm() {
       <Textarea
         label="O que você precisa resolver?"
         name="mensagem"
-        placeholder="Descreva o que está travando sua operação: planilhas soltas, sistemas que não conversam, retrabalho, falta de indicadores..."
+        placeholder="Descreva sistemas atuais, integrações críticas, dados sensíveis, documentos, permissões ou fluxos que precisam de mais controle."
         required
         value={fields.mensagem}
         onChange={set("mensagem")}
@@ -149,12 +149,12 @@ export function ContactForm() {
 
       <FlowButton
         type="submit"
-        text={status === "sending" ? "Enviando..." : "Falar com a Phosphorcode"}
+        text={status === "sending" ? "Enviando..." : "Avaliar minha operação de saúde"}
         className="mt-sm w-full justify-center"
       />
 
       <p className="text-center text-xs text-foreground-secondary/60">
-        Ao enviar, a Antonela entra em contato com você no WhatsApp.
+        Ao enviar, analisamos seu contexto antes de propor qualquer caminho.
       </p>
     </form>
   );

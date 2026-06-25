@@ -7,7 +7,7 @@ import { siteContent } from "@/content/site-content";
 
 export const metadata: Metadata = {
   title: "Termos de Uso · Phosphorcode",
-  description: "Condições de uso do site e dos serviços da Phosphorcode.",
+  description: "Condições de uso do site e dos serviços de engenharia da Phosphorcode.",
 };
 
 export default function TermosPage() {
@@ -59,7 +59,8 @@ export default function TermosPage() {
                 <p>
                   As informações sobre serviços têm caráter geral. Qualquer escopo,
                   prazo ou valor é definido apenas em proposta formal, após o
-                  entendimento da sua necessidade.
+                  entendimento dos sistemas, integrações, riscos e prioridades da
+                  operação.
                 </p>
               </div>
 

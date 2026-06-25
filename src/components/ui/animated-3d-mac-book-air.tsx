@@ -79,16 +79,16 @@ const Macbook: React.FC = () => {
                   Phosphorcode
                 </span>
                 <p className="mt-[3px] text-[6px] font-semibold leading-[7px] text-[rgb(236_240_228)]">
-                  Softwares sob medida
+                  Software proprietário
                   <br />
-                  para <span className="text-[rgb(150_210_110)]">controlar.</span>
+                  para <span className="text-[rgb(150_210_110)]">saúde.</span>
                 </p>
                 <div className="mt-[4px] flex gap-[3px]">
                   <span className="rounded-[2px] bg-[rgb(64_132_52)] px-[4px] py-[2px] text-[3px] font-bold text-[rgb(236_240_228)]">
-                    Criar
+                    Avaliar
                   </span>
                   <span className="rounded-[2px] border border-[rgba(236,240,228,0.3)] px-[4px] py-[2px] text-[3px] text-[rgba(236,240,228,0.8)]">
-                    Método
+                    Mapear
                   </span>
                 </div>
                 <div className="mt-[5px] grid grid-cols-3 gap-[3px]">

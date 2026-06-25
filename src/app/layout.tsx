@@ -23,8 +23,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Phosphorcode | Sistemas que seguram a sua operacao",
-  description: "Software sob medida para empresas que precisam operar com mais controle, integração e segurança.",
+  title: "Phosphorcode | Software proprietário para operações de saúde",
+  description:
+    "Sistemas proprietários para clínicas, laboratórios, operadoras e empresas de saúde que precisam de segurança, integração e arquitetura para crescer.",
   icons: {
     icon: "/brand/favicon.svg",
   },

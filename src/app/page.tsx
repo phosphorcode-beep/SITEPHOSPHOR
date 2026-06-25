@@ -73,9 +73,9 @@ export default function Home() {
         rotatingWords={siteContent.hero.rotatingWords}
         description={siteContent.hero.subheadline}
         primaryCta={siteContent.hero.primaryCta}
-        primaryCtaMobile="Criar software"
+        primaryCtaMobile="Avaliar operação"
         secondaryCta={siteContent.hero.secondaryCta}
-        secondaryCtaMobile="Método"
+        secondaryCtaMobile="Mapear sistemas"
         primaryHref="#contato"
         secondaryHref="#processo"
       />
@@ -103,9 +103,9 @@ export default function Home() {
 
             <ul className="mt-xl grid gap-0">
               {[
-                "Respondemos em até 25 segundos.",
-                "Se fizer sentido, agendamos uma conversa técnica sem compromisso.",
-                "A proposta vem depois de entender o problema de verdade.",
+                "Lemos o contexto antes de falar em solução.",
+                "Se fizer sentido, agendamos uma conversa técnica sobre sistemas, riscos e integrações.",
+                "A proposta vem depois de entender a operação com precisão.",
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-md border-t border-border/14 py-md">
                   <span className="font-secondary text-caption font-semibold text-brand-primary">

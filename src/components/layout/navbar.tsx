@@ -104,7 +104,7 @@ export function Navbar() {
                 className="transition-transform duration-300 ease-out group-hover:rotate-45"
               />
             </span>
-            Falar com a Phosphorcode
+            Avaliar operação
           </Link>
 
           {/* Mobile toggle */}
@@ -140,7 +140,7 @@ export function Navbar() {
               onClick={() => setMobileOpen(false)}
               className="mt-6 flex items-center justify-center gap-2 rounded-full bg-brand-primary px-4 py-4 text-base font-semibold text-foreground-inverse"
             >
-              Falar com a Phosphorcode
+              Avaliar operação
               <ArrowRight size={16} aria-hidden />
             </Link>
           </div>

@@ -282,19 +282,19 @@ interface PixelHeroProps {
 }
 
 export function PixelHero({
-  baseText = "Software sob medida para operações que exigem",
+  baseText = "O software que a sua operação de saúde precisa",
   rotatingWords = [
-    "controle.",
-    "integração.",
-    "segurança.",
-    "rastreabilidade.",
-    "continuidade.",
+    "não existe pronto.",
+    "integra agenda.",
+    "protege dados.",
+    "rastreia documentos.",
+    "nós construímos.",
   ],
-  description = "Criamos sistemas para empresas de varejo e saúde que precisam vender, atender e operar melhor — sem depender de improviso.",
-  primaryCta = "Falar com a Phosphorcode",
-  primaryCtaMobile = "Falar",
-  secondaryCta = "Ver soluções",
-  secondaryCtaMobile = "Soluções",
+  description = "Construímos sistemas proprietários para operações de saúde que precisam de segurança, integração e arquitetura para crescer.",
+  primaryCta = "Avaliar minha operação de saúde",
+  primaryCtaMobile = "Avaliar",
+  secondaryCta = "Mapear sistemas e integrações",
+  secondaryCtaMobile = "Mapear",
   primaryHref = "#contato",
   secondaryHref = "#solucoes",
 }: PixelHeroProps) {

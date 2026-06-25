@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-// Recebe o formulário do site e repassa para o servidor da Antonela.
+// Recebe o formulário do site e repassa para o servidor de atendimento.
 // Roda no servidor (Vercel), então o segredo nunca vai para o navegador.
 export async function POST(req: Request) {
   try {

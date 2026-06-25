@@ -7,7 +7,7 @@ import { siteContent } from "@/content/site-content";
 
 export const metadata: Metadata = {
   title: "Política de Privacidade · Phosphorcode",
-  description: "Como a Phosphorcode coleta, usa e protege seus dados.",
+  description: "Como a Phosphorcode coleta, usa e protege dados enviados pelo site.",
 };
 
 export default function PrivacidadePage() {
@@ -28,7 +28,8 @@ export default function PrivacidadePage() {
             <div className="mt-xl grid gap-lg text-body leading-relaxed text-foreground-secondary">
               <p>
                 Esta política explica como a Phosphorcode trata as informações que
-                você compartilha conosco ao navegar no site ou ao entrar em contato.
+                você compartilha conosco ao navegar no site ou ao solicitar uma
+                conversa sobre sistemas, integrações e operações de saúde.
               </p>
 
               <div>
@@ -38,7 +39,7 @@ export default function PrivacidadePage() {
                 <p>
                   Coletamos apenas os dados que você nos envia de forma voluntária no
                   formulário de contato, como nome, empresa, email, número, quantidade
-                  de funcionários e a descrição da sua necessidade.
+                  de funcionários e a descrição do contexto técnico ou operacional.
                 </p>
               </div>
 
@@ -48,8 +49,9 @@ export default function PrivacidadePage() {
                 </Heading>
                 <p>
                   Usamos esses dados exclusivamente para responder seu contato,
-                  entender seu cenário e elaborar uma proposta. Não vendemos nem
-                  alugamos suas informações.
+                  entender sistemas, riscos, integrações e prioridades, e conduzir uma
+                  proposta quando fizer sentido. Não vendemos nem alugamos suas
+                  informações.
                 </p>
               </div>
 

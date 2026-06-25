@@ -14,8 +14,8 @@ import {
 export const siteContent = {
   brand: {
     name: "Phosphorcode",
-    tagline: "Software para operação real.",
-    toneOfVoice: "Sênior, técnica, discreta, confiável e direta.",
+    tagline: "Software proprietário para operações de saúde.",
+    toneOfVoice: "Direto, técnico, confiante e focado em engenharia.",
     contactEmail: "contato@phosphorcode.com.br",
     domain: "phosphorcode.com.br",
   },
@@ -26,206 +26,208 @@ export const siteContent = {
     { label: "FAQ", href: "#faq" },
   ],
   hero: {
-    baseText: "Criamos softwares para empresas que precisam controlar",
+    baseText: "O software que a sua operação de saúde precisa",
     rotatingWords: [
-      "vendas.",
-      "estoque.",
-      "financeiro.",
-      "produção.",
-      "logística.",
-      "atendimento.",
-      "integrações.",
-      "operações.",
+      "não existe pronto.",
+      "integra agenda.",
+      "protege dados.",
+      "rastreia documentos.",
+      "organiza gestão.",
+      "conecta financeiro.",
+      "cresce com segurança.",
+      "nós construímos.",
     ],
     subheadline:
-      "Desenvolvemos softwares sob medida para transformar processos manuais em operações integradas, seguras e rastreáveis.",
-    primaryCta: "Criar software sob medida",
-    secondaryCta: "Ver método",
-    microcopy: "Diagnóstico · Arquitetura · Desenvolvimento · Implantação · Evolução",
+      "Projetamos, desenvolvemos e mantemos sistemas proprietários para clínicas, laboratórios, operadoras e empresas de saúde que chegaram ao limite das ferramentas prontas.",
+    primaryCta: "Avaliar minha operação de saúde",
+    secondaryCta: "Mapear sistemas e integrações",
+    microcopy: "Discovery · Arquitetura · Build · Integração · Evolução contínua",
   },
   pain: {
-    eyebrow: "Dor operacional",
-    title: "Quando a operação cresce, o improviso começa a custar caro.",
+    eyebrow: "Limite do pronto",
+    title: "Toda operação de saúde chega a um ponto em que o software pronto começa a limitar.",
     cards: [
       {
         icon: FileSpreadsheet,
-        title: "Planilhas soltas",
+        title: "Dados sensíveis espalhados",
         description:
-          "Informações importantes espalhadas entre arquivos, mensagens e controles manuais.",
+          "Paciente, documentos, atendimento e financeiro circulando entre sistemas, arquivos e controles manuais.",
       },
       {
         icon: Unplug,
-        title: "Sistemas que não conversam",
-        description: "ERP, agenda, PDV, CRM e e-commerce operando sem integração real.",
+        title: "Agenda sem integração",
+        description: "Agenda, prontuário, CRM, financeiro e gestão operando sem uma arquitetura comum.",
       },
       {
         icon: RefreshCw,
-        title: "Retrabalho operacional",
+        title: "Processos sem rastreabilidade",
         description:
-          "A equipe repete tarefas, confere dados manualmente e perde tempo com processos frágeis.",
+          "A equipe confere dados manualmente, perde histórico e depende de combinados frágeis para operar.",
       },
       {
         icon: LineChart,
-        title: "Decisão sem visibilidade",
+        title: "Gestão sem visão em tempo real",
         description:
-          "Gestores sem indicadores confiáveis para acompanhar vendas, estoque, atendimento e produtividade.",
+          "Diretores e gestores sem indicadores confiáveis para acompanhar unidades, atendimento e produtividade.",
       },
     ],
   },
   solutions: {
-    eyebrow: "Soluções",
-    title: "Softwares sob medida para vender, atender e operar melhor.",
+    eyebrow: "Software proprietário",
+    title: "Sistemas para saúde feitos para o fluxo real da operação.",
     subtitle:
-      "Criamos sistemas internos, sites, plataformas e integrações com arquitetura, revisão técnica e continuidade — para empresas que precisam controlar processos, dados e operações críticas sem depender de improviso.",
+      "Construímos portais, dashboards, CRMs, sistemas internos e integrações seguras com arquitetura, testes, documentação e continuidade. Não adaptamos sua operação ao software disponível: projetamos o sistema para ela.",
     cards: [
       {
         icon: ServerCog,
-        title: "Sistemas internos",
+        title: "Sistemas proprietários",
         description:
-          "Plataformas administrativas, dashboards, portais e ferramentas operacionais construídas para o fluxo real da empresa.",
+          "Módulos administrativos, operacionais e de gestão construídos para clínicas, laboratórios, operadoras e redes de saúde.",
       },
       {
         icon: MonitorSmartphone,
-        title: "Sites e plataformas digitais",
+        title: "Portais e áreas logadas",
         description:
-          "Sites institucionais, portais, áreas logadas e experiências digitais conectadas à operação.",
+          "Portais de paciente, atendimento, documentos e gestão conectados às regras e permissões da operação.",
       },
       {
         icon: ArrowRightLeft,
-        title: "Integrações operacionais",
+        title: "Integrações profundas",
         description:
-          "Conectamos ERP, PDV, e-commerce, agenda, CRM, gateways, automações e sistemas legados.",
+          "Conectamos agenda, prontuário, financeiro, CRM, ERP, bases de dados, APIs e sistemas legados.",
       },
       {
         icon: LayoutDashboard,
-        title: "Dashboards e indicadores",
+        title: "Dashboards e rastreabilidade",
         description:
-          "Indicadores, relatórios e painéis para quem precisa decidir com dados confiáveis.",
+          "Indicadores, logs, relatórios e painéis para acompanhar operação, segurança e performance com dados confiáveis.",
       },
     ],
   },
   process: {
-    eyebrow: "Método Phosphor",
-    title: "Software sob medida,\nprocesso estruturado.",
+    eyebrow: "Ciclo de trabalho",
+    title: "Do discovery à evolução contínua.",
     description:
-      "Cada operação é diferente. Por isso, começamos entendendo o contexto real da empresa antes de desenhar, construir e evoluir a solução.",
-    cta: "Criar software sob medida",
+      "Antes de programar, entendemos sistemas, riscos, integrações e fluxo operacional. Depois construímos uma base própria, segura e mantível para crescer com a empresa.",
+    cta: "Avaliar minha operação de saúde",
     phases: [
       {
-        phase: "Fase 01 · Diagnóstico operacional",
-        title: "Mapeamos a operação.",
+        phase: "Phosphor Discovery",
+        title: "Mapeamos sistemas, riscos e integrações.",
         description:
-          "Antes de qualquer linha de código, mergulhamos na rotina real da empresa. Levantamos processos, gargalos, sistemas atuais, fluxos manuais, dados sensíveis e pontos de risco. O objetivo é entender onde a operação perde tempo e controle, e definir com clareza o que o software precisa resolver de verdade.",
+          "Levantamos agenda, prontuário, financeiro, documentos, CRM, dados sensíveis, permissões, gargalos e sistemas atuais. O objetivo é entender onde a operação perdeu controle e definir uma arquitetura inicial com prioridades claras.",
       },
       {
-        phase: "Fase 02 · Arquitetura da solução",
-        title: "Desenhamos o software sob medida.",
+        phase: "Phosphor Build",
+        title: "Construímos o sistema proprietário.",
         description:
-          "Com o diagnóstico em mãos, transformamos a operação em uma estrutura técnica clara: fluxos, regras de negócio, integrações, permissões por perfil, modelo de dados e prioridades de entrega. Tudo desenhado para o contexto da empresa, sem depender de modelo pronto ou template genérico.",
+          "Transformamos o diagnóstico em portais, CRMs, dashboards, módulos administrativos e ferramentas operacionais. Cada entrega nasce com código próprio, versionado, documentado e preparado para manutenção.",
       },
       {
-        phase: "Fase 03 · Desenvolvimento e implantação",
-        title: "Construímos e colocamos em operação.",
+        phase: "Phosphor Integrate",
+        title: "Integramos o que precisa conversar.",
         description:
-          "Desenvolvemos o software com revisão técnica, testes, segurança e documentação em cada etapa. Conectamos integrações, validamos com a equipe, homologamos e implantamos com previsibilidade, para que a solução funcione no uso real do dia a dia, e não apenas em demonstração.",
+          "Conectamos agenda, prontuário, financeiro, atendimento, documentos, CRM, ERP e APIs com segurança, rastreabilidade e visão de dados. Integração não é gatilho solto: é parte da arquitetura.",
       },
       {
-        phase: "Fase 04 · Evolução contínua",
-        title: "Evoluímos com a operação.",
+        phase: "Phosphor Care",
+        title: "Mantemos, monitoramos e evoluímos.",
         description:
-          "A entrega é o começo da relação, não o fim. Acompanhamos o uso, monitoramos o sistema, corrigimos pontos críticos, ajustamos fluxos e implementamos melhorias. Conforme a empresa cresce, expandimos o software com novas funcionalidades e integrações, sempre com suporte e manutenção contínuos.",
+          "Acompanhamos o uso real, mantemos backups, logs, permissões e segurança, corrigimos pontos críticos e planejamos novas entregas. O sistema precisa sobreviver ao crescimento da operação.",
       },
     ],
   },
   techRuler: {
-    eyebrow: "Régua técnica",
-    title: "Sob medida não significa improvisado.",
+    eyebrow: "Régua técnica mínima",
+    title: "Funcionar não basta.",
     description:
-      "Todo projeto entrega uma base técnica mínima. É a régua que garante segurança, rastreabilidade e manutenção no longo prazo.",
+      "Todo projeto entrega uma base técnica mínima. O sistema precisa ser seguro, rastreável, documentado e mantível por qualquer time técnico.",
     checklist: [
+      "TypeScript",
       "Autenticação segura",
       "Permissões por perfil",
-      "Banco de dados estruturado",
-      "Logs e rastreabilidade",
+      "Banco estruturado",
+      "Logs de erro",
       "Backups",
+      "Versionamento Git",
       "Ambiente de teste",
-      "Deploy em produção",
-      "Documentação técnica",
+      "Ambiente de produção",
+      "README técnico",
       "Documentação para o cliente",
-      "Plano de evolução",
+      "Checklist de segurança e deploy",
     ],
   },
   verticals: {
-    eyebrow: "Varejo e saúde",
-    title: "Software sob medida para operações de varejo e saúde.",
+    eyebrow: "Especialização",
+    title: "Saúde no centro. Varejo como experiência complementar.",
     cards: [
       {
-        icon: ShoppingCart,
-        name: "Varejo",
+        icon: Stethoscope,
+        name: "Phosphor Health",
         description:
-          "Pedidos, estoque, CRM, e-commerce, PDV, dashboards, automações e integrações com sistemas comerciais.",
+          "Sistemas proprietários para clínicas, laboratórios, operadoras e redes de saúde que precisam integrar agenda, paciente, documentos, financeiro, atendimento e gestão.",
       },
       {
-        icon: Stethoscope,
-        name: "Saúde",
+        icon: ShoppingCart,
+        name: "Phosphor Retail",
         description:
-          "Agenda, portal do paciente, dados sensíveis, documentos, atendimento, relatórios e segurança de acesso.",
+          "A mesma engenharia aplicada a varejo e e-commerce quando a operação exige pedidos, estoque, CRM, dashboards e integração entre canais.",
       },
     ],
   },
   gettingStarted: {
     eyebrow: "Como começamos",
-    title: "O primeiro passo é entender a operação.",
-    text: "Antes de propor uma solução, analisamos o cenário atual: processos, sistemas, gargalos, riscos e prioridades. A partir disso, definimos o melhor caminho para construir ou evoluir o software.",
-    cta: "Mapear minha operação",
+    title: "Antes de construir, mapeamos.",
+    text: "Entendemos os sistemas em uso, os dados sensíveis, as integrações críticas, os riscos de segurança e os fluxos que não podem quebrar. A proposta vem depois do diagnóstico técnico e funcional.",
+    cta: "Mapear sistemas e integrações",
   },
   faq: {
-    eyebrow: "Dúvidas frequentes",
+    eyebrow: "Perguntas frequentes",
     title: "Perguntas frequentes",
     items: [
       {
-        question: "Qual é o prazo de um projeto?",
+        question: "Vocês trabalham só com saúde?",
         answer:
-          "Depende do escopo. Após o diagnóstico, definimos um cronograma realista por entregas. Os projetos costumam começar por um MVP funcional e evoluir a partir do uso real.",
+          "Nossa especialidade é saúde: clínicas, laboratórios, operadoras, redes de saúde e healthtechs. Também aplicamos a mesma engenharia a operações de varejo e e-commerce quando há necessidade real de software proprietário.",
+      },
+      {
+        question: "O que significa software proprietário?",
+        answer:
+          "É um sistema construído para a sua operação, com código próprio, documentação, versionamento e arquitetura sob medida. Ele não obriga a empresa a se adaptar ao limite de uma ferramenta pronta.",
       },
       {
         question: "Como o escopo é definido?",
         answer:
-          "O escopo nasce do diagnóstico operacional. Mapeamos processos, prioridades e integrações antes de definir o que será construído na primeira fase.",
+          "O escopo nasce do discovery. Mapeamos sistemas atuais, riscos, integrações, permissões, dados sensíveis e prioridades antes de definir o que será construído primeiro.",
       },
       {
-        question: "Existe suporte após a entrega?",
+        question: "Vocês integram com sistemas que já usamos?",
         answer:
-          "Sim. Depois da implantação, acompanhamos o uso, corrigimos pontos críticos e evoluímos a solução com suporte e manutenção contínuos.",
+          "Sim. Integramos agenda, prontuário, financeiro, CRM, ERP, bases de dados, APIs e sistemas legados. A integração é planejada na arquitetura, não tratada como remendo no fim.",
       },
       {
-        question: "Vocês integram com os sistemas que já usamos?",
+        question: "Existe manutenção após a entrega?",
         answer:
-          "Sim. Conectamos o software a ERPs, PDVs, CRMs, agendas, e-commerces, gateways e sistemas legados que a empresa já utiliza.",
-      },
-      {
-        question: "O software pode evoluir depois?",
-        answer:
-          "Sim. O software é construído para evoluir. Novas funcionalidades, ajustes e melhorias entram em ciclos planejados conforme a operação cresce.",
+          "Sim. O Phosphor Care cobre manutenção, evolução, monitoramento, backups, logs, permissões, segurança e melhorias contínuas conforme o sistema passa pelo uso real.",
       },
       {
         question: "De quem é a propriedade do software?",
         answer:
-          "O software é seu. Você recebe o código, a documentação técnica e os acessos necessários para manter a propriedade total da solução.",
+          "O software é da sua empresa. Você recebe código versionado, documentação técnica, documentação para o cliente e os acessos necessários para manter propriedade e continuidade.",
       },
     ],
   },
   finalCta: {
     eyebrow: "Vamos conversar",
-    title: "Sua operação precisa de um software sob medida?",
-    text: "Vamos mapear seus processos e entender o que precisa ser construído, integrado ou melhorado.",
-    cta: "Criar software sob medida",
+    title: "Sua operação de saúde precisa de um software proprietário?",
+    text: "Vamos mapear sistemas, riscos e integrações para entender o que precisa ser construído, conectado ou evoluído com segurança.",
+    cta: "Avaliar minha operação de saúde",
   },
   contact: {
-    cta: "Criar software sob medida",
+    cta: "Avaliar minha operação de saúde",
     segmentoOptions: [
-      { value: "varejo", label: "Varejo" },
       { value: "saude", label: "Saúde" },
+      { value: "varejo", label: "Varejo / e-commerce" },
       { value: "outro", label: "Outro" },
     ],
     urgenciaOptions: [
