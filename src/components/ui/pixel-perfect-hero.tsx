@@ -352,7 +352,7 @@ export function PixelHero({
 
       {/* Topo: headline com palavra rotativa */}
       <div className="order-1 flex w-full flex-col items-center justify-center text-center pointer-events-none">
-        <h1 className="mx-auto max-w-4xl px-1 font-primary text-[1.625rem] font-bold leading-[1.12] tracking-tight text-foreground-inverse sm:text-4xl md:text-5xl lg:text-6xl">
+        <h1 className="mx-auto max-w-4xl px-1 font-primary text-[1.25rem] font-bold leading-[1.12] tracking-tight text-foreground-inverse sm:text-4xl md:text-5xl lg:text-6xl">
           <span className="block">{baseText}</span>
           <span className="mt-1 block">
             <RotatingWord words={rotatingWords} />
