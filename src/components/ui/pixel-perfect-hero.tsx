@@ -282,16 +282,18 @@ interface PixelHeroProps {
 }
 
 export function PixelHero({
-  baseText = "O software que a sua operação de saúde precisa",
+  baseText = "O software que a sua operação precisa",
   rotatingWords = [
     "não existe pronto.",
-    "integra agenda.",
-    "protege dados.",
+    "integra sistemas.",
+    "protege dados críticos.",
+    "conecta canais.",
+    "organiza estoque.",
     "rastreia documentos.",
     "nós construímos.",
   ],
-  description = "Construímos sistemas proprietários para operações de saúde que precisam de segurança, integração e arquitetura para crescer.",
-  primaryCta = "Avaliar minha operação de saúde",
+  description = "Construímos sistemas proprietários para operações de saúde, varejo e e-commerce que precisam de segurança, integração e arquitetura para crescer.",
+  primaryCta = "Avaliar minha operação",
   primaryCtaMobile = "Avaliar",
   secondaryCta = "Mapear sistemas e integrações",
   secondaryCtaMobile = "Mapear",

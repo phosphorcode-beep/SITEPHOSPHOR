@@ -73,7 +73,7 @@ export default function Home() {
         rotatingWords={siteContent.hero.rotatingWords}
         description={siteContent.hero.subheadline}
         primaryCta={siteContent.hero.primaryCta}
-        primaryCtaMobile="Avaliar operação"
+        primaryCtaMobile="Avaliar"
         secondaryCta={siteContent.hero.secondaryCta}
         secondaryCtaMobile="Mapear sistemas"
         primaryHref="#contato"
