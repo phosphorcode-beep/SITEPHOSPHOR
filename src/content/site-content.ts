@@ -26,17 +26,13 @@ export const siteContent = {
     { label: "FAQ", href: "#faq" },
   ],
   hero: {
-    baseText: "O software que a sua operação precisa",
+    baseText: "Quando o software pronto limita,",
     rotatingWords: [
-      "não existe pronto.",
-      "integra sistemas.",
-      "protege dados críticos.",
-      "conecta canais.",
-      "organiza estoque.",
-      "rastreia documentos.",
-      "organiza gestão.",
-      "cresce com segurança.",
-      "nós construímos.",
+      "a operação pede engenharia.",
+      "os sistemas precisam conversar.",
+      "os dados precisam ser confiáveis.",
+      "saúde e varejo precisam de controle.",
+      "é hora de construir o seu.",
     ],
     subheadline:
       "Projetamos, desenvolvemos e mantemos sistemas proprietários para operações que chegaram ao limite das ferramentas prontas. Saúde é nossa especialidade; varejo e e-commerce também têm espaço quando precisam de arquitetura, integração e continuidade.",
