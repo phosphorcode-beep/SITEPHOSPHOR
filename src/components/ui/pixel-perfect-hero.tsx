@@ -282,15 +282,14 @@ interface PixelHeroProps {
 }
 
 export function PixelHero({
-  baseText = "O software que a sua operação precisa",
+  baseText = "Software proprietário para operações que",
   rotatingWords = [
-    "não existe pronto.",
-    "integra sistemas.",
-    "protege dados críticos.",
-    "conecta canais.",
-    "organiza estoque.",
-    "rastreia documentos.",
-    "nós construímos.",
+    "cresceram além do pronto.",
+    "precisam integrar sistemas.",
+    "dependem de dados confiáveis.",
+    "conectam saúde, varejo e gestão.",
+    "exigem segurança desde a arquitetura.",
+    "não podem operar no improviso.",
   ],
   description = "Construímos sistemas proprietários para operações de saúde, varejo e e-commerce que precisam de segurança, integração e arquitetura para crescer.",
   primaryCta = "Avaliar minha operação",
